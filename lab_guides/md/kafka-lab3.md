@@ -472,7 +472,6 @@ is a subscription to the topic.
 
 
 
-___
 ### Conclusion Kafka Consumer example
 
 
@@ -484,7 +483,6 @@ topic to receive messages. The *Kafka consumer* uses the `poll` method to get N 
 group and one producer. Each consumer groups gets a copy of the same data. More precise, each consumer group really 
 has a unique set of offset/partition pairs per.
 
-___
 ### Review Kafka Consumer
 
 
@@ -508,28 +506,3 @@ So a server can serve up records from many partitions on poll.
 <br />
 <br />
 
-
-#### Related content
-* [Kafka Tutorial: Kafka Producer](http://cloudurable.com/blog/kafka-tutorial-kafka-producer/index.html)
-* [Kafka Architecture](http://cloudurable.com/blog/kafka-architecture/index.html)
-* [What is Kafka?](http://cloudurable.com/blog/what-is-kafka/index.html)
-* [Kafka Topic Architecture](http://cloudurable.com/blog/kafka-architecture-topics/index.html)
-* [Kafka Consumer Architecture](http://cloudurable.com/blog/kafka-architecture-consumers/index.html)
-* [Kafka Producer Architecture](http://cloudurable.com/blog/kafka-architecture-producers/index.html)
-* [Kafka and Schema Registry](http://cloudurable.com/blog/kafka-avro-schema-registry/index.html)
-* [Kafka and Avro](http://cloudurable.com/blog/avro/index.html)
-* [Kafka Tutorial Slides](http://cloudurable.com/ppt/kafka-tutorial-cloudruable-v2.pdf)
-* [Kafka from the command line](http://cloudurable.com/blog/kafka-tutorial-kafka-from-command-line/index.html)
-* [Kafka clustering and failover basics](http://cloudurable.com/blog/kafka-tutorial-kafka-failover-kafka-cluster/index.html)
-
-
-
-<br />
-
-#### About Cloudurable
-We hope you enjoyed this article. Please provide [feedback](http://cloudurable.com/contact/index.html).
-Cloudurable provides [Kafka training](http://cloudurable.com/kafka-training/index.html 
-"Apache Kafka Training Course, Instructor led, onsite training"), 
-[Kafka consulting](http://cloudurable.com/kafka-aws-consulting/index.html), 
-[Kafka support](http://cloudurable.com/subscription_support/index.html) and helps 
-[setting up Kafka clusters in AWS](http://cloudurable.com/services/index.html).
