@@ -3,7 +3,7 @@
 Welcome to the session 5 lab 3. The work for this lab is done in `~/kafka-training/labs/lab5.3`.
 In this lab, you are going to set up producer durability for our advanced producer.
 
-Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
+
 
 Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 

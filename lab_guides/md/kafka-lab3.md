@@ -3,7 +3,7 @@
 
 Welcome to the session 3 lab. The work for this lab is done in `~/kafka-training/labs/lab3`.
 In this lab, you are going to create simple Java Kafka consumer.
-Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
+
 The latest version of this lab lives [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 In this lab, you are going to create a simple *Kafka Consumer*.
