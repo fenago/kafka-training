@@ -1,7 +1,7 @@
 # Lab 5.1: Creating Advanced Kafka Producers in Java
 
 Welcome to the session 5 lab 1. The work for this lab is done in
-`~/kafka-training/lab5.1`.
+`~/kafka-training/labs/lab5.1`.
 
 In this lab, you are going to create an advanced Java Kafka consumer.
 
@@ -54,7 +54,7 @@ The StockPrice is a simple domain object that holds a stock price has a name, do
 and cents. The StockPrice knows how to convert itself into a JSON string.
 
 
-#### ~/kafka-training/lab5.1/src/main/java/com/cloudurable/kafka/model/StockPrice.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/cloudurable/kafka/model/StockPrice.java
 #### Kafka Producer:  StockPrice
 
 ```java
@@ -169,7 +169,7 @@ in its own thread using the thread pool.
 
 
 
-#### ~/kafka-training/lab5.1/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer imports, createProducer
 ```java
 package com.cloudurable.kafka.producer;
@@ -209,7 +209,7 @@ to create a KafkaProducer. The `createProducer()` calls `setupBoostrapAndSeriali
 
 
 
-#### ~/kafka-training/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer imports, createProducer
 ```java
 
@@ -236,7 +236,7 @@ custom serializer (StockPriceSerializer). The `StockPriceSerializer` will serial
 ## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in setupBootstrapAndSerializers.
 
 
-#### ~/kafka-training/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer.main - start thread pool
 ```java
 
@@ -270,7 +270,7 @@ from the thread pool.
 ## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in main.
 
 
-#### ~/kafka-training/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer.getStockSenderList - create list of StockSenders
 ```java
 
@@ -312,7 +312,7 @@ The getStockSenderList of StockPriceKafkaProducer just creates a list of StockSe
 
 The StockPriceSerializer converts a StockPrice into a byte array.
 
-#### ~/kafka-training/lab5.1/src/main/java/com/cloudurable/kafka/producer/StockPriceSerializer.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/cloudurable/kafka/producer/StockPriceSerializer.java
 #### Kafka Producer:  StockPriceSerializer - convert StockPrice into a byte array
 ```java
 package com.cloudurable.kafka.producer;
@@ -350,7 +350,7 @@ The StockAppConstants defines a few constants, namely, topic name and a comma de
 
 
 
-#### ~/kafka-training/lab5.1/solution/src/main/java/com/cloudurable/kafka/StockAppConstants.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/StockAppConstants.java
 #### Kafka Producer:  StockAppConstants defines constants
 ```java
 package com.cloudurable.kafka;
@@ -372,7 +372,7 @@ The `StockSender` is used to show using `KafkaProducer` from many threads.
 The `StockSender` delays a random time duration between delayMin and delayMax, then sends a random `StockPrice` between
 `stockPriceHigh` and `stockPriceLow`.
 
-#### ~/kafka-training/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender imports, Runnable
 ```java
 package com.cloudurable.kafka.producer;
@@ -397,7 +397,7 @@ public class StockSender implements Runnable{
 The `StockSender` imports Kafka Producer, `ProducerRecord`, `RecordMetadata`, and `StockPrice`.
 It implements `Runnable`, and can be submitted to an `ExecutionService` (thread pool).
 
-#### ~/kafka-training/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender fields
 ```java
 public class StockSender implements Runnable{
@@ -428,7 +428,7 @@ public class StockSender implements Runnable{
 The `StockSender` takes a topic, high & low stockPrice, producer, and delay min & max.
 
 
-#### ~/kafka-training/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender run method
 ```java
 public class StockSender implements Runnable{
@@ -464,7 +464,7 @@ The StockSender run methods in a forever loop creates random record, sends the r
 and then repeats.
 
 
-#### ~/kafka-training/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender createRandomRecord
 ```java
 public class StockSender implements Runnable{
@@ -497,7 +497,7 @@ public class StockSender implements Runnable{
 The StockSender createRandomRecord method uses randomIntBetween. The createRandomRecord creates StockPrice and then
 wraps StockPrice in ProducerRecord.
 
-#### ~/kafka-training/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender displayRecordMetaData
 ```java
 public class StockSender implements Runnable{
@@ -555,7 +555,7 @@ Now run the first Kafka Broker.
 
 #### Running the 1st Kafka Broker (Run in a new terminal)
 ```sh
-~/kafka-training/lab5.1
+~/kafka-training/labs/lab5.1
 
 $ cat bin/start-1st-server.sh
 #!/usr/bin/env bash
@@ -573,7 +573,7 @@ Now run the second Kafka Broker.
 
 #### Running the 2nd Kafka Broker (Run in a new terminal)
 ```sh
-~/kafka-training/lab5.1
+~/kafka-training/labs/lab5.1
 
 $ cat bin/start-2nd-server.sh
 #!/usr/bin/env bash
@@ -591,7 +591,7 @@ Now run the third Kafka Broker.
 
 #### Running the 3rd Kafka Broker (Run in a new terminal)
 ```sh
-~/kafka-training/lab5.1
+~/kafka-training/labs/lab5.1
 
 $ cat bin/start-3rd-server.sh
 #!/usr/bin/env bash
@@ -609,7 +609,7 @@ Once all brokers are running, run create-topic.sh as follows.
 
 #### Running create topic
 ```sh
-~/kafka-training/lab5.1
+~/kafka-training/labs/lab5.1
 
 $ cat bin/create-topic.sh
 #!/usr/bin/env bash

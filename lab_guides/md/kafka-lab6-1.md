@@ -1,6 +1,6 @@
 # Lab 6.1: Kafka Advanced Consumer Part 1
 
-Welcome to the session 6 lab 1. The work for this lab is done in `~/kafka-training/lab6.1`.
+Welcome to the session 6 lab 1. The work for this lab is done in `~/kafka-training/labs/lab6.1`.
 
 In this lab, you are going to set up an advanced Kafka Consumer.
 
@@ -34,7 +34,7 @@ The Stock Price Consumer example has the following classes:
 
 The `StockPriceDeserializer` calls the JSON parser to parse JSON in bytes to a `StockPrice` object.
 
-#### ~/kafka-training/lab6.1/src/main/java/com/cloudurable/kafka/consumer/StockPriceDeserializer.java
+#### ~/kafka-training/labs/lab6.1/src/main/java/com/cloudurable/kafka/consumer/StockPriceDeserializer.java
 #### Kafka Consumer:  StockPriceDeserializer - Parse JSON in bytes to a StockPrice object
 ```java
 package com.cloudurable.kafka.consumer;
@@ -66,7 +66,7 @@ public class StockDeserializer implements Deserializer<StockPrice> {
 ## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/StockPriceDeserializer.java` and follow the instructions in the file.
 
 
-#### ~/kafka-training/lab6.1/src/main/java/com/cloudurable/kafka/model/StockPrice.java
+#### ~/kafka-training/labs/lab6.1/src/main/java/com/cloudurable/kafka/model/StockPrice.java
 #### Kafka Producer:  StockPrice
 ```java
 package com.cloudurable.kafka.producer.model;
@@ -97,7 +97,7 @@ Fix the constructor by using the hint which calls the JSON parser.
 It has a `runConsumer()` method that drains topic, creates map of current stocks and calls `displayRecordsStatsAndStocks()` method.
 The method `displayRecordsStatsAndStocks()` prints out the size of each partition read and total record count and prints out each stock at its current price.
 
-#### ~/kafka-training/lab6.1/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.1/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer -
 ```java
 package com.cloudurable.kafka.consumer;
@@ -210,7 +210,7 @@ Now run the first Kafka Broker.
 
 #### Running the 1st Kafka Broker (Run in a new terminal)
 ```sh
-~/kafka-training/lab6.1
+~/kafka-training/labs/lab6.1
 
 $ cat bin/start-1st-server.sh
 #!/usr/bin/env bash
@@ -228,7 +228,7 @@ Now run the second Kafka Broker.
 
 #### Running the 2nd Kafka Broker (Run in a new terminal)
 ```sh
-~/kafka-training/lab6.1
+~/kafka-training/labs/lab6.1
 
 $ cat bin/start-2nd-server.sh
 #!/usr/bin/env bash
@@ -246,7 +246,7 @@ Now run the third Kafka Broker.
 
 #### Running the 3rd Kafka Broker (Run in a new terminal)
 ```sh
-~/kafka-training/lab6.1
+~/kafka-training/labs/lab6.1
 
 $ cat bin/start-3rd-server.sh
 #!/usr/bin/env bash
@@ -264,7 +264,7 @@ Once all brokers are running, run create-topic.sh as follows.
 
 #### Running create topic
 ```sh
-~/kafka-training/lab6.1
+~/kafka-training/labs/lab6.1
 
 $ cat bin/create-topic.sh
 #!/usr/bin/env bash

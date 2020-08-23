@@ -1,6 +1,6 @@
 # Lab 5.4: Kafka Metrics and Replication Verification
 
-Welcome to the session 5 lab 4. The work for this lab is done in `~/kafka-training/lab5.4`.
+Welcome to the session 5 lab 4. The work for this lab is done in `~/kafka-training/labs/lab5.4`.
 In this lab, you are going to set up Kafka metrics and replication verification.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -26,7 +26,7 @@ and prints out the MetricName and Metric value. The `StockPriceKafkaProducer` ma
 submits `MetricsProducerReporter` to the `ExecutorService` (thread pool).
 
 
-#### ~/kafka-training/lab5.4/src/main/java/com/cloudurable/kafka/producer/MetricsProducerReporter.java
+#### ~/kafka-training/labs/lab5.4/src/main/java/com/cloudurable/kafka/producer/MetricsProducerReporter.java
 #### Kafka Producer:  MetricsProducerReporter for reporting metrics is Runnable
 ```java
 package com.cloudurable.kafka.producer;
@@ -70,7 +70,7 @@ Note that the `MetricsProducerReporter` is `Runnable` and it will get submitted 
 Kafka Producer, which it will call to report metrics.
 
 
-#### ~/kafka-training/lab5.4/src/main/java/com/cloudurable/kafka/producer/MetricsProducerReporter.java
+#### ~/kafka-training/labs/lab5.4/src/main/java/com/cloudurable/kafka/producer/MetricsProducerReporter.java
 #### Kafka Producer:  MetricsProducerReporter calls producer.metrics()
 ```java
 package com.cloudurable.kafka.producer;
@@ -145,7 +145,7 @@ TreeMap<String, MetricPair>. The MetricPair is helper class that has a Metric an
 Then we give it a nice format so we can read metrics easily and use so some space and
 some easy indicators to find the metrics in the log.
 
-#### ~/kafka-training/lab5.4/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.4/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer adds MetricsProducerReporter to executorService
 ```java
 public class StockPriceKafkaProducer {
@@ -216,7 +216,7 @@ stop one of the brokers.
 
 ```sh
 
-## In ~/kafka-training/lab5.4
+## In ~/kafka-training/labs/lab5.4
 
 $ cat bin/replica-verification.sh
 #!/usr/bin/env bash
@@ -252,7 +252,7 @@ brokers and watch the max lag increase.
 
 #### Running replica-verification.sh and describe-topics.sh after killing one broker while running StockPriceKafkaProducer
 ```sh
-# In ~/kafka-training/lab5.4
+# In ~/kafka-training/labs/lab5.4
 $ cat bin/describe-topics.sh
 #!/usr/bin/env bash
 

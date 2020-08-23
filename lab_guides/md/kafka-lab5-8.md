@@ -1,7 +1,7 @@
 
 # Lab 5.8: Kafka Custom Partitioner
 
-Welcome to the session 5 lab 8. The work for this lab is done in `~/kafka-training/lab5.8`.
+Welcome to the session 5 lab 8. The work for this lab is done in `~/kafka-training/labs/lab5.8`.
 In this lab, you are going to set up a Kafka custom Partitioner.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -36,7 +36,7 @@ All Partitioner class implements the Kafka `Partitioner` interface and have to o
 `StockPricePartitioner` implements the `configure()` method with `importantStocks` config property.
 The `importantStocks` gets parsed and added to `importantStocks` HashSet which is used to filter the stocks.
 
-#### ~/kafka-training/lab5.8/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.8/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer configure partitioner
 ```java
 package com.cloudurable.kafka.producer;
@@ -77,7 +77,7 @@ hash of the stockName modulus partitionCount -1 as the partition to send the rec
 `partitionNum = abs(stockName.hashCode()) % (partitionCount - 1)`.
 
 
-#### ~/kafka-training/lab5.8/src/main/java/com/cloudurable/kafka/producer/StockPricePartitioner.java
+#### ~/kafka-training/labs/lab5.8/src/main/java/com/cloudurable/kafka/producer/StockPricePartitioner.java
 #### Kafka Producer:  StockPricePartitioner partition
 ```java
 package com.cloudurable.kafka.producer;
@@ -123,7 +123,7 @@ public class StockPricePartitioner implements Partitioner{
 ### Producer Config: Configuring Partitioner
 
 
-#### ~/kafka-training/lab5.8/src/main/java/com/cloudurable/kafka/producer/StockPricePartitioner.java
+#### ~/kafka-training/labs/lab5.8/src/main/java/com/cloudurable/kafka/producer/StockPricePartitioner.java
 #### Kafka Producer:  StockPriceKafkaProducer createProducer()
 ```java
 

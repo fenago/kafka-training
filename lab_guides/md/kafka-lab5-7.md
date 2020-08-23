@@ -1,7 +1,7 @@
 
 # Lab 5.7: Kafka Interceptor
 
-Welcome to the session 5 lab 7. The work for this lab is done in `~/kafka-training/lab5.7`.
+Welcome to the session 5 lab 7. The work for this lab is done in `~/kafka-training/labs/lab5.7`.
 In this lab, you are going to set up Kafka Producer interceptor.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -24,7 +24,7 @@ Let's define the `StockProducerInterceptor` as follows:
 
 ## KafkaProducer ProducerInterceptor
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
+#### ~/kafka-training/labs/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
 #### Kafka Producer:  StockProducerInterceptor
 ```java
 package com.cloudurable.kafka.producer;
@@ -51,7 +51,7 @@ Notice that the StockProducerInterceptor implements ProducerInterceptor.
 
 The `onSend` method gets called before the record is sent to the broker.
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
+#### ~/kafka-training/labs/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
 #### Kafka Producer:  StockProducerInterceptor onSend
 ```java
 package com.cloudurable.kafka.producer;
@@ -98,7 +98,7 @@ Every 100 onSendCount, we print out record data.
 
 The `onAck` method gets called after the broker acknowledges the record.
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
+#### ~/kafka-training/labs/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
 #### Kafka Producer:  StockProducerInterceptor onAck
 ```java
 package com.cloudurable.kafka.producer;
@@ -144,7 +144,7 @@ Every 100 onAckCount, we print out record data.
 
 There are other methods to override.
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
+#### ~/kafka-training/labs/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
 #### Kafka Producer:  StockProducerInterceptor the rest
 ```java
 package com.cloudurable.kafka.producer;
@@ -222,7 +222,7 @@ Next we need to configure the StockProducerInterceptor in the StockPriceKafkaPro
 
 ## KafkaProducer - Interceptor Config
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer
 ```java
 public class StockPriceKafkaProducer {

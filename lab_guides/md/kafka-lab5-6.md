@@ -1,7 +1,7 @@
 
 # Lab 5.6: Kafka Retry, in-flight, request timeout, and retry backoff
 
-Welcome to the session 5 lab 6. The work for this lab is done in `~/kafka-training/lab5.6`.
+Welcome to the session 5 lab 6. The work for this lab is done in `~/kafka-training/labs/lab5.6`.
 In this lab, you are going to set up Kafka Producer retries.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -25,7 +25,7 @@ Kafka Brokers while `StockPriceKafkaProducer` runs. Please notice retry messages
 
 
 
-#### ~/kafka-training/lab5.6/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.6/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer disable batching
 ```java
 

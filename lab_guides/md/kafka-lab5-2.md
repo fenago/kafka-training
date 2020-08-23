@@ -1,6 +1,6 @@
 # Lab 5.2: Adding a clean shutdown to our producer
 
-Welcome to the session 5 lab 2. The work for this lab is done in `~/kafka-training/lab5.2`.
+Welcome to the session 5 lab 2. The work for this lab is done in `~/kafka-training/labs/lab5.2`.
 In this lab, you are going to create a clean shutdown for our advanced Producer.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -27,7 +27,7 @@ CTRL-C or by pressing the stop button in your IDE.
 
 
 
-#### ~/kafka-training/lab5.2/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.2/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer shutdown hook for clean shutdown
 ```java
 public class StockPriceKafkaProducer {

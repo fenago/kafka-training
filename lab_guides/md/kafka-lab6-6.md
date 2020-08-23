@@ -1,6 +1,6 @@
 # Lab 6.6: Consumer with many threads
 
-Welcome to the session 6 lab 6. The work for this lab is done in `~/kafka-training/lab6.6`.
+Welcome to the session 6 lab 6. The work for this lab is done in `~/kafka-training/labs/lab6.6`.
 In this lab, you are going to implement consumers with many threads.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -39,7 +39,7 @@ How do you commit the position unless there is some order? You have to provide t
 
 ### One Consumer with Worker Threads
 
-#### ~/kafka-training/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable
 ```java
 package com.cloudurable.kafka.consumer;
@@ -88,7 +88,7 @@ sending offsets to Kafka.
 
 ### Consumer with Worker Threads: Use Worker
 
-#### ~/kafka-training/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable.pollRecordsAndProcess
 ```java
 package com.cloudurable.kafka.consumer;
@@ -143,7 +143,7 @@ Process the records async, and calls method `processCommits` will send offsets t
 
 ### Consumer with Worker Threads: processCommits
 
-#### ~/kafka-training/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable.processCommits
 ```java
 package com.cloudurable.kafka.consumer;
@@ -201,7 +201,7 @@ Track the highest offset per TopicPartition, then call `consumer.commitSync` to 
 
 ### Submit Records to Commit Queues per Partition
 
-#### ~/kafka-training/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable
 ```java
 package com.cloudurable.kafka.consumer;
@@ -263,7 +263,7 @@ The method ***commitRecordOffsetToKafka()***, commits the record to its topicPar
 Check this out. `ConsumerMain` also passes the number of worker threads that each
 `StockPriceConsumerRunnable` runs.
 
-#### ~/kafka-training/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  ConsumerMain
 ```java
 package com.cloudurable.kafka.consumer;

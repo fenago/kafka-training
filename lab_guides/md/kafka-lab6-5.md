@@ -1,6 +1,6 @@
 # Lab 6.5: Thread per Consumer
 
-Welcome to the session 6 lab 5. The work for this lab is done in `~/kafka-training/lab6.5`.
+Welcome to the session 6 lab 5. The work for this lab is done in `~/kafka-training/labs/lab6.5`.
 In this lab, you are going to implement a thread per consumer.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -30,7 +30,7 @@ To create a consumer per thread, we will move away from our `SimpleStockPriceCon
 and use a new class called `StockPriceConsumerRunnable` that implements Runnable.
 We will then use a thread pool to launch `StockPriceConsumerRunnable` instances.
 
-#### ~/kafka-training/lab6.5/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.5/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable
 ```java
 package com.cloudurable.kafka.consumer;
@@ -127,7 +127,7 @@ We will also create a `ConsumerMain` class that will start up thread pool.
 It will create a producer per thread. Then it will submit the producers
 (StockPriceConsumerRunnable, which are runnable)  to the `executorService` (`threadPool`).
 
-#### ~/kafka-training/lab6.5/src/main/java/com/cloudurable/kafka/consumer/ConsumerMain.java
+#### ~/kafka-training/labs/lab6.5/src/main/java/com/cloudurable/kafka/consumer/ConsumerMain.java
 #### Kafka Consumer:  ConsumerMain
 ```java
 package com.cloudurable.kafka.consumer;

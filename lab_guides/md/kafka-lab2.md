@@ -1,7 +1,7 @@
 
 # LAB 2 Writing a Kafka Producer in Java
 
-Welcome to the session 2 lab. The work for this lab is done in `~/kafka-training/lab2`.
+Welcome to the session 2 lab. The work for this lab is done in `~/kafka-training/labs/lab2`.
 
 In this lab, you are going to create simple Java Kafka producer.
 You create a new replicated Kafka topic called `my-example-topic`, then you create
@@ -21,9 +21,9 @@ ____
 
 Next, you need to create a replicated topic.
 
-## ***ACTION*** - EDIT `~/kafka-training/lab2/create-topic.sh` and follow instructions in file.
+## ***ACTION*** - EDIT `~/kafka-training/labs/lab2/create-topic.sh` and follow instructions in file.
 
-#### ~/kafka-training/lab2/create-topic.sh
+#### ~/kafka-training/labs/lab2/create-topic.sh
 
 ```sh
 #!/usr/bin/env bash
@@ -52,7 +52,7 @@ Then we list the Kafka topics.
 #### Output from running create-topic.sh
 
 ```sh
-$ cd ~/kafka-training/lab2
+$ cd ~/kafka-training/labs/lab2
 $ ./create-topic.sh
 Created topic "my-example-topic".
 __consumer_offsets
@@ -66,10 +66,10 @@ ____
 
 For this example, we use gradle to build the project.
 
-## ***ACTION*** - EDIT `~/kafka-training/lab2/solution/build.gradle` and follow the instructions in file.
+## ***ACTION*** - EDIT `~/kafka-training/labs/lab2/solution/build.gradle` and follow the instructions in file.
 
 
-#### ~/kafka-training/lab2/solution/build.gradle
+#### ~/kafka-training/labs/lab2/solution/build.gradle
 
 ```java
 group 'cloudurable-kafka'
@@ -114,7 +114,7 @@ Next, we will import the Kafka packages and define a constant for the topic and 
 of bootstrap servers that the producer will connect.
 
 #### KafkaProducerExample.java - imports and constants
-#### ~/kafka-training/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
 
 ```java
 
@@ -152,7 +152,7 @@ ____
 Now, that we imported the Kafka classes and defined some constants, let's create a Kafka producer.
 
 #### KafkaProducerExample.java - Create Producer to send Records
-#### ~/kafka-training/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
 
 ```java
 public class KafkaProducerExample {
@@ -203,7 +203,7 @@ method to send some message ids and messages to the Kafka topic we created earli
 
 
 #### KafkaProducerExample.java - Send Records Synchronously
-#### ~/kafka-training/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
 
 ```java
 public class KafkaProducerExample {
@@ -257,7 +257,7 @@ ____
 Next you define the `main` method.
 
 #### KafkaProducerExample.java - Running the Producer
-#### ~/kafka-training/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
 
 ```java
 public static void main(String... args) throws Exception {
@@ -284,7 +284,7 @@ The big difference here will be that we use a lambda expression to define a call
 
 
 #### KafkaProducerExample.java - Send Records Asynchronously with Kafka Producer
-#### ~/kafka-training/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
 
 ```java
 static void runProducer(final int sendMessageCount) throws InterruptedException {

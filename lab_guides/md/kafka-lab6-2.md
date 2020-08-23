@@ -1,6 +1,6 @@
 # Lab 6.2: StockPriceConsumer Controlling Consumer Position
 
-Welcome to the session 6 lab 2. The work for this lab is done in `~/kafka-training/lab6.2`.
+Welcome to the session 6 lab 2. The work for this lab is done in `~/kafka-training/labs/lab6.2`.
 In this lab, you are going to control consumer position.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -38,7 +38,7 @@ Dead consumers may see `CommitFailedException` thrown from a call to `commitSync
 
 You can control consumer position moving to forward or backward. Consumers can re-consume older records or skip to the most recent records.
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SeekTo.java
+#### ~/kafka-training/labs/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SeekTo.java
 #### Kafka Consumer:  SeekTo
 ```java
 package com.cloudurable.kafka.consumer;
@@ -66,7 +66,7 @@ If using automatic partition assignment, you must handle cases where partition a
 Pass ***ConsumerRebalanceListener*** instance in call to ***kafkaConsumer.subscribe***(Collection, ConsumerRebalanceListener) and ***kafkaConsumer.subscribe***(Pattern, ConsumerRebalanceListener).
 When partitions taken from consumer, commit its offset for partitions by implementing ***ConsumerRebalanceListener.onPartitionsRevoked***(Collection) and when partitions are assigned to consumer, look up offset for new partitions and correctly initialize consumer to that position by implementing ***ConsumerRebalanceListener.onPartitionsAssigned***(Collection).
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.Consumer
 ```java
 package com.cloudurable.kafka.consumer;
@@ -101,7 +101,7 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.Consumer
 ```java
 package com.cloudurable.kafka.consumer;
@@ -142,7 +142,7 @@ public class SimpleStockPriceConsumer {
 
 ### Controling Consumers Position Example
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SeekToConsumerRebalanceListener.java
+#### ~/kafka-training/labs/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SeekToConsumerRebalanceListener.java
 #### Kafka Consumer:  SeekToConsumerRebalanceListener
 ```java
 package com.cloudurable.kafka.consumer;
@@ -189,7 +189,7 @@ public class SeekToConsumerRebalanceListener implements ConsumerRebalanceListene
 ## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SeekToConsumerRebalanceListener.java` and follow the instructions in file.
 
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.runConsumer
 ```java
 package com.cloudurable.kafka.consumer;
@@ -241,7 +241,7 @@ Use SeekTo, Position and ReadCountStatusUpdate
 ## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the runConsumer method.
 
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.Consumer
 ```java
 package com.cloudurable.kafka.consumer;

@@ -1,6 +1,6 @@
 # Lab 8.1: Kafka SSL
 
-Welcome to the session 8 lab 1. The work for this lab is done in `~/kafka-training/lab8.1`.
+Welcome to the session 8 lab 1. The work for this lab is done in `~/kafka-training/labs/lab8.1`.
 In this lab, you are going to setup Kafka SSL support.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -227,7 +227,7 @@ to `/opt/kafka/conf/certs/`.
 
 #### Running create-ssl-key-keystore.sh
 ```sh
-~/kafka-training/lab8.1/solution
+~/kafka-training/labs/lab8.1/solution
 
 $ bin/create-ssl-key-keystore.sh
 Create the cluster key for cluster communication.

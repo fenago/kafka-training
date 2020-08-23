@@ -1,6 +1,6 @@
 # Lab 6.3: StockPriceConsumer At Most Once and At Least Once
 
-Welcome to the session 6 lab 3. The work for this lab is done in `~/kafka-training/lab6.3`.
+Welcome to the session 6 lab 3. The work for this lab is done in `~/kafka-training/labs/lab6.3`.
 In this lab, you are going to implement At-Most-Once and At-Least-Once message semantics from the
 consumer perspective.
 
@@ -44,7 +44,7 @@ At most once is messages may be lost but never redelivered. At least once is mes
 
 ### "At-Least-Once" - Delivery Semantics
 
-#### ~/kafka-training/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
 package com.cloudurable.kafka.consumer;
@@ -97,7 +97,7 @@ public class SimpleStockPriceConsumer {
 
 ### "At-Most-Once" - Delivery Semantics
 
-#### ~/kafka-training/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
 package com.cloudurable.kafka.consumer;
@@ -150,7 +150,7 @@ public class SimpleStockPriceConsumer {
 
 ### Fine Grained "At-Least-Once"
 
-#### ~/kafka-training/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
 package com.cloudurable.kafka.consumer;
@@ -206,7 +206,7 @@ public class SimpleStockPriceConsumer {
 
 ### Fine Grained "At-Most-Once"
 
-#### ~/kafka-training/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
 package com.cloudurable.kafka.consumer;

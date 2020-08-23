@@ -1,6 +1,6 @@
 # Lab 6.7: Implementing a priority queue with consumer.assign()
 
-Welcome to the session 6 lab 7. The work for this lab is done in `~/kafka-training/lab6.7`.
+Welcome to the session 6 lab 7. The work for this lab is done in `~/kafka-training/labs/lab6.7`.
 In this lab, you are going to implement a priority queue with `consumer.assign()`.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -18,7 +18,7 @@ Use the `Partitioner` from an earlier example for Producer so only important sto
 
 ## Using partitionsFor() for Priority Queue
 
-#### ~/kafka-training/lab6.7/src/main/java/com/cloudurable/kafka/consumer/ConsumerMain.java
+#### ~/kafka-training/labs/lab6.7/src/main/java/com/cloudurable/kafka/consumer/ConsumerMain.java
 #### Kafka Consumer:  ConsumerMain.main
 ```java
 package com.cloudurable.kafka.consumer;
@@ -93,7 +93,7 @@ Notice that the index is the topic partition. Num threads are the partition coun
 
 ## Using assign() for Priority Queue
 
-#### ~/kafka-training/lab6.7/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.7/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable.runConsumer
 ```java
 package com.cloudurable.kafka.consumer;

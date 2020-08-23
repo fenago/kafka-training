@@ -1,6 +1,6 @@
 # Lab 6.4: StockPriceConsumer Exactly Once Consumer Messaging Semantics
 
-Welcome to the session 6 lab 4. The work for this lab is done in `~/kafka-training/lab6.4`.
+Welcome to the session 6 lab 4. The work for this lab is done in `~/kafka-training/labs/lab6.4`.
 In this lab, you are going to implement ***Exactly Once*** messaging semantics.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
@@ -27,7 +27,7 @@ transaction thus implementing “exactly once” messaging.
 
 StockPriceRecord holds offset and partition info
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/StockPriceRecord.java
+#### ~/kafka-training/labs/lab6.4/src/main/java/com/cloudurable/kafka/consumer/StockPriceRecord.java
 #### Kafka Consumer:  StockPriceRecord
 ```java
 package com.cloudurable.kafka.consumer;
@@ -69,7 +69,7 @@ public class StockPriceRecord  {
 
 The `DatabaseUtilities` class saves Topic, Offset, Partition data in the Database.
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/DatabaseUtilities.java
+#### ~/kafka-training/labs/lab6.4/src/main/java/com/cloudurable/kafka/consumer/DatabaseUtilities.java
 #### Kafka Consumer:  DatabaseUtilities.saveStockPrice
 ```java
 package com.cloudurable.kafka.consumer;
@@ -115,7 +115,7 @@ To get exactly once, you need to save the offset and partition with the output o
 
 "Exactly-Once" - Delivery Semantics
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.4/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
 package com.cloudurable.kafka.consumer;
@@ -216,7 +216,7 @@ by implementing `ConsumerRebalanceListener.onPartitionsAssigned(Collection)`.
 
 "Exactly-Once" - Delivery Semantics
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/SeekToLatestRecordsConsumerRebalanceListener.java
+#### ~/kafka-training/labs/lab6.4/src/main/java/com/cloudurable/kafka/consumer/SeekToLatestRecordsConsumerRebalanceListener.java
 #### Kafka Consumer:  SeekToLatestRecordsConsumerRebalanceListener.onPartitionsAssigned
 ```java
 package com.cloudurable.kafka.consumer;
@@ -286,7 +286,7 @@ Then we seek to that position with consumer.seek
 
 Subscribe to this topic using SeekToLatestRecordsConsumerRebalanceListener
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.4/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.runConsumer
 ```java
 package com.cloudurable.kafka.consumer;
