@@ -1,0 +1,8 @@
+{"namespace": "com.cloudurable.phonebook",
+  "type": "record",
+  "name": "Employee",
+  "fields": [
+    {"name": "firstName", "type": "string"}
+  ]
+}
+

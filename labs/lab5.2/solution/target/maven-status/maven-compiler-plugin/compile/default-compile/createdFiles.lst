@@ -1,0 +1,7 @@
+com/cloudurable/kafka/producer/StockPriceSerializer.class
+com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.class
+com/cloudurable/kafka/consumer/StockDeserializer.class
+com/cloudurable/kafka/model/StockPrice.class
+com/cloudurable/kafka/producer/StockPriceKafkaProducer.class
+com/cloudurable/kafka/producer/StockSender.class
+com/cloudurable/kafka/StockAppConstants.class

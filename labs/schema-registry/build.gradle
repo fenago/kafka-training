@@ -1,0 +1,31 @@
+plugins {
+    id "com.commercehub.gradle.plugin.avro" version "0.9.0"
+}
+
+group 'cloudurable'
+version '1.0-SNAPSHOT'
+apply plugin: 'java'
+sourceCompatibility = 1.8
+
+dependencies {
+    compile "org.apache.avro:avro:1.8.1"
+    compile 'com.squareup.okhttp3:okhttp:3.7.0'
+    testCompile 'junit:junit:4.11'
+    compile 'org.apache.kafka:kafka-clients:1.1.0'
+    compile 'io.confluent:kafka-avro-serializer:3.2.1'
+}
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url "http://packages.confluent.io/maven/"
+    }
+}
+avro {
+    createSetters = false
+    fieldVisibility = "PRIVATE"
+}
+
+wrapper {
+    gradleVersion = "4.7"
+}

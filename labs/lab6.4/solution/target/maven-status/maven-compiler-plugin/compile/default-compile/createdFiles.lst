@@ -1,0 +1,11 @@
+com/cloudurable/kafka/producer/support/StockPriceSerializer.class
+com/cloudurable/kafka/consumer/DatabaseUtilities.class
+com/cloudurable/kafka/producer/support/StockSender.class
+com/cloudurable/kafka/consumer/SeekToLatestRecordsConsumerRebalanceListener.class
+com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.class
+com/cloudurable/kafka/consumer/StockPriceRecord.class
+com/cloudurable/kafka/producer/support/StockPricePartitioner.class
+com/cloudurable/kafka/consumer/StockDeserializer.class
+com/cloudurable/kafka/model/StockPrice.class
+com/cloudurable/kafka/producer/StockPriceKafkaProducer.class
+com/cloudurable/kafka/StockAppConstants.class

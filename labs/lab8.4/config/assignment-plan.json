@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "partitions": [
+    {
+      "topic": "stock-prices",
+      "partition": 2,
+      "replicas": [
+        1
+      ]
+    },
+    {
+      "topic": "stocks",
+      "partition": 7,
+      "replicas": [
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "topic": "stocks",
+      "partition": 2,
+      "replicas": [
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "topic": "stocks",
+      "partition": 6,
+      "replicas": [
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "topic": "stock-prices",
+      "partition": 5,
+      "replicas": [
+        1
+      ]
+    },
+    {
+      "topic": "stocks",
+      "partition": 4,
+      "replicas": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "topic": "stocks",
+      "partition": 8,
+      "replicas": [
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "topic": "stock-prices",
+      "partition": 4,
+      "replicas": [
+        0
+      ]
+    },
+    {
+      "topic": "stock-prices",
+      "partition": 8,
+      "replicas": [
+        1
+      ]
+    },
+    {
+      "topic": "stocks",
+      "partition": 0,
+      "replicas": [
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "topic": "stock-prices",
+      "partition": 3,
+      "replicas": [
+        2
+      ]
+    },
+    {
+      "topic": "stock-prices",
+      "partition": 0,
+      "replicas": [
+        2
+      ]
+    },
+    {
+      "topic": "stock-prices",
+      "partition": 7,
+      "replicas": [
+        0
+      ]
+    },
+    {
+      "topic": "stocks",
+      "partition": 3,
+      "replicas": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "topic": "stocks",
+      "partition": 1,
+      "replicas": [
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "topic": "stock-prices",
+      "partition": 1,
+      "replicas": [
+        0
+      ]
+    },
+    {
+      "topic": "stocks",
+      "partition": 5,
+      "replicas": [
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "topic": "stock-prices",
+      "partition": 6,
+      "replicas": [
+        2
+      ]
+    }
+  ]
+}

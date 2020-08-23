@@ -1,0 +1,24 @@
+group 'cloudurable-kafka'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // TODO import kafka client jar
+    // HINT: compile 'org.apache.kafka:kafka-clients:1.1.0'
+    // TODO import logging lib.
+    // HINT: compile 'ch.qos.logback:logback-classic:1.2.2'
+}
+
+wrapper {
+    gradleVersion = "4.7"
+}
+
+
