@@ -1,0 +1,98 @@
+rootProject.name = 'kafka-training-java'
+
+include 'avro'
+
+include 'lab2/solution'
+//include 'lab2' does not compile until they fix build
+
+include 'lab3/solution'
+include 'lab3'
+
+include 'lab5.1/solution'
+include 'lab5.1'
+
+include 'lab5.2/solution'
+include 'lab5.2'
+
+include 'lab5.3/solution'
+include 'lab5.3'
+
+include 'lab5.4/solution'
+include 'lab5.4'
+
+include 'lab5.5/solution'
+include 'lab5.5'
+
+include 'lab5.6/solution'
+include 'lab5.6'
+
+include 'lab5.7/solution'
+include 'lab5.7'
+
+include 'lab5.8/solution'
+include 'lab5.8'
+
+include 'lab5.PRIME/solution'
+include 'lab5.PRIME'
+
+include 'lab6.1/solution'
+include 'lab6.1'
+
+include 'lab6.2/solution'
+include 'lab6.2'
+
+include 'lab6.3/solution'
+include 'lab6.3'
+
+include 'lab6.4/solution'
+include 'lab6.4'
+
+include 'lab6.5/solution'
+include 'lab6.5'
+
+include 'lab6.6/solution'
+include 'lab6.6'
+
+include 'lab6.7/solution'
+include 'lab6.7'
+
+include 'lab6.PRIME/solution'
+include 'lab6.PRIME'
+
+include 'lab7.1/solution'
+//include 'lab7.1' Does not work until they fix
+
+include 'lab7.2/solution'
+include 'lab7.2'
+
+
+include 'lab8.1/solution'
+include 'lab8.1'
+
+include 'lab8.2/solution'
+include 'lab8.2'
+
+include 'lab8.3/solution'
+include 'lab8.3'
+
+include 'lab8.4/solution'
+include 'lab8.4'
+
+include 'lab9/solution'
+include 'lab9'
+
+include 'lab10/solution'
+include 'lab10'
+
+include 'schema-registry'
+
+include 'stream-lab1-1/solution'
+include 'stream-lab1-1'
+
+include 'stream-lab1-2/solution'
+include 'stream-lab1-2'
+
+
+
+
+

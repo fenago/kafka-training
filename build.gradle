@@ -1,0 +1,50 @@
+group 'cloudurable.kafka'
+version '1.0-SNAPSHOT'
+
+
+
+subprojects {
+    apply plugin: 'maven'
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "http://packages.confluent.io/maven/"
+        }
+        maven {
+            url "https://oss.sonatype.org/content/repositories/releases/"
+        }
+        maven { url = 'https://oss.sonatype.org/content/repositories/releases/' }
+    }
+
+    task createPom {
+        doLast {
+            pom {
+                project {
+                    groupId "${project.group}"
+                    artifactId "${project.name.replace('/', '-')}"
+                    version '1.0.0'
+
+                    inceptionYear '2017'
+
+
+                }
+            }.withXml {
+                // Workaround for the missing build { ... } section above.
+                def pluginNode = asNode().appendNode('build').appendNode('plugins')
+                        .appendNode("plugin")
+
+                pluginNode.appendNode("groupId", "org.apache.maven.plugins")
+                pluginNode.appendNode("artifactId", "maven-compiler-plugin")
+                pluginNode.appendNode("version", "3.7.0")
+
+                def configuration = pluginNode.appendNode("configuration")
+                configuration.appendNode("source", "1.8")
+                configuration.appendNode("target", "1.8")
+            }.writeTo("pom.xml")
+        }
+    }
+}
