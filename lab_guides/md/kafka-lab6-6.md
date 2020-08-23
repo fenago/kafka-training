@@ -5,7 +5,7 @@ In this lab, you are going to implement consumers with many threads.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/041c2c546e513a3481289ca16fe11cd4).
+Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 
 ## Lab Consumer with many threads

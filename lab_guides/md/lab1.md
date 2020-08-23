@@ -4,23 +4,12 @@
 
 Let's do a simple lab showing how to use producers and consumers from the Kafka command line.
 
-These files should be setup on your virtual box image. You do the work for this lab
+These files should be setup on your lab environment. You do the work for this lab
 in the directory `~/kafka-training/lab1`.
 You can find the latest versions of the instructions for
-Lab1 [here](https://gist.github.com/RichardHightower/37433e766e5915aae3048ade08b3db56).
+Lab1 [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
-If you prefer to run the examples on another OS, e.g., OSX, please refer to the
-[Kafka course notes](https://goo.gl/a4kk5b)
-for instructions on how to download labs and run them on OSX.
 
-Note: later versions will likely work, but this was example was done with 1.0.0.0.
-The Kafka 1.0.0.0 just came out in November 2017. The course was recently upgraded to 1.1.0.
-
-If you are using the Virtual Box image of Linux, we unzipped the Kafka download
-and put it in `~/kafka-training/`, and then renamed the Kafka install folder to
-`kafka`. Please do the same if you decide to install Kafka yourself.
-
-***You should be using the VirtualBox image.***
 
 Next, we are going to run *ZooKeeper* and then run *Kafka Server/Broker*.
 We will use some Kafka command line utilities, to create Kafka topics,

@@ -6,7 +6,7 @@ In this lab, you are going to set up Kafka Producer interceptor.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/2976b878ed48603fe85766af5f85ac78).
+Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 ## Producer Interception
 

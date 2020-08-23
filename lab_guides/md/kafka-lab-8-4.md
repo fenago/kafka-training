@@ -5,7 +5,7 @@ In this lab, you are going to Kafka SASL SCRAM.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/bb989e89db38c092795ad108edd45b7d). - Please input the correct link
+Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides). - Please input the correct link
 
 ## Kafka and SASL SCRAM
 

@@ -5,7 +5,7 @@ In this lab, you are going to implement a priority queue with `consumer.assign()
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/81a66e0f9822e9e74660deec10640d27).
+Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 
 ## Lab Using consumer.assign to implement a priority queue

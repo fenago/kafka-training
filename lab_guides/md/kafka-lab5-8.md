@@ -6,7 +6,7 @@ In this lab, you are going to set up a Kafka custom Partitioner.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/bbb6ea6f059cf757810ef470f5eddaf8).
+Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 
 ## Lab Write Custom Partitioner

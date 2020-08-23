@@ -5,7 +5,7 @@ In this lab, you are going to set up Kafka metrics and replication verification.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the lastest version of this lab [here](https://gist.github.com/RichardHightower/b8ce014913da7c69166273bf486bc629).
+Find the lastest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 
 ## Lab Adding Producer Metrics and Replication Verification

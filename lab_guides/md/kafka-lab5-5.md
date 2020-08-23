@@ -6,7 +6,7 @@ In this lab, you are going to try Kafka producer batching and compression.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the lastest version of this lab [here](https://gist.github.com/RichardHightower/313eb5b91ab8876690f9d87a20f6e3bd).
+Find the lastest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 ## Lab Batching and Compressing Kafka Records
 

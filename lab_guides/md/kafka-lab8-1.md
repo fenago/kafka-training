@@ -5,7 +5,7 @@ In this lab, you are going to setup Kafka SSL support.
 
 Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/965b627ab7b67eb35c8fe7dc9e4fb710).
+Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 # Lab 8: Kafka Security
 
