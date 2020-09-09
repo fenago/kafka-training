@@ -9,7 +9,7 @@
     </appender>
 
 
-    <logger name="com.cloudurable.kafka" level="INFO" />
+    <logger name="com.fenago.kafka" level="INFO" />
 
     <logger name="org.apache.kafka" level="INFO"/>
     <logger name="org.apache.kafka.common.metrics" level="INFO"/>

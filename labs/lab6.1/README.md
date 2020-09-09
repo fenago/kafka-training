@@ -34,12 +34,12 @@ The Stock Price Consumer example has the following classes:
 
 The `StockPriceDeserializer` calls the JSON parser to parse JSON in bytes to a `StockPrice` object.
 
-#### ~/kafka-training/lab6.1/src/main/java/com/cloudurable/kafka/consumer/StockPriceDeserializer.java
+#### ~/kafka-training/lab6.1/src/main/java/com/fenago/kafka/consumer/StockPriceDeserializer.java
 #### Kafka Consumer:  StockPriceDeserializer - Parse JSON in bytes to a StockPrice object
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.common.serialization.Deserializer;
 
 import java.nio.charset.StandardCharsets;
@@ -63,13 +63,13 @@ public class StockDeserializer implements Deserializer<StockPrice> {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/StockPriceDeserializer.java` and follow the instructions in the file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/StockPriceDeserializer.java` and follow the instructions in the file.
 
 
-#### ~/kafka-training/lab6.1/src/main/java/com/cloudurable/kafka/model/StockPrice.java
+#### ~/kafka-training/lab6.1/src/main/java/com/fenago/kafka/model/StockPrice.java
 #### Kafka Producer:  StockPrice
 ```java
-package com.cloudurable.kafka.producer.model;
+package com.fenago.kafka.producer.model;
 
 import io.advantageous.boon.json.JsonFactory;
 
@@ -89,7 +89,7 @@ public class StockPrice {
 
 Fix the constructor by using the hint which calls the JSON parser.
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/model/StockPrice.java` and follow the instructions in the file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/model/StockPrice.java` and follow the instructions in the file.
 
 ### SimpleStockPriceKafkaConsumer
 
@@ -97,12 +97,12 @@ Fix the constructor by using the hint which calls the JSON parser.
 It has a `runConsumer()` method that drains topic, creates map of current stocks and calls `displayRecordsStatsAndStocks()` method.
 The method `displayRecordsStatsAndStocks()` prints out the size of each partition read and total record count and prints out each stock at its current price.
 
-#### ~/kafka-training/lab6.1/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/lab6.1/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer -
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -183,7 +183,7 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions in the file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions in the file.
 
 ### Running the example
 

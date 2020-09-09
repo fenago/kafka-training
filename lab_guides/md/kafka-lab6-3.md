@@ -44,12 +44,12 @@ At most once is messages may be lost but never redelivered. At least once is mes
 
 ### "At-Least-Once" - Delivery Semantics
 
-#### ~/kafka-training/labs/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.3/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -89,7 +89,7 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` and implement At-Least-Once Semantics
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement At-Least-Once Semantics
 ## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
 ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
 ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
@@ -97,12 +97,12 @@ public class SimpleStockPriceConsumer {
 
 ### "At-Most-Once" - Delivery Semantics
 
-#### ~/kafka-training/labs/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.3/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -143,19 +143,19 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` and implement At-Most-Once Semantics
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement At-Most-Once Semantics
 ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
 ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
 ## ***ACTION*** - OBSERVE and then STOP consumer and producer
 
 ### Fine Grained "At-Least-Once"
 
-#### ~/kafka-training/labs/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.3/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -199,19 +199,19 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Most-Once Semantics
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Most-Once Semantics
 ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
 ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
 ## ***ACTION*** - OBSERVE and then STOP consumer and producer
 
 ### Fine Grained "At-Most-Once"
 
-#### ~/kafka-training/labs/lab6.3/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab6.3/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -255,7 +255,7 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Least-Once Semantics
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Least-Once Semantics
 ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
 ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
 ## ***ACTION*** - OBSERVE and then STOP consumer and producer

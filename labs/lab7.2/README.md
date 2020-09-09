@@ -105,7 +105,7 @@ Let's use an example to talk about this. The following example is from our Avro 
 #### Employee example Avro Schema
 
 ```javascript
-{"namespace": "com.cloudurable.phonebook",
+{"namespace": "com.fenago.phonebook",
   "type": "record",
   "name": "Employee",
   "doc" : "Represents an Employee at a company",
@@ -140,7 +140,7 @@ Let's say our `Employee` record did not have an `age` in version 1 of the schema
 we decided to add an `age` field with a default value of -1. Now let’s say we have a Producer
 using version 2  of the schema with age, and a Consumer using version 1 with no age.
 
-The `Producer` uses version 2 of the `Employee` schema and creates a `com.cloudurable.Employee` record,
+The `Producer` uses version 2 of the `Employee` schema and creates a `com.fenago.Employee` record,
 and sets `age` field to `42`, then sends it to Kafka topic `new-employees`.
 The Consumer consumes records from `new-employees` using version 1 of the Employee Schema.
 Since Consumer is using version 1 of the schema, the `age` field gets removed during deserialization.
@@ -194,7 +194,7 @@ Schema registry a little better using the OkHttp client from Square (`com.square
 
 #### Using REST endpoints to try out all of the Schema Registry options
 ```
-package com.cloudurable.kafka.schema;
+package com.fenago.kafka.schema;
 
 import okhttp3.*;
 
@@ -208,7 +208,7 @@ public class SchemaMain {
     private final static String EMPLOYEE_SCHEMA = "{\n" +
             "  \"schema\": \"" +
             "  {" +
-            "    \\\"namespace\\\": \\\"com.cloudurable.phonebook\\\"," +
+            "    \\\"namespace\\\": \\\"com.fenago.phonebook\\\"," +
             "    \\\"type\\\": \\\"record\\\"," +
             "    \\\"name\\\": \\\"Employee\\\"," +
             "    \\\"fields\\\": [" +
@@ -376,7 +376,7 @@ plugins {
     id "com.commercehub.gradle.plugin.avro" version "0.9.0"
 }
 
-group 'cloudurable'
+group 'fenago'
 version '1.0-SNAPSHOT'
 apply plugin: 'java'
 sourceCompatibility = 1.8
@@ -412,12 +412,12 @@ and the Avro lib (`org.apache.avro:avro:1.8.1`).
 Next, let's write the Producer as follows.
 
 #### Producer that uses Kafka Avro Serialization and Kafka Registry
-#### src/main/java/com/cloudurable/kafka/schema/AvroProducer.java
+#### src/main/java/com/fenago/kafka/schema/AvroProducer.java
 ```java
-package com.cloudurable.kafka.schema;
+package com.fenago.kafka.schema;
 
-import com.cloudurable.phonebook.Employee;
-import com.cloudurable.phonebook.PhoneNumber;
+import com.fenago.phonebook.Employee;
+import com.fenago.phonebook.PhoneNumber;
 import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
@@ -503,11 +503,11 @@ Then we use the Producer as expected.
 Next we have to write the Consumer.
 
 #### Consumer that uses Kafka Avro Serialization and Schema Registry
-#### src/main/java/com/cloudurable/kafka/schema/AvroConsumer.java
+#### src/main/java/com/fenago/kafka/schema/AvroConsumer.java
 ```java
-package com.cloudurable.kafka.schema;
+package com.fenago.kafka.schema;
 
-import com.cloudurable.phonebook.Employee;
+import com.fenago.phonebook.Employee;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import org.apache.kafka.clients.consumer.Consumer;

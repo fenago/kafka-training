@@ -72,7 +72,7 @@ For this example, we use gradle to build the project.
 #### ~/kafka-training/labs/lab2/solution/build.gradle
 
 ```java
-group 'cloudurable-kafka'
+group 'fenago-kafka'
 version '1.0-SNAPSHOT'
 apply plugin: 'java'
 sourceCompatibility = 1.8
@@ -114,11 +114,11 @@ Next, we will import the Kafka packages and define a constant for the topic and 
 of bootstrap servers that the producer will connect.
 
 #### KafkaProducerExample.java - imports and constants
-#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/fenago/kafka/KafkaProducerExample.java
 
 ```java
 
-package com.cloudurable.kafka;
+package com.fenago.kafka;
 
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.LongSerializer;
@@ -141,7 +141,7 @@ record value serializer. The constant `BOOTSTRAP_SERVERS` is set to
 that we started up in the last lesson. Go ahead and make sure all three Kafka servers are running.
 The constant `TOPIC` is set to the replicated Kafka topic that we just created.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/KafkaProducerExample.java and add constants as above.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaProducerExample.java and add constants as above.
 
 
 
@@ -152,7 +152,7 @@ ____
 Now, that we imported the Kafka classes and defined some constants, let's create a Kafka producer.
 
 #### KafkaProducerExample.java - Create Producer to send Records
-#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/fenago/kafka/KafkaProducerExample.java
 
 ```java
 public class KafkaProducerExample {
@@ -203,7 +203,7 @@ method to send some message ids and messages to the Kafka topic we created earli
 
 
 #### KafkaProducerExample.java - Send Records Synchronously
-#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/fenago/kafka/KafkaProducerExample.java
 
 ```java
 public class KafkaProducerExample {
@@ -257,7 +257,7 @@ ____
 Next you define the `main` method.
 
 #### KafkaProducerExample.java - Running the Producer
-#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/fenago/kafka/KafkaProducerExample.java
 
 ```java
 public static void main(String... args) throws Exception {
@@ -284,7 +284,7 @@ The big difference here will be that we use a lambda expression to define a call
 
 
 #### KafkaProducerExample.java - Send Records Asynchronously with Kafka Producer
-#### ~/kafka-training/labs/lab2/src/main/java/com/cloudurable/kafka/KafkaProducerExample.java
+#### ~/kafka-training/labs/lab2/src/main/java/com/fenago/kafka/KafkaProducerExample.java
 
 ```java
 static void runProducer(final int sendMessageCount) throws InterruptedException {

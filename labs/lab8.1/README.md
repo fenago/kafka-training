@@ -93,7 +93,7 @@ CLUSTER_NAME=kafka
 CERT_AUTH_FILE="$CERT_OUTPUT_PATH/ca-cert"
 CLUSTER_CERT_FILE="$CERT_OUTPUT_PATH/${CLUSTER_NAME}-cert"
 D_NAME="CN=CloudDurable Image $CLUSTER_NAME cluster, OU=Cloudurable, O=Cloudurable"
-D_NAME="${D_NAME}, L=San Francisco, ST=CA, C=USA, DC=cloudurable, DC=com"
+D_NAME="${D_NAME}, L=San Francisco, ST=CA, C=USA, DC=fenago, DC=com"
 DAYS_VALID=365
 
 mkdir -p "$CERT_OUTPUT_PATH"
@@ -107,7 +107,7 @@ echo "Create the Certificate Authority (CA) file to sign keys."
 openssl req -new -x509 -keyout ca-key -out "$CERT_AUTH_FILE" \
 -days "$DAYS_VALID" \
 -passin pass:"$PASSWORD" -passout pass:"$PASSWORD" \
--subj "/C=US/ST=CA/L=San Francisco/O=Engineering/CN=cloudurable.com"
+-subj "/C=US/ST=CA/L=San Francisco/O=Engineering/CN=fenago.com"
 
 echo "Import the Certificate Authority file into the trust store."
 keytool -keystore "$TRUST_STORE" -alias CARoot \
@@ -161,7 +161,7 @@ echo "Create the Certificate Authority (CA) file to sign keys."
 openssl req -new -x509 -keyout ca-key -out "$CERT_AUTH_FILE" \
 -days "$DAYS_VALID" \
 -passin pass:"$PASSWORD" -passout pass:"$PASSWORD" \
--subj "/C=US/ST=CA/L=San Francisco/O=Engineering/CN=cloudurable.com"
+-subj "/C=US/ST=CA/L=San Francisco/O=Engineering/CN=fenago.com"
 ```
 
 ***X.509 certificate contains a public key and an identity (is hostname, or an organization, or an individual and is either signed by a certificate authority or self-signed)***
@@ -391,12 +391,12 @@ zookeeper.connection.timeout.ms=6000
 
 You will need to pass in truststore and keystore locations and passwords to the consumer.
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/ConsumerUtil.java` and follow instructions in file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java` and follow instructions in file.
 
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -455,12 +455,12 @@ public class ConsumerUtil {
 
 You will need to pass in truststore and keystore locations and passwords to the producer.
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/producer/support/ProducerUtils.java` and follow instructions in file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/producer/support/ProducerUtils.java` and follow instructions in file.
 
 ```java
-package com.cloudurable.kafka.producer.support;
+package com.fenago.kafka.producer.support;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import io.advantageous.boon.core.Lists;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.producer.KafkaProducer;

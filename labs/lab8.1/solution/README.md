@@ -63,14 +63,14 @@ on Kafka Brokers.
 
 You will need to pass in truststore and keystore locations and passwords to the consumer.
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/ConsumerUtil.java` and follow instructions in file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java` and follow instructions in file.
 
 
 ## Configure Kafka Producer
 
 You will need to pass in truststore and keystore locations and passwords to the producer.
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/producer/ProducerUtils.java` and follow instructions in file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/producer/ProducerUtils.java` and follow instructions in file.
 ## ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
 ## ***ACTION*** - RUN ConsumerBlueMain from the IDE
 ## ***ACTION*** - RUN StockPriceProducer from the IDE

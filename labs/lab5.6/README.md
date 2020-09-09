@@ -25,7 +25,7 @@ StockPriceKafkaProducer.
 
 
 
-#### ~/kafka-training/lab5.6/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/lab5.6/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer disable batching
 ```java
 

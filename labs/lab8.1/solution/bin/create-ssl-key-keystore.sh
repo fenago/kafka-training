@@ -14,7 +14,7 @@ CLUSTER_NAME=kafka
 CERT_AUTH_FILE="$CERT_OUTPUT_PATH/ca-cert"
 CLUSTER_CERT_FILE="$CERT_OUTPUT_PATH/${CLUSTER_NAME}-cert"
 D_NAME="CN=CloudDurable Image $CLUSTER_NAME cluster, OU=Cloudurable, O=Cloudurable"
-D_NAME="${D_NAME}, L=San Francisco, ST=CA, C=USA, DC=cloudurable, DC=com"
+D_NAME="${D_NAME}, L=San Francisco, ST=CA, C=USA, DC=fenago, DC=com"
 DAYS_VALID=365
 
 mkdir -p "$CERT_OUTPUT_PATH"
@@ -31,7 +31,7 @@ echo "Create the Certificate Authority (CA) file to sign keys."
 openssl req -new -x509 -keyout ca-key -out "$CERT_AUTH_FILE" \
     -days "$DAYS_VALID" \
     -passin pass:"$PASSWORD" -passout pass:"$PASSWORD" \
-    -subj "/C=US/ST=CA/L=San Francisco/O=Engineering/CN=cloudurable.com"
+    -subj "/C=US/ST=CA/L=San Francisco/O=Engineering/CN=fenago.com"
 
 ## Use keytool to import CA into Kafka’s truststore
 echo "Import the Certificate Authority file into the trust store."

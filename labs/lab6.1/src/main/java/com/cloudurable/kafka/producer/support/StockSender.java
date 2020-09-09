@@ -1,6 +1,6 @@
-package com.cloudurable.kafka.producer.support;
+package com.fenago.kafka.producer.support;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;

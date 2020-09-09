@@ -1,9 +1,9 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.StockAppConstants;
+import com.fenago.kafka.StockAppConstants;
 
-import static com.cloudurable.kafka.consumer.ConsumerUtil.BROKERS;
-import static com.cloudurable.kafka.consumer.ConsumerUtil.startConsumers;
+import static com.fenago.kafka.consumer.ConsumerUtil.BROKERS;
+import static com.fenago.kafka.consumer.ConsumerUtil.startConsumers;
 
 public class ConsumerBlueMain {
     public static void main(String... args) throws Exception {

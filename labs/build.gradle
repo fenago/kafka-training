@@ -1,4 +1,4 @@
-group 'cloudurable.kafka'
+group 'fenago.kafka'
 version '1.0-SNAPSHOT'
 
 

@@ -27,12 +27,12 @@ transaction thus implementing “exactly once” messaging.
 
 StockPriceRecord holds offset and partition info
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/StockPriceRecord.java
+#### ~/kafka-training/lab6.4/src/main/java/com/fenago/kafka/consumer/StockPriceRecord.java
 #### Kafka Consumer:  StockPriceRecord
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.TopicPartition;
 
@@ -63,16 +63,16 @@ public class StockPriceRecord  {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/StockPriceRecord.java` follow the instructions in the file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/StockPriceRecord.java` follow the instructions in the file.
 
 ### DatabaseUtilities
 
 The `DatabaseUtilities` class saves Topic, Offset, Partition data in the Database.
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/DatabaseUtilities.java
+#### ~/kafka-training/lab6.4/src/main/java/com/fenago/kafka/consumer/DatabaseUtilities.java
 #### Kafka Consumer:  DatabaseUtilities.saveStockPrice
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -109,19 +109,19 @@ public class DatabaseUtilities {
 
 To get exactly once, you need to save the offset and partition with the output of the consumer process.
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/DatabaseUtilities.java` follow the instructions in the file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/DatabaseUtilities.java` follow the instructions in the file.
 
 ### SimpleStockPriceConsumer
 
 "Exactly-Once" - Delivery Semantics
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/lab6.4/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
@@ -134,9 +134,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import static com.cloudurable.kafka.consumer.DatabaseUtilities.getConnection;
-import static com.cloudurable.kafka.consumer.DatabaseUtilities.saveStockPrice;
-import static com.cloudurable.kafka.consumer.DatabaseUtilities.startJdbcTransaction;
+import static com.fenago.kafka.consumer.DatabaseUtilities.getConnection;
+import static com.fenago.kafka.consumer.DatabaseUtilities.saveStockPrice;
+import static com.fenago.kafka.consumer.DatabaseUtilities.startJdbcTransaction;
 
 public class SimpleStockPriceConsumer
 {
@@ -192,7 +192,7 @@ public class SimpleStockPriceConsumer
 
 Try to commit the DB transaction and if it succeeds, commit the offset position.
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` follow the instructions in the file to commit database transaction and Kafka log.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` follow the instructions in the file to commit database transaction and Kafka log.
 
 ## Initializing and saving offsets from ConsumerRebalanceListener
 
@@ -216,12 +216,12 @@ by implementing `ConsumerRebalanceListener.onPartitionsAssigned(Collection)`.
 
 "Exactly-Once" - Delivery Semantics
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/SeekToLatestRecordsConsumerRebalanceListener.java
+#### ~/kafka-training/lab6.4/src/main/java/com/fenago/kafka/consumer/SeekToLatestRecordsConsumerRebalanceListener.java
 #### Kafka Consumer:  SeekToLatestRecordsConsumerRebalanceListener.onPartitionsAssigned
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRebalanceListener;
 import org.apache.kafka.common.TopicPartition;
@@ -280,19 +280,19 @@ public class SeekToLatestRecordsConsumerRebalanceListener
 We load a map of max offset per TopicPartition from the database. We could (should) use SQL, but for this example, we just use a map and iterate through the current stock price records looking for max. The `maxOffsets` key is TopicPartition and value is the max offset for that partition.
 Then we seek to that position with consumer.seek
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SeekToLatestRecordsConsumerRebalanceListener.java` follow the instructions in the file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SeekToLatestRecordsConsumerRebalanceListener.java` follow the instructions in the file.
 
 ### SimpleStockPriceConsumer
 
 Subscribe to this topic using SeekToLatestRecordsConsumerRebalanceListener
 
-#### ~/kafka-training/lab6.4/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/lab6.4/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.runConsumer
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
@@ -305,9 +305,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import static com.cloudurable.kafka.consumer.DatabaseUtilities.getConnection;
-import static com.cloudurable.kafka.consumer.DatabaseUtilities.saveStockPrice;
-import static com.cloudurable.kafka.consumer.DatabaseUtilities.startJdbcTransaction;
+import static com.fenago.kafka.consumer.DatabaseUtilities.getConnection;
+import static com.fenago.kafka.consumer.DatabaseUtilities.saveStockPrice;
+import static com.fenago.kafka.consumer.DatabaseUtilities.startJdbcTransaction;
 
 public class SimpleStockPriceConsumer
 {
@@ -339,7 +339,7 @@ public class SimpleStockPriceConsumer
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` method and follow the instructions to subscribe to topic using SeekToLatestRecordsConsumerRebalanceListener.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` method and follow the instructions to subscribe to topic using SeekToLatestRecordsConsumerRebalanceListener.
 
 ## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
 ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE

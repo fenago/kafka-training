@@ -1,2 +1,2 @@
-/Users/rick/github/streaming-data-platform/java/lab6.PRIME/solution/src/test/java/com/cloudurable/kafka/producer/StockPriceTest.java
-/Users/rick/github/streaming-data-platform/java/lab6.PRIME/solution/src/test/java/com/cloudurable/kafka/consumer/DatabaseUtilitiesTest.java
+/Users/rick/github/streaming-data-platform/java/lab6.PRIME/solution/src/test/java/com/fenago/kafka/producer/StockPriceTest.java
+/Users/rick/github/streaming-data-platform/java/lab6.PRIME/solution/src/test/java/com/fenago/kafka/consumer/DatabaseUtilitiesTest.java

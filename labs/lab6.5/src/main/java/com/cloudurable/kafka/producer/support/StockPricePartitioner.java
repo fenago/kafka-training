@@ -1,4 +1,4 @@
-package com.cloudurable.kafka.producer.support;
+package com.fenago.kafka.producer.support;
 
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;

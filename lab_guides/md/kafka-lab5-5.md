@@ -24,12 +24,12 @@ config, observe output of Producer metrics and StockPriceKafkaProducer output.
 
 
 
-#### ~/kafka-training/labs/lab5.5/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab5.5/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Producer:  SimpleStockPriceConsumer to consumer records
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.producer.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.producer.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 ...
@@ -65,10 +65,10 @@ The `SimpleStockPriceConsumer` is similar to other `Consumer` examples we have c
 `SimpleStockPriceConsumer` subscribes to `stock-prices` topic and uses a custom serializer (`StockDeserializer`).
 
 
-#### ~/kafka-training/labs/lab5.5/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab5.5/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Producer:  SimpleStockPriceConsumer runConsumer
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 ...
 
 public class SimpleStockPriceConsumer {
@@ -115,10 +115,10 @@ public class SimpleStockPriceConsumer {
 The run method drains Kafka topic. It creates map of current stocks prices, and calls `displayRecordsStatsAndStocks()`.
 
 
-#### ~/kafka-training/labs/lab5.5/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/labs/lab5.5/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Producer:  SimpleStockPriceConsumer displayRecordsStatsAndStocks
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 ...
 
 public class SimpleStockPriceConsumer {
@@ -145,12 +145,12 @@ The `displayRecordsStatsAndStocks` method prints out size of each partition read
 Then it prints out each stock at its current price.
 
 
-#### ~/kafka-training/labs/lab5.5/src/main/java/com/cloudurable/kafka/consumer/StockDeserializer.java
+#### ~/kafka-training/labs/lab5.5/src/main/java/com/fenago/kafka/consumer/StockDeserializer.java
 #### Kafka Producer:  StockDeserializer
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.producer.model.StockPrice;
+import com.fenago.kafka.producer.model.StockPrice;
 import org.apache.kafka.common.serialization.Deserializer;
 
 import java.nio.charset.StandardCharsets;
@@ -181,7 +181,7 @@ Let's start by disabling batching in the StockPriceKafkaProducer.
 Setting `props.put(ProducerConfig.BATCH_SIZE_CONFIG,  0)` turns batching off.
 After you do this rerun `StockPriceKafkaProducer` and check `Consumer` stats and `Producer` stats.
 
-#### ~/kafka-training/labs/lab5.5/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.5/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer disable batching
 ```java
 
@@ -216,7 +216,7 @@ price records per partition.
 After you do this rerun `StockPriceKafkaProducer` and check `Consumer` stats and `Producer` stats.
 
 
-#### ~/kafka-training/labs/lab5.5/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.5/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer set batch size to 16K
 ```java
 
@@ -248,7 +248,7 @@ of a stock price records per partition whichever comes first.
 After you do this rerun `StockPriceKafkaProducer` and check `Consumer` stats and `Producer` stats.
 
 
-#### ~/kafka-training/labs/lab5.5/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.5/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer set linger to 10 ms
 ```java
 
@@ -298,7 +298,7 @@ Now let's enable compression in the `StockPriceKafkaProducer` by setting the com
 Setting `props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG,  "snappy)` turns compression.
 After you do this rerun `StockPriceKafkaProducer` and check `Consumer` stats and `Producer` stats as before.
 
-#### ~/kafka-training/labs/lab5.5/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.5/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer enable compression
 ```java
 

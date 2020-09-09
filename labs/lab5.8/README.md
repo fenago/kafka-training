@@ -36,10 +36,10 @@ partition() method which takes topic, key, value, and cluster and then returns p
 StockPricePartitioner implements the configure() method with importantStocks config property.
 The importantStocks gets parsed and added to importantStocks HashSet which is used to filter the stocks.
 
-#### ~/kafka-training/lab5.8/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/lab5.8/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer configure partitioner
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;
@@ -77,10 +77,10 @@ hash of the stockName modulus partitionCount -1 as the partition to send the rec
 `partitionNum = abs(stockName.hashCode()) % (partitionCount - 1)`.
 
 
-#### ~/kafka-training/lab5.8/src/main/java/com/cloudurable/kafka/producer/StockPricePartitioner.java
+#### ~/kafka-training/lab5.8/src/main/java/com/fenago/kafka/producer/StockPricePartitioner.java
 #### Kafka Producer:  StockPricePartitioner partition
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
 public class StockPricePartitioner implements Partitioner{
 
@@ -123,7 +123,7 @@ public class StockPricePartitioner implements Partitioner{
 ### Producer Config: Configuring Partitioner
 
 
-#### ~/kafka-training/lab5.8/src/main/java/com/cloudurable/kafka/producer/StockPricePartitioner.java
+#### ~/kafka-training/lab5.8/src/main/java/com/fenago/kafka/producer/StockPricePartitioner.java
 #### Kafka Producer:  StockPriceKafkaProducer createProducer()
 ```java
 

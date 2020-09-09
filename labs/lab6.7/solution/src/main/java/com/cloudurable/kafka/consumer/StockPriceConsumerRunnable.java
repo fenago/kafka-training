@@ -1,6 +1,6 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
 import org.slf4j.Logger;
@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.cloudurable.kafka.StockAppConstants.TOPIC;
+import static com.fenago.kafka.StockAppConstants.TOPIC;
 
 
 public class StockPriceConsumerRunnable implements Runnable {

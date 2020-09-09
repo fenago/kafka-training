@@ -79,11 +79,11 @@ Avro schemas and IDL are written in JSON.
 
 Let's take a look at an example Avro schema.
 
-#### ./src/main/avro/com/cloudurable/phonebook/Employee.avsc
+#### ./src/main/avro/com/fenago/phonebook/Employee.avsc
 #### Example schema for an Employee record
 
 ```javascript
-{"namespace": "com.cloudurable.phonebook",
+{"namespace": "com.fenago.phonebook",
   "type": "record",  "name": "Employee",
     "fields": [
         {"name": "firstName", "type": "string"},
@@ -118,7 +118,7 @@ plugins {
     id "com.commercehub.gradle.plugin.avro" version "0.9.0"
 }
 
-group 'cloudurable'
+group 'fenago'
 version '1.0-SNAPSHOT'
 apply plugin: 'java'
 sourceCompatibility = 1.8
@@ -146,12 +146,12 @@ This makes the instances somewhat immutable.
 
 Running `gradle build` will generate the Employee.java.
 
-#### ./build/generated-main-avro-java/com/cloudurable/phonebook/Employee.java
+#### ./build/generated-main-avro-java/com/fenago/phonebook/Employee.java
 #### Generated Avro code
 
 ```java
 
-package com.cloudurable.phonebook;
+package com.fenago.phonebook;
 
 import org.apache.avro.specific.SpecificData;
 
@@ -259,7 +259,7 @@ final DataFileReader<Employee> dataFileReader = new DataFileReader<>(file, empRe
 ```
 
 
-## ***ACTION*** - EDIT `src/test/java/com/cloudurable/phonebook/EmployeeTest.java` and follow the instructions in the file.
+## ***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTest.java` and follow the instructions in the file.
 ## ***ACTION*** - RUN EmployeeTest from the IDE
 
 ## Working with Generic Records
@@ -269,7 +269,7 @@ You can use a `GenericRecord` instead of generating an Employee class as follows
 #### Using GenericRecord to create an Employee record
 
 ```java
-final String schemaLoc = "src/main/avro/com/cloudurable/phonebook/Employee.avsc";
+final String schemaLoc = "src/main/avro/com/fenago/phonebook/Employee.avsc";
 final File schemaFile = new File(schemaLoc);
 final Schema schema = new Schema.Parser().parse(schemaFile);
 
@@ -346,9 +346,9 @@ org.apache.avro.file.DataFileWriter$AppendWriteException: java.lang.ClassCastExc
 java.lang.String cannot be cast to java.lang.Number
 
     at org.apache.avro.file.DataFileWriter.append(DataFileWriter.java:308)
-    at com.cloudurable.phonebook.EmployeeTestNoGen.lambda$testWrite$1(EmployeeTestNoGen.java:71)
+    at com.fenago.phonebook.EmployeeTestNoGen.lambda$testWrite$1(EmployeeTestNoGen.java:71)
     at java.util.ArrayList.forEach(ArrayList.java:1249)
-    at com.cloudurable.phonebook.EmployeeTestNoGen.testWrite(EmployeeTestNoGen.java:69)
+    at com.fenago.phonebook.EmployeeTestNoGen.testWrite(EmployeeTestNoGen.java:69)
     ...
 Caused by: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number
     at org.apache.avro.generic.GenericDatumWriter.writeWithoutConversion(GenericDatumWriter.java:117)
@@ -365,7 +365,7 @@ If you left out a required field like `firstName`, then you would get this.
 
 #### Stack trace from leaving out firstName
 ```
-Caused by: java.lang.NullPointerException: null of string in field firstName of com.cloudurable.phonebook.Employee
+Caused by: java.lang.NullPointerException: null of string in field firstName of com.fenago.phonebook.Employee
     at org.apache.avro.generic.GenericDatumWriter.npe(GenericDatumWriter.java:132)
     at org.apache.avro.generic.GenericDatumWriter.writeWithoutConversion(GenericDatumWriter.java:126)
     at org.apache.avro.generic.GenericDatumWriter.write(GenericDatumWriter.java:73)
@@ -379,7 +379,7 @@ The [Avro schema and IDL specification document](https://avro.apache.org/docs/cu
 
  Let's add to the Employee schema and show some of the different types that Avro supports.
 
-## ***ACTION*** - EDIT `src/test/java/com/cloudurable/phonebook/EmployeeTestNoGen.java` and follow the instructions in the file.
+## ***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTestNoGen.java` and follow the instructions in the file.
 ## ***ACTION*** - RUN EmployeeTestNoGen from the IDE
 ## ***ACTION*** - CHANGE Change a test and leave out the firstName what happens?
 ## ***ACTION*** - CHANGE Change a test and use a string for age what happens?
@@ -387,9 +387,9 @@ The [Avro schema and IDL specification document](https://avro.apache.org/docs/cu
 
 ## Working with more advanced schema
 
-#### More advanced schema - `src/main/avro/com/cloudurable/phonebook/Employee.avsc`
+#### More advanced schema - `src/main/avro/com/fenago/phonebook/Employee.avsc`
  ```javascript
- {"namespace": "com.cloudurable.phonebook",
+ {"namespace": "com.fenago.phonebook",
   "type": "record",
   "name": "Employee",
   "fields": [
@@ -449,7 +449,7 @@ The PhoneNumber object gets generated as does the Status class.
 #### PhoneNumber record
 ```java
 
-package com.cloudurable.phonebook;
+package com.fenago.phonebook;
 
 import org.apache.avro.specific.SpecificData;
 
@@ -469,7 +469,7 @@ public class PhoneNumber extends org.apache.avro.specific.SpecificRecordBase ...
 
 #### Status enum
 ```java
-package com.cloudurable.phonebook;
+package com.fenago.phonebook;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public enum Status {

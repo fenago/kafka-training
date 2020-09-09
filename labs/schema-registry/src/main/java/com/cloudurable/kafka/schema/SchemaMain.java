@@ -1,4 +1,4 @@
-package com.cloudurable.kafka.schema;
+package com.fenago.kafka.schema;
 
 import okhttp3.*;
 
@@ -12,7 +12,7 @@ public class SchemaMain {
     private final static String EMPLOYEE_SCHEMA = "{\n" +
             "  \"schema\": \"" +
             "  {" +
-            "    \\\"namespace\\\": \\\"com.cloudurable.phonebook\\\"," +
+            "    \\\"namespace\\\": \\\"com.fenago.phonebook\\\"," +
             "    \\\"type\\\": \\\"record\\\"," +
             "    \\\"name\\\": \\\"Employee\\\"," +
             "    \\\"fields\\\": [" +

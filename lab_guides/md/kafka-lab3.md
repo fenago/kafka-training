@@ -31,11 +31,11 @@ Next, you import the Kafka packages and define a constant for the topic and a co
 servers that the consumer will connect.
 
 #### KafkaConsumerExample.java - imports and constants
-#### ~/kafka-training/labs/lab3/src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java
+#### ~/kafka-training/labs/lab3/src/main/java/com/fenago/kafka/KafkaConsumerExample.java
 
 ```java
 
-package com.cloudurable.kafka;
+package com.fenago.kafka;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.common.serialization.LongDeserializer;
@@ -64,7 +64,7 @@ servers that we started up in the last lesson. Go ahead and make sure all
 three Kafka servers are running. The constant `TOPIC` gets set to the replicated
 Kafka topic that you created in the last lab.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java and add the constants above.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and add the constants above.
 
 ____
 ### Create Kafka Consumer using Topic to Receive Records
@@ -73,7 +73,7 @@ ____
 Now, that you imported the Kafka classes and defined some constants, let's create the Kafka consumer.
 
 #### KafkaConsumerExample.java - Create Consumer to process Records
-#### ~/kafka-training/labs/lab3/src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java
+#### ~/kafka-training/labs/lab3/src/main/java/com/fenago/kafka/KafkaConsumerExample.java
 
 ```java
 
@@ -128,14 +128,14 @@ Important notice that you need to subscribe the consumer to the topic
 The subscribe method takes a list of topics to subscribe to, and this list will replace the current subscriptions 
 if any.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java and finish the createConsumer method.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and finish the createConsumer method.
 ____
 ### Process messages from Kafka with Consumer
 
 Now, let's process some records with our Kafka Producer.
 
 #### KafkaConsumerExample.java - Process records from Consumer
-#### ~/kafka-training/labs/lab3/src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java
+#### ~/kafka-training/labs/lab3/src/main/java/com/fenago/kafka/KafkaConsumerExample.java
 
 ```java
 public class KafkaConsumerExample {
@@ -182,9 +182,9 @@ Notice if you receive records (`consumerRecords.count()!=0`), then `runConsumer`
 `consumer.commitAsync()` which
 commit offsets returned on the last call to consumer.poll(...) for all the subscribed list of topic partitions.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java and finish the runConsumer method.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and finish the runConsumer method.
 
-## ***ACTION*** - RUN src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java from the IDE.
+## ***ACTION*** - RUN src/main/java/com/fenago/kafka/KafkaConsumerExample.java from the IDE.
 
 
 ### Kafka Consumer Poll method
@@ -198,9 +198,9 @@ When new records become available, the poll method returns straight away.
 You can can control the maximum records returned by the poll() with `props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100);`. 
 The poll method is not thread safe and is not meant to get called from multiple threads.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java and edit the createConsumer method to add `props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100)`.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and edit the createConsumer method to add `props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100)`.
 ## ***ACTION*** - RE RUN Producer from last lab to create some more records.
-## ***ACTION*** - RUN src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java from the IDE.
+## ***ACTION*** - RUN src/main/java/com/fenago/kafka/KafkaConsumerExample.java from the IDE.
 
 
 ____
@@ -209,7 +209,7 @@ ____
 Next you define the `main` method.
 
 #### KafkaConsumerExample.java - Running the Consumer
-#### ~/kafka-training/labs/lab3/src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java
+#### ~/kafka-training/labs/lab3/src/main/java/com/fenago/kafka/KafkaConsumerExample.java
 
 ```java
 
@@ -384,7 +384,7 @@ Then run the producer once from your IDE.  What happens? The consumers should ea
 First, let's modify the Consumer to make their group id unique as follows:
 
 #### KafkaConsumerExample - Make the Consumer group id unique
-#### ~/kafka-training/labs/lab3/src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java
+#### ~/kafka-training/labs/lab3/src/main/java/com/fenago/kafka/KafkaConsumerExample.java
 ```java
 public class KafkaConsumerExample {
 

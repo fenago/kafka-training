@@ -1,4 +1,4 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
 import java.sql.*;
 import java.util.ArrayList;

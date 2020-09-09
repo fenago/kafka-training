@@ -26,12 +26,12 @@ and prints out the MetricName and Metric value. The `StockPriceKafkaProducer` ma
 submits `MetricsProducerReporter` to the `ExecutorService` (thread pool).
 
 
-#### ~/kafka-training/labs/lab5.4/src/main/java/com/cloudurable/kafka/producer/MetricsProducerReporter.java
+#### ~/kafka-training/labs/lab5.4/src/main/java/com/fenago/kafka/producer/MetricsProducerReporter.java
 #### Kafka Producer:  MetricsProducerReporter for reporting metrics is Runnable
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import io.advantageous.boon.core.Sets;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.common.Metric;
@@ -70,10 +70,10 @@ Note that the `MetricsProducerReporter` is `Runnable` and it will get submitted 
 Kafka Producer, which it will call to report metrics.
 
 
-#### ~/kafka-training/labs/lab5.4/src/main/java/com/cloudurable/kafka/producer/MetricsProducerReporter.java
+#### ~/kafka-training/labs/lab5.4/src/main/java/com/fenago/kafka/producer/MetricsProducerReporter.java
 #### Kafka Producer:  MetricsProducerReporter calls producer.metrics()
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 ...
 
 public class MetricsProducerReporter implements Runnable {
@@ -145,7 +145,7 @@ TreeMap<String, MetricPair>. The MetricPair is helper class that has a Metric an
 Then we give it a nice format so we can read metrics easily and use so some space and
 some easy indicators to find the metrics in the log.
 
-#### ~/kafka-training/labs/lab5.4/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.4/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer adds MetricsProducerReporter to executorService
 ```java
 public class StockPriceKafkaProducer {

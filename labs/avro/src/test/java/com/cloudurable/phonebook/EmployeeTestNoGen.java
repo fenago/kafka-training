@@ -1,4 +1,4 @@
-package com.cloudurable.phonebook;
+package com.fenago.phonebook;
 
 import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileReader;
@@ -22,7 +22,7 @@ public class EmployeeTestNoGen {
     @Test
     public void test() throws Exception {
 
-        final String schemaLoc = "src/main/avro/com/cloudurable/phonebook/Employee.avsc";
+        final String schemaLoc = "src/main/avro/com/fenago/phonebook/Employee.avsc";
         final File schemaFile = new File(schemaLoc);
         final Schema schema = new Schema.Parser().parse(schemaFile);
 
@@ -38,7 +38,7 @@ public class EmployeeTestNoGen {
 
     @Test
     public void testWrite() throws Exception {
-        final String schemaLoc = "src/main/avro/com/cloudurable/phonebook/Employee.avsc";
+        final String schemaLoc = "src/main/avro/com/fenago/phonebook/Employee.avsc";
         final File schemaFile = new File(schemaLoc);
         final Schema schema = new Schema.Parser().parse(schemaFile);
 

@@ -1,2 +1,2 @@
-com/cloudurable/kafka/consumer/DatabaseUtilitiesTest.class
-com/cloudurable/kafka/producer/StockPriceTest.class
+com/fenago/kafka/consumer/DatabaseUtilitiesTest.class
+com/fenago/kafka/producer/StockPriceTest.class

@@ -1,7 +1,7 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;

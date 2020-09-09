@@ -95,7 +95,7 @@ Client {
 
 ## Modify Consumer createConsumer() add SASL config and JAAS config location
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/consumer/ConsumerUtil.java and follow directions
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
 
 
 ## Modify JAAS config for Producer add user
@@ -104,7 +104,7 @@ Client {
 
 ## Modify Producer createProducer()  add SASL config and JAAS config location
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/support/StockPriceProducerUtils.java and follow directions
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
 
 ## Run the lab
 

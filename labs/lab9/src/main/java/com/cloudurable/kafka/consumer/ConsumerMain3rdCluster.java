@@ -1,7 +1,7 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import static com.cloudurable.kafka.consumer.ConsumerUtil.THIRD_CLUSTER;
-import static com.cloudurable.kafka.consumer.ConsumerUtil.startConsumers;
+import static com.fenago.kafka.consumer.ConsumerUtil.THIRD_CLUSTER;
+import static com.fenago.kafka.consumer.ConsumerUtil.startConsumers;
 
 public class ConsumerMain3rdCluster {
 

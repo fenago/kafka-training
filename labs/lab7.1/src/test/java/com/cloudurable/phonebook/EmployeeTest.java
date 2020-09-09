@@ -1,4 +1,4 @@
-package com.cloudurable.phonebook;
+package com.fenago.phonebook;
 
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;

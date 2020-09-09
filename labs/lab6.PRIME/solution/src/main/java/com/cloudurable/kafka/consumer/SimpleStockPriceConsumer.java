@@ -1,7 +1,7 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.function.*;
 
-import static com.cloudurable.kafka.consumer.DatabaseUtilities.*;
+import static com.fenago.kafka.consumer.DatabaseUtilities.*;
 
 public class SimpleStockPriceConsumer {
     private static final Logger logger =

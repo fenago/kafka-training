@@ -24,10 +24,10 @@ Let's define the StockProducerInterceptor as follows:
 
 ## KafkaProducer ProducerInterceptor
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
+#### ~/kafka-training/lab5.7/src/main/java/com/fenago/kafka/producer/StockProducerInterceptor.java
 #### Kafka Producer:  StockProducerInterceptor
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
 import org.apache.kafka.clients.producer.ProducerInterceptor;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -51,10 +51,10 @@ Notice that the StockProducerInterceptor implements ProducerInterceptor.
 
 The onSend method gets called before the record is sent to the broker.
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
+#### ~/kafka-training/lab5.7/src/main/java/com/fenago/kafka/producer/StockProducerInterceptor.java
 #### Kafka Producer:  StockProducerInterceptor onSend
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 ...
 
 public class StockProducerInterceptor implements ProducerInterceptor {
@@ -98,10 +98,10 @@ Every 100 onSendCount, we print out record data.
 
 The onAck method gets called after the broker acknowledges the record.
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
+#### ~/kafka-training/lab5.7/src/main/java/com/fenago/kafka/producer/StockProducerInterceptor.java
 #### Kafka Producer:  StockProducerInterceptor onAck
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 ...
 
 public class StockProducerInterceptor implements ProducerInterceptor {
@@ -144,10 +144,10 @@ Every 100 onAckCount, we print out record data.
 
 There are other methods to override.
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockProducerInterceptor.java
+#### ~/kafka-training/lab5.7/src/main/java/com/fenago/kafka/producer/StockProducerInterceptor.java
 #### Kafka Producer:  StockProducerInterceptor the rest
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
 import org.apache.kafka.clients.producer.ProducerInterceptor;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -222,7 +222,7 @@ Next we need to configure the StockProducerInterceptor in the StockPriceKafkaPro
 
 ## KafkaProducer - Interceptor Config
 
-#### ~/kafka-training/lab5.7/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/lab5.7/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer
 ```java
 public class StockPriceKafkaProducer {

@@ -30,12 +30,12 @@ To create a consumer per thread, we will move away from our `SimpleStockPriceCon
 and use a new class called `StockPriceConsumerRunnable` that implements Runnable.
 We will then use a thread pool to launch `StockPriceConsumerRunnable` instances.
 
-#### ~/kafka-training/lab6.5/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/lab6.5/src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.CommitFailedException;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -48,7 +48,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.cloudurable.kafka.StockAppConstants.TOPIC;
+import static com.fenago.kafka.StockAppConstants.TOPIC;
 
 public class StockPriceConsumerRunnable implements Runnable{
     private static final Logger logger =
@@ -127,13 +127,13 @@ We will also create a `ConsumerMain` class that will start up thread pool.
 It will create a producer per thread. Then it will submit the producers
 (StockPriceConsumerRunnable, which are runnable)  to the `executorService` (`threadPool`).
 
-#### ~/kafka-training/lab6.5/src/main/java/com/cloudurable/kafka/consumer/ConsumerMain.java
+#### ~/kafka-training/lab6.5/src/main/java/com/fenago/kafka/consumer/ConsumerMain.java
 #### Kafka Consumer:  ConsumerMain
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -171,8 +171,8 @@ public class ConsumerMain {
 
 ## Lab Work
 
-## ***ACTION*** - EDIT `com.cloudurable.kafka.consumer.StockPriceConsumerRunnable` and follow the instructions in the file.
-## ***ACTION*** - EDIT `com.cloudurable.kafka.consumer.ConsumerMain` and follow the instructions in the file.
+## ***ACTION*** - EDIT `com.fenago.kafka.consumer.StockPriceConsumerRunnable` and follow the instructions in the file.
+## ***ACTION*** - EDIT `com.fenago.kafka.consumer.ConsumerMain` and follow the instructions in the file.
 
 
 ## ***ACTION*** - RUN ZooKeeper and Brokers if needed.

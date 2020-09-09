@@ -27,7 +27,7 @@ CTRL-C or by pressing the stop button in your IDE.
 
 
 
-#### ~/kafka-training/lab5.2/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/lab5.2/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer shutdown hook for clean shutdown
 ```java
 public class StockPriceKafkaProducer {
@@ -76,5 +76,5 @@ Notice we add a shutdown hook using Runtime.getRuntime().addShutdownHook and thi
 shuts down the thread pool, then calls flush on the producer and then closes the producer whilst waiting 10 seconds for the close to happen.
 
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java and add a shutdown hook to main.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and add a shutdown hook to main.
 ## ***ACTION*** - RUN this StockPriceKafkaProducer and try shutting it down.

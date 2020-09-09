@@ -1,4 +1,4 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
 // TODO... We just want you to look at this so you know it is not part of Kafka.
 // HINT: There is nothing to do. :)

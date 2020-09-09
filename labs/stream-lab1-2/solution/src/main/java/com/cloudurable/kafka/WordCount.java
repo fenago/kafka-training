@@ -1,4 +1,4 @@
-package com.cloudurable.kafka;
+package com.fenago.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.Serdes;

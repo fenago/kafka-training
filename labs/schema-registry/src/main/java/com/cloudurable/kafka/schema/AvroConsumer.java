@@ -1,6 +1,6 @@
-package com.cloudurable.kafka.schema;
+package com.fenago.kafka.schema;
 
-import com.cloudurable.phonebook.Employee;
+import com.fenago.phonebook.Employee;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import org.apache.kafka.clients.consumer.Consumer;

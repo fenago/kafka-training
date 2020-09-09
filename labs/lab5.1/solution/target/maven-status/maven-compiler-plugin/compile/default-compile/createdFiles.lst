@@ -1,7 +1,7 @@
-com/cloudurable/kafka/producer/StockPriceSerializer.class
-com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.class
-com/cloudurable/kafka/consumer/StockDeserializer.class
-com/cloudurable/kafka/model/StockPrice.class
-com/cloudurable/kafka/producer/StockPriceKafkaProducer.class
-com/cloudurable/kafka/producer/StockSender.class
-com/cloudurable/kafka/StockAppConstants.class
+com/fenago/kafka/producer/StockPriceSerializer.class
+com/fenago/kafka/consumer/SimpleStockPriceConsumer.class
+com/fenago/kafka/consumer/StockDeserializer.class
+com/fenago/kafka/model/StockPrice.class
+com/fenago/kafka/producer/StockPriceKafkaProducer.class
+com/fenago/kafka/producer/StockSender.class
+com/fenago/kafka/StockAppConstants.class

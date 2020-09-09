@@ -2,7 +2,7 @@ plugins {
     id "com.commercehub.gradle.plugin.avro" version "0.9.0"
 }
 
-group 'cloudurable'
+group 'fenago'
 version '1.0-SNAPSHOT'
 apply plugin: 'java'
 sourceCompatibility = 1.8

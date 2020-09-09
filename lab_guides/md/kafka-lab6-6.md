@@ -39,12 +39,12 @@ How do you commit the position unless there is some order? You have to provide t
 
 ### One Consumer with Worker Threads
 
-#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
 import org.slf4j.Logger;
@@ -55,7 +55,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.cloudurable.kafka.StockAppConstants.TOPIC;
+import static com.fenago.kafka.StockAppConstants.TOPIC;
 
 public class StockPriceConsumerRunnable implements Runnable {
     private static final Logger logger =
@@ -88,12 +88,12 @@ sending offsets to Kafka.
 
 ### Consumer with Worker Threads: Use Worker
 
-#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable.pollRecordsAndProcess
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
 import org.slf4j.Logger;
@@ -104,7 +104,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.cloudurable.kafka.StockAppConstants.TOPIC;
+import static com.fenago.kafka.StockAppConstants.TOPIC;
 
 public class StockPriceConsumerRunnable implements Runnable {
 ...
@@ -143,12 +143,12 @@ Process the records async, and calls method `processCommits` will send offsets t
 
 ### Consumer with Worker Threads: processCommits
 
-#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable.processCommits
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
 import org.slf4j.Logger;
@@ -159,7 +159,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.cloudurable.kafka.StockAppConstants.TOPIC;
+import static com.fenago.kafka.StockAppConstants.TOPIC;
 
 public class StockPriceConsumerRunnable implements Runnable {
 ...
@@ -201,12 +201,12 @@ Track the highest offset per TopicPartition, then call `consumer.commitSync` to 
 
 ### Submit Records to Commit Queues per Partition
 
-#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
 import org.slf4j.Logger;
@@ -217,7 +217,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.cloudurable.kafka.StockAppConstants.TOPIC;
+import static com.fenago.kafka.StockAppConstants.TOPIC;
 
 public class StockPriceConsumerRunnable implements Runnable {
 ...
@@ -263,13 +263,13 @@ The method ***commitRecordOffsetToKafka()***, commits the record to its topicPar
 Check this out. `ConsumerMain` also passes the number of worker threads that each
 `StockPriceConsumerRunnable` runs.
 
-#### ~/kafka-training/labs/lab6.6/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.6/src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  ConsumerMain
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -356,8 +356,8 @@ public class ConsumerMain {
 
 Use the slides for Session 6 as a guide.
 
-## ***ACTION*** - EDIT `com.cloudurable.kafka.consumer.StockPriceConsumerRunnable` and follow the instructions in the file.
-## ***ACTION*** - EDIT `com.cloudurable.kafka.consumer.ConsumerMain` and follow the instructions in the file.
+## ***ACTION*** - EDIT `com.fenago.kafka.consumer.StockPriceConsumerRunnable` and follow the instructions in the file.
+## ***ACTION*** - EDIT `com.fenago.kafka.consumer.ConsumerMain` and follow the instructions in the file.
 ## ***ACTION*** - RECREATE the topic with more partitions (HINT: bin/create-topic.sh).
 
 

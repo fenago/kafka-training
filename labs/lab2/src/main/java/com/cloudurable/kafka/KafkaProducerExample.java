@@ -1,4 +1,4 @@
-package com.cloudurable.kafka;
+package com.fenago.kafka;
 
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.LongSerializer;

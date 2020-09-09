@@ -1,6 +1,6 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
-import static com.cloudurable.kafka.StockAppConstants.TOPIC;
+import static com.fenago.kafka.StockAppConstants.TOPIC;
 import static java.util.concurrent.Executors.newFixedThreadPool;
 
 public class ConsumerUtil {

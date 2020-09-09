@@ -1,4 +1,4 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
 public class DatabaseException extends RuntimeException {
 }

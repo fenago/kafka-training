@@ -1,7 +1,7 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.TopicPartition;
 

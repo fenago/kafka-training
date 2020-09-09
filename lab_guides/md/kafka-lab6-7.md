@@ -18,13 +18,13 @@ Use the `Partitioner` from an earlier example for Producer so only important sto
 
 ## Using partitionsFor() for Priority Queue
 
-#### ~/kafka-training/labs/lab6.7/src/main/java/com/cloudurable/kafka/consumer/ConsumerMain.java
+#### ~/kafka-training/labs/lab6.7/src/main/java/com/fenago/kafka/consumer/ConsumerMain.java
 #### Kafka Consumer:  ConsumerMain.main
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -40,7 +40,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.IntStream;
 
-import static com.cloudurable.kafka.StockAppConstants.TOPIC;
+import static com.fenago.kafka.StockAppConstants.TOPIC;
 import static java.util.concurrent.Executors.newFixedThreadPool;
 
 public class ConsumerMain {
@@ -93,12 +93,12 @@ Notice that the index is the topic partition. Num threads are the partition coun
 
 ## Using assign() for Priority Queue
 
-#### ~/kafka-training/labs/lab6.7/src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java
+#### ~/kafka-training/labs/lab6.7/src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java
 #### Kafka Consumer:  StockPriceConsumerRunnable.runConsumer
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
 import org.slf4j.Logger;
@@ -109,7 +109,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.cloudurable.kafka.StockAppConstants.TOPIC;
+import static com.fenago.kafka.StockAppConstants.TOPIC;
 
 
 public class StockPriceConsumerRunnable implements Runnable {
@@ -136,8 +136,8 @@ public class StockPriceConsumerRunnable implements Runnable {
 
 Use the slides for Session 6 as a guide.
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/ConsumerMain.java` and follow the instructions in the file.
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/StockPriceConsumerRunnable.java` and follow the instructions in the file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/ConsumerMain.java` and follow the instructions in the file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java` and follow the instructions in the file.
 ## ***ACTION*** - RECREATE the topic with five partitions (HINT: bin/create-topic.sh) and use 5 partitions.
 
 

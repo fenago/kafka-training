@@ -1,8 +1,8 @@
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
-import com.cloudurable.kafka.StockAppConstants;
+import com.fenago.kafka.StockAppConstants;
 
-import static com.cloudurable.kafka.producer.support.StockPriceProducerUtils.*;
+import static com.fenago.kafka.producer.support.StockPriceProducerUtils.*;
 
 public class StockPriceProducer {
 

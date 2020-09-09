@@ -1,5 +1,5 @@
-package com.cloudurable.kafka.producer;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.producer;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.common.serialization.Serializer;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;

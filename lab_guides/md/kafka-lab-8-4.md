@@ -101,11 +101,11 @@ KafkaClient {
 
 Configure SCRAM_SHA_256
 
-#### ~kafka-training/labs/lab8.4/src/main/java/com/cloudurable/kafka/producer/support/StockPriceProducerUtils.java
+#### ~kafka-training/labs/lab8.4/src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java
 ```java
-package com.cloudurable.kafka.producer.support;
+package com.fenago.kafka.producer.support;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import io.advantageous.boon.core.Lists;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -154,18 +154,18 @@ public class StockPriceProducerUtils {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/support/StockPriceProducerUtils.java and follow directions
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
 
 
 ## Configure SCRAM in Consumer
 
 Configure SCRAM_SHA_256.
 
-#### ~kafka-training/labs/lab8.4/src/main/java/com/cloudurable/kafka/consumer/ConsumerUtil.java
+#### ~kafka-training/labs/lab8.4/src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -218,7 +218,7 @@ public class ConsumerUtil {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/consumer/ConsumerUtil.java and follow directions
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
 
 
 ## Modify Kafka Brokers Config properties file add SCRAM config

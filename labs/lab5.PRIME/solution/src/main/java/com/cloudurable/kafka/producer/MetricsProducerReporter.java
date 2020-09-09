@@ -1,6 +1,6 @@
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import io.advantageous.boon.core.Sets;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.common.Metric;

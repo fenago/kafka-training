@@ -1,7 +1,7 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
@@ -90,25 +90,25 @@ public class SimpleStockPriceConsumer {
 //            commitTransaction();        //Commit DB Transaction
 
             /**
-             * ## ***ACTION*** - EDIT `com.cloudurable.kafka.consumer.SimpleStockPriceConsumer` and implement At-Least-Once Semantics
+             * ## ***ACTION*** - EDIT `com.fenago.kafka.consumer.SimpleStockPriceConsumer` and implement At-Least-Once Semantics
              ## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
              ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
              ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
              ## ***ACTION*** - OBSERVE and then STOP consumer and producer
 
 
-             ## ***ACTION*** - EDIT `com.cloudurable.kafka.consumer.SimpleStockPriceConsumer` and implement At-Most-Once Semantics
+             ## ***ACTION*** - EDIT `com.fenago.kafka.consumer.SimpleStockPriceConsumer` and implement At-Most-Once Semantics
              ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
              ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
              ## ***ACTION*** - OBSERVE and then STOP consumer and producer
 
 
-             ## ***ACTION*** - EDIT `com.cloudurable.kafka.consumer.SimpleStockPriceConsumer` and implement fine-grained At-Most-Once Semantics
+             ## ***ACTION*** - EDIT `com.fenago.kafka.consumer.SimpleStockPriceConsumer` and implement fine-grained At-Most-Once Semantics
              ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
              ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
              ## ***ACTION*** - OBSERVE and then STOP consumer and producer
 
-             ## ***ACTION*** - EDIT `com.cloudurable.kafka.consumer.SimpleStockPriceConsumer` and implement fine-grained At-Least-Once Semantics
+             ## ***ACTION*** - EDIT `com.fenago.kafka.consumer.SimpleStockPriceConsumer` and implement fine-grained At-Least-Once Semantics
              ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
              ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
              ## ***ACTION*** - OBSERVE and then STOP consumer and producer

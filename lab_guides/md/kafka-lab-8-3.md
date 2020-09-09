@@ -317,11 +317,11 @@ KafkaClient {
 
 ## Modify Consumer createConsumer() add SASL config and JAAS config location
 
-#### ~kafka-training/labs/lab8.3/src/main/java/com/cloudurable/kafka/consumer/ConsumerUtil.java
+#### ~kafka-training/labs/lab8.3/src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -374,7 +374,7 @@ public class ConsumerUtil {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/consumer/ConsumerUtil.java and follow directions
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
 
 
 ## Create JAAS config for Producer add user
@@ -394,11 +394,11 @@ KafkaClient {
 
 ## Modify Producer createProducer()  add SASL config and JAAS config location
 
-#### ~kafka-training/labs/lab8.3/src/main/java/com/cloudurable/kafka/producer/support/StockPriceProducerUtils.java
+#### ~kafka-training/labs/lab8.3/src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java
 ```java
-package com.cloudurable.kafka.producer.support;
+package com.fenago.kafka.producer.support;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import io.advantageous.boon.core.Lists;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -449,7 +449,7 @@ public class StockPriceProducerUtils {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/support/StockPriceProducerUtils.java and follow directions
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
 ## ***ACTION*** - COPY JAAS files `cp -R resources/opt/kafka/conf/security /opt/kafka/conf/`
 
 ## Run the lab

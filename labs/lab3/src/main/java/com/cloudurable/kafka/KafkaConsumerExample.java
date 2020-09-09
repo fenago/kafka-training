@@ -1,4 +1,4 @@
-package com.cloudurable.kafka;
+package com.fenago.kafka;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.common.serialization.LongDeserializer;
@@ -16,7 +16,7 @@ public class KafkaConsumerExample {
             // HINT "localhost:9092,localhost:9093,localhost:9094";
 
 
-    //## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java and finish the runConsumer method.
+    //## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and finish the runConsumer method.
     private static Consumer<Long, String> createConsumer() {
 
         //TODO create the properties used to create a Kafka consumer.
@@ -42,7 +42,7 @@ public class KafkaConsumerExample {
 
 
 
-    //## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/KafkaConsumerExample.java and finish the runConsumer method.
+    //## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and finish the runConsumer method.
     static void runConsumer() throws InterruptedException {
         final Consumer<Long, String> consumer = createConsumer();
         try {

@@ -25,7 +25,7 @@ Kafka Brokers while `StockPriceKafkaProducer` runs. Please notice retry messages
 
 
 
-#### ~/kafka-training/labs/lab5.6/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.6/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer disable batching
 ```java
 

@@ -1,11 +1,11 @@
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
 import org.junit.Test;
 
 import java.sql.Connection;
 import java.util.List;
 
-import static com.cloudurable.kafka.consumer.DatabaseUtilities.getConnection;
+import static com.fenago.kafka.consumer.DatabaseUtilities.getConnection;
 import static org.junit.Assert.*;
 
 public class DatabaseUtilitiesTest {

@@ -54,11 +54,11 @@ The StockPrice is a simple domain object that holds a stock price has a name, do
 and cents. The StockPrice knows how to convert itself into a JSON string.
 
 
-#### ~/kafka-training/labs/lab5.1/src/main/java/com/cloudurable/kafka/model/StockPrice.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/model/StockPrice.java
 #### Kafka Producer:  StockPrice
 
 ```java
-package com.cloudurable.kafka.producer.model;
+package com.fenago.kafka.producer.model;
 
 import io.advantageous.boon.json.JsonFactory;
 
@@ -155,7 +155,7 @@ public class StockPrice {
 StockPrice is just a POJO.
 
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/model/StockPrice.java and follow the instructions.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/model/StockPrice.java and follow the instructions.
 
 
 
@@ -169,13 +169,13 @@ in its own thread using the thread pool.
 
 
 
-#### ~/kafka-training/labs/lab5.1/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer imports, createProducer
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.producer.model.StockPrice;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.producer.model.StockPrice;
 import io.advantageous.boon.core.Lists;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
@@ -205,11 +205,11 @@ public class StockPriceKafkaProducer {
 The above code imports Kafka classes and sets up the logger and calls createProducer
 to create a KafkaProducer. The `createProducer()` calls `setupBoostrapAndSerializers()`.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in createProducer.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in createProducer.
 
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer imports, createProducer
 ```java
 
@@ -233,10 +233,10 @@ public class StockPriceKafkaProducer {
 The `setupBootstrapAndSerializers` method initializes bootstrap servers, client id, key serializer and
 custom serializer (StockPriceSerializer). The `StockPriceSerializer` will serialize `StockPrice` into bytes.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in setupBootstrapAndSerializers.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in setupBootstrapAndSerializers.
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer.main - start thread pool
 ```java
 
@@ -267,10 +267,10 @@ instance the producer.
 It then creates a thread pool (`executorService`) and runs each `StockSender`, which is runnable, in its own thread
 from the thread pool.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in main.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in main.
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer.getStockSenderList - create list of StockSenders
 ```java
 
@@ -305,18 +305,18 @@ from the thread pool.
 
 The getStockSenderList of StockPriceKafkaProducer just creates a list of StockSenders.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in getStockSenderList.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in getStockSenderList.
 
 
 ### StockPriceSerializer
 
 The StockPriceSerializer converts a StockPrice into a byte array.
 
-#### ~/kafka-training/labs/lab5.1/src/main/java/com/cloudurable/kafka/producer/StockPriceSerializer.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockPriceSerializer.java
 #### Kafka Producer:  StockPriceSerializer - convert StockPrice into a byte array
 ```java
-package com.cloudurable.kafka.producer;
-import com.cloudurable.kafka.producer.model.StockPrice;
+package com.fenago.kafka.producer;
+import com.fenago.kafka.producer.model.StockPrice;
 import org.apache.kafka.common.serialization.Serializer;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
@@ -341,7 +341,7 @@ public class StockPriceSerializer implements Serializer<StockPrice> {
 Notice the StockPriceSerializer converts a StockPrice into a byte array by calling
 StockPrice.toJson.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/StockPriceSerializer.java and follow the instructions.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceSerializer.java and follow the instructions.
 
 
 ### StockAppConstants
@@ -350,10 +350,10 @@ The StockAppConstants defines a few constants, namely, topic name and a comma de
 
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/StockAppConstants.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/StockAppConstants.java
 #### Kafka Producer:  StockAppConstants defines constants
 ```java
-package com.cloudurable.kafka;
+package com.fenago.kafka;
 
 public class StockAppConstants {
     public final static String TOPIC = "stock-prices";
@@ -372,12 +372,12 @@ The `StockSender` is used to show using `KafkaProducer` from many threads.
 The `StockSender` delays a random time duration between delayMin and delayMax, then sends a random `StockPrice` between
 `stockPriceHigh` and `stockPriceLow`.
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender imports, Runnable
 ```java
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
-import com.cloudurable.kafka.producer.model.StockPrice;
+import com.fenago.kafka.producer.model.StockPrice;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
@@ -397,7 +397,7 @@ public class StockSender implements Runnable{
 The `StockSender` imports Kafka Producer, `ProducerRecord`, `RecordMetadata`, and `StockPrice`.
 It implements `Runnable`, and can be submitted to an `ExecutionService` (thread pool).
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender fields
 ```java
 public class StockSender implements Runnable{
@@ -428,7 +428,7 @@ public class StockSender implements Runnable{
 The `StockSender` takes a topic, high & low stockPrice, producer, and delay min & max.
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender run method
 ```java
 public class StockSender implements Runnable{
@@ -464,7 +464,7 @@ The StockSender run methods in a forever loop creates random record, sends the r
 and then repeats.
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender createRandomRecord
 ```java
 public class StockSender implements Runnable{
@@ -497,7 +497,7 @@ public class StockSender implements Runnable{
 The StockSender createRandomRecord method uses randomIntBetween. The createRandomRecord creates StockPrice and then
 wraps StockPrice in ProducerRecord.
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/cloudurable/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender displayRecordMetaData
 ```java
 public class StockSender implements Runnable{
@@ -526,7 +526,7 @@ Every 100 records StockSender displayRecordMetaData method gets called, which pr
 key, JSON value, topic, partition, offset, time. The `displayRecordMetaData` uses the `Future` from the call
 to `producer.send()`.
 
-## ***ACTION*** - EDIT src/main/java/com/cloudurable/kafka/producer/StockSender.java and follow the instructions.
+## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockSender.java and follow the instructions.
 
 
 ### Running the example

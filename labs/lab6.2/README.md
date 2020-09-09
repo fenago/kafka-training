@@ -38,17 +38,17 @@ Dead consumers may see `CommitFailedException` thrown from a call to `commitSync
 
 You can control consumer position moving to forward or backward. Consumers can re-consume older records or skip to the most recent records.
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SeekTo.java
+#### ~/kafka-training/lab6.2/src/main/java/com/fenago/kafka/consumer/SeekTo.java
 #### Kafka Consumer:  SeekTo
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 public enum SeekTo {
     START, END, LOCATION, NONE
 }
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SeekTo.java` and follow the instructions in the file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SeekTo.java` and follow the instructions in the file.
 
 Use ***consumer.seek***(TopicPartition, long) to specify. ***E.g.*** `consumer.seekToBeginning(Collecion)` and `consumer.seekToEnd(Collection)`
 ***Use Case Time-sensitive record processing:*** Skip to most recent records.
@@ -66,12 +66,12 @@ If using automatic partition assignment, you must handle cases where partition a
 Pass ***ConsumerRebalanceListener*** instance in call to ***kafkaConsumer.subscribe***(Collection, ConsumerRebalanceListener) and ***kafkaConsumer.subscribe***(Pattern, ConsumerRebalanceListener).
 When partitions taken from consumer, commit its offset for partitions by implementing ***ConsumerRebalanceListener.onPartitionsRevoked***(Collection) and when partitions are assigned to consumer, look up offset for new partitions and correctly initialize consumer to that position by implementing ***ConsumerRebalanceListener.onPartitionsAssigned***(Collection).
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/lab6.2/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.Consumer
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -101,12 +101,12 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/lab6.2/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.Consumer
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -138,15 +138,15 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the main method.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the main method.
 
 ### Controling Consumers Position Example
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SeekToConsumerRebalanceListener.java
+#### ~/kafka-training/lab6.2/src/main/java/com/fenago/kafka/consumer/SeekToConsumerRebalanceListener.java
 #### Kafka Consumer:  SeekToConsumerRebalanceListener
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRebalanceListener;
 import org.apache.kafka.common.TopicPartition;
@@ -186,15 +186,15 @@ public class SeekToConsumerRebalanceListener implements ConsumerRebalanceListene
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SeekToConsumerRebalanceListener.java` and follow the instructions in file.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SeekToConsumerRebalanceListener.java` and follow the instructions in file.
 
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/lab6.2/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.runConsumer
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -238,15 +238,15 @@ public class SimpleStockPriceConsumer {
 
 Use SeekTo, Position and ReadCountStatusUpdate
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the runConsumer method.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the runConsumer method.
 
 
-#### ~/kafka-training/lab6.2/src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java
+#### ~/kafka-training/lab6.2/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
 #### Kafka Consumer:  SimpleStockPriceConsumer.Consumer
 ```java
-package com.cloudurable.kafka.consumer;
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.consumer;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -281,7 +281,7 @@ public class SimpleStockPriceConsumer {
 
 Create ***SeekToConsumerRebalanceListener*** passing `SeekTo` and `location`
 
-## ***ACTION*** - EDIT `src/main/java/com/cloudurable/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the createConsumer method.
+## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the createConsumer method.
 
 ## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
 ## ***ACTION*** - RUN SimpleStockPriceConsumer run with moving to start of log

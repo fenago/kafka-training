@@ -1,10 +1,10 @@
-package com.cloudurable.kafka.producer;
+package com.fenago.kafka.producer;
 
-import com.cloudurable.kafka.StockAppConstants;
-import com.cloudurable.kafka.model.StockPrice;
-import com.cloudurable.kafka.producer.support.StockPricePartitioner;
-import com.cloudurable.kafka.producer.support.StockPriceSerializer;
-import com.cloudurable.kafka.producer.support.StockSender;
+import com.fenago.kafka.StockAppConstants;
+import com.fenago.kafka.model.StockPrice;
+import com.fenago.kafka.producer.support.StockPricePartitioner;
+import com.fenago.kafka.producer.support.StockPriceSerializer;
+import com.fenago.kafka.producer.support.StockSender;
 import io.advantageous.boon.core.Lists;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;

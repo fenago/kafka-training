@@ -39,7 +39,7 @@ KafkaClient {
   useKeyTab=true
   storeKey=true
   keyTab="/opt/kafka/conf/security/kafka_consumer.keytab"
-  principal="kafka-consumer-stocks@cloudurable.com";
+  principal="kafka-consumer-stocks@fenago.com";
 };
 ```
 
@@ -84,7 +84,7 @@ KafkaServer {
   useKeyTab=true
   storeKey=true
   keyTab="/opt/kafka/conf/security/kafka_broker.keytab"
-  principal="kafka/kafka-broker.hostname.com1@cloudurable.com";
+  principal="kafka/kafka-broker.hostname.com1@fenago.com";
 };
 
 // Zookeeper client authentication
@@ -93,7 +93,7 @@ Client {
   useKeyTab=true
   storeKey=true
   keyTab="/opt/kafka/conf/security/kafka_broker.keytab"
-  principal="kafka/kafka-broker1.hostname.com@cloudurable.com";
+  principal="kafka/kafka-broker1.hostname.com@fenago.com";
 };
 ```
 
@@ -105,7 +105,7 @@ Pass to JVM starting up broker. <br>
 
 Configure SASL port and SASL mechanisms in server.properties as described. <br>
 Configure service name (`sasl.kerberos.service.name`). <br>
-Match principal name of the kafka brokers from JAAS config on last slide. Recall principal was `kafka/kafka-broker1.hostname.com@cloudurable.com` . <br>
+Match principal name of the kafka brokers from JAAS config on last slide. Recall principal was `kafka/kafka-broker1.hostname.com@fenago.com` . <br>
 Set `sasl.enabled.mechanisms` to ***GSSAPI*** (Kerberos). <br>
 Set inter broker communication to ***SASL_PLAINTEXT*** or ***SASL_SSL*** .
 
@@ -253,11 +253,11 @@ Sets the connection protocol to ***SASL_SSL***, encrypt with ***SSL***, authenti
 Sets the service name to ***Kafka***. <br>
 Sets the `sasl.mechanism` to ***Kerberos*** (GSSAPI).
 
-#### ~/kafka-training/lab8.2/solution/src/main/java/com/cloudurable/kafka/consumer/ConsumerUtil.java
+#### ~/kafka-training/lab8.2/solution/src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java
 ```java
-package com.cloudurable.kafka.consumer;
+package com.fenago.kafka.consumer;
 
-import com.cloudurable.kafka.model.StockPrice;
+import com.fenago.kafka.model.StockPrice;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -309,7 +309,7 @@ public class ConsumerUtil {
 }
 ```
 
-## ***ACTION*** - EDIT `lab8.2/solution/src/main/java/com/cloudurable/kafka/consumer/ConsumerUtil.java` and follow instructions
+## ***ACTION*** - EDIT `lab8.2/solution/src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java` and follow instructions
 
 ## Kafka support multiple SASL Providers
 

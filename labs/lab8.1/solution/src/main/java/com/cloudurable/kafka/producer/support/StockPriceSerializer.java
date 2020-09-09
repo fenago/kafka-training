@@ -1,5 +1,5 @@
-package com.cloudurable.kafka.producer.support;
-import com.cloudurable.kafka.model.StockPrice;
+package com.fenago.kafka.producer.support;
+import com.fenago.kafka.model.StockPrice;
 import io.advantageous.boon.core.Lists;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.producer.KafkaProducer;
