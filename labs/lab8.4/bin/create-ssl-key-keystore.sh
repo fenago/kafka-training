@@ -12,7 +12,7 @@ TRUST_STORE_PASS="$PASSWORD"
 CLUSTER_NAME=kafka
 CERT_AUTH_FILE="$CERT_OUTPUT_PATH/ca-cert"
 CLUSTER_CERT_FILE="$CERT_OUTPUT_PATH/${CLUSTER_NAME}-cert"
-D_NAME="CN=CloudDurable Image $CLUSTER_NAME cluster, OU=Cloudurable, O=Cloudurable"
+D_NAME="CN=CloudDurable Image $CLUSTER_NAME cluster, OU=Fenago, O=Fenago"
 D_NAME="${D_NAME}, L=San Francisco, ST=CA, C=USA, DC=fenago, DC=com"
 DAYS_VALID=365
 
