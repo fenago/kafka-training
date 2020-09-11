@@ -352,10 +352,14 @@ debug=false
 ~/kafka-training/confluent/bin/schema-registry-start  ~/kafka-training/confluent/etc/schema-registry/schema-registry.properties
 ```
 
-## ***ACTION*** - RUN the schema registry on port 8081
-## ***ACTION*** - EDIT SchemaMain and follow the instructions in the file.
-## ***ACTION*** - RUN SchemaMain from the IDE.
-## ***ACTION*** - TRY Add extra fields and then check compatibility
+
+***ACTION*** - RUN the schema registry on port 8081
+
+***ACTION*** - EDIT SchemaMain and follow the instructions in the file.
+
+***ACTION*** - RUN SchemaMain from the IDE.
+
+***ACTION*** - TRY Add extra fields and then check compatibility
 
 ## Writing Consumers and Producers that use Kafka Avro Serializers and the Schema Registry
 
@@ -404,7 +408,8 @@ avro {
 }
 ```
 
-## ***ACTION*** - MODIFY build.gradle then RUN it.
+
+***ACTION*** - MODIFY build.gradle then RUN it.
 
 Notice that we include the Kafka Avro Serializer lib (`io.confluent:kafka-avro-serializer:3.2.1`)
 and the Avro lib (`org.apache.avro:avro:1.8.1`).
@@ -496,7 +501,8 @@ props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
 
 Then we use the Producer as expected.
 
-## ***ACTION*** - Edit AvroProducer and follow instructions in the file.
+
+***ACTION*** - Edit AvroProducer and follow instructions in the file.
 
 ### AvroConsumer
 
@@ -600,7 +606,8 @@ props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "true");
                 "http://localhost:8081"); //<----- Run Schema Registry on 8081
 ```
 
-## ***ACTION*** - Edit AvroConsumer and follow instructions in the file.
+
+***ACTION*** - Edit AvroConsumer and follow instructions in the file.
 
 An additional step is we have to tell it to use the generated version of the `Employee` object.
 If we did not, then it would use Avro `GenericRecord` instead of our generated `Employee` object,
@@ -622,9 +629,12 @@ and Kafka is running locally on your machine.
 ~/kafka-tutorial/kafka/bin/kafka-server-start.sh kafka/config/server.properties
 ```
 
-## ***ACTION*** - RUN ZooKeeper and a Kafka Broker
-## ***ACTION*** - RUN AvroProducer from the IDE
-## ***ACTION*** - RUN AvroConsumer from the IDE
+
+***ACTION*** - RUN ZooKeeper and a Kafka Broker
+
+***ACTION*** - RUN AvroProducer from the IDE
+
+***ACTION*** - RUN AvroConsumer from the IDE
 
 ## Expected results.
 The consumer gets messages from the Kafka broker that was sent by the producer.

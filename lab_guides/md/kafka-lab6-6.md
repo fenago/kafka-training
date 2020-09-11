@@ -358,15 +358,22 @@ public class ConsumerMain {
 
 Use the slides for Session 6 as a guide.
 
-## ***ACTION*** - EDIT `com.fenago.kafka.consumer.StockPriceConsumerRunnable` and follow the instructions in the file.
-## ***ACTION*** - EDIT `com.fenago.kafka.consumer.ConsumerMain` and follow the instructions in the file.
-## ***ACTION*** - RECREATE the topic with more partitions (HINT: bin/create-topic.sh).
+
+***ACTION*** - EDIT `com.fenago.kafka.consumer.StockPriceConsumerRunnable` and follow the instructions in the file.
+
+***ACTION*** - EDIT `com.fenago.kafka.consumer.ConsumerMain` and follow the instructions in the file.
+
+***ACTION*** - RECREATE the topic with more partitions (HINT: bin/create-topic.sh).
 
 
-## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
-## ***ACTION*** - RUN ConsumerMain from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumers and producer
+
+***ACTION*** - RUN ZooKeeper and Brokers if needed.
+
+***ACTION*** - RUN ConsumerMain from IDE
+
+***ACTION*** - RUN StockPriceKafkaProducer from IDE
+
+***ACTION*** - OBSERVE and then STOP consumers and producer
 
 ## Expected behavior
 It should run and should get messages like this:

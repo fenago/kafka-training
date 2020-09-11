@@ -67,8 +67,10 @@ public class StockPricePartitioner implements Partitioner{
 
 ```
 
-## ***ACTION*** - EDIT StockPricePartitioner and implement Partitioner interface
-## ***ACTION*** - EDIT StockPricePartitioner and finish configure method to read importantStocks
+
+***ACTION*** - EDIT StockPricePartitioner and implement Partitioner interface
+
+***ACTION*** - EDIT StockPricePartitioner and finish configure method to read importantStocks
 
 
 ### StockPricePartitioner partition()
@@ -119,7 +121,8 @@ public class StockPricePartitioner implements Partitioner{
 
 ```
 
-## ***ACTION*** - EDIT StockPricePartitioner and finish partition method as described and show above.
+
+***ACTION*** - EDIT StockPricePartitioner and finish partition method as described and show above.
 
 
 ### Producer Config: Configuring Partitioner
@@ -154,8 +157,10 @@ Pass config property to `importantStocks`. The `importantStock` are the ones tha
 Run it as before. The important stocks are IBM and UBER in this example and are the only ones that will go
 into the last partition.
 
-## ***ACTION*** - EDIT StockPriceKafkaProducer and add `importantStocks` to the Producer config
-## ***ACTION*** - EDIT StockPriceKafkaProducer and set `PARTITIONER_CLASS_CONFIG` to `StockPricePartitioner`
+
+***ACTION*** - EDIT StockPriceKafkaProducer and add `importantStocks` to the Producer config
+
+***ACTION*** - EDIT StockPriceKafkaProducer and set `PARTITIONER_CLASS_CONFIG` to `StockPricePartitioner`
 
 
 ## Review of lab work
@@ -167,8 +172,11 @@ You setup max inflight messages and retry back off.
 You implemented a `ProducerInterceptor`.
 You implemented a custom partitioner to implement a priority queue for important stocks.
 
-## ***ACTION*** - START ZooKeeper and Kafka Brokers as needed
-## ***ACTION*** - Run StockPriceKafkaProducer from the IDE
-## ***ACTION*** - Run SimpleStockPriceConsumer from the IDE
+
+***ACTION*** - START ZooKeeper and Kafka Brokers as needed
+
+***ACTION*** - Run StockPriceKafkaProducer from the IDE
+
+***ACTION*** - Run SimpleStockPriceConsumer from the IDE
 
 It should all work. :)

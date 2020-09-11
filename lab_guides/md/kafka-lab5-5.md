@@ -206,9 +206,12 @@ public class StockPriceKafkaProducer {
 }
 ```
 
-## ***ACTION*** - EDIT StockPriceKafkaProducer.java and disable batching as described above.
-## ***ACTION*** - RUN Zookeeper, Brokers, and StockPriceKafkaProducer, and look at the stats.
-## ***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.
+
+***ACTION*** - EDIT StockPriceKafkaProducer.java and disable batching as described above.
+
+***ACTION*** - RUN Zookeeper, Brokers, and StockPriceKafkaProducer, and look at the stats.
+
+***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.
 
 ### Set batching to 16K and retest
 
@@ -238,9 +241,12 @@ We saw the consumer records per poll averages around 7.5 and saw the batch size 
 Look how much the request queue time shrunk! The record-send-rate is 200% faster! You can see record-send-rate in the
 metrics of the producer.
 
-## ***ACTION*** - EDIT StockPriceKafkaProducer.java and set batch size to 16K.
-## ***ACTION*** - RUN StockPriceKafkaProducer, and look at the stats.
-## ***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.
+
+***ACTION*** - EDIT StockPriceKafkaProducer.java and set batch size to 16K.
+
+***ACTION*** - RUN StockPriceKafkaProducer, and look at the stats.
+
+***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.
 
 ### Set batching to 16K and linger to 10ms
 
@@ -276,9 +282,12 @@ We saw the consumer records per poll averages around 17 and saw the batch size i
 The record-send-rate went down, but higher than without batching.
 
 
-## ***ACTION*** - EDIT StockPriceKafkaProducer.java and set linger to 10ms.
-## ***ACTION*** - RUN StockPriceKafkaProducer, and look at the stats.
-## ***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.
+
+***ACTION*** - EDIT StockPriceKafkaProducer.java and set linger to 10ms.
+
+***ACTION*** - RUN StockPriceKafkaProducer, and look at the stats.
+
+***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.
 
 
 ### Try different sizes and times
@@ -287,9 +296,12 @@ Try 16K, 32K and 64K batch sizes and then try 10 ms, 100 ms, and 1 second linger
 Which is the best for which type of use case?
 
 
-## ***ACTION*** - EDIT StockPriceKafkaProducer.java try different batch sizes and linger times.
-## ***ACTION*** - RUN StockPriceKafkaProducer, and look at the stats.
-## ***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.
+
+***ACTION*** - EDIT StockPriceKafkaProducer.java try different batch sizes and linger times.
+
+***ACTION*** - RUN StockPriceKafkaProducer, and look at the stats.
+
+***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.
 
 
 
@@ -326,6 +338,9 @@ public class StockPriceKafkaProducer {
 The Snappy compression 64K/50ms should have the highest record-send-rate and 1/2 the queue time.
 
 
-## ***ACTION*** - EDIT StockPriceKafkaProducer.java set batch size to 64K and linger to 50ms.
-## ***ACTION*** - RUN StockPriceKafkaProducer, and look at the stats.
-## ***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.
+
+***ACTION*** - EDIT StockPriceKafkaProducer.java set batch size to 64K and linger to 50ms.
+
+***ACTION*** - RUN StockPriceKafkaProducer, and look at the stats.
+
+***ACTION*** - RUN SimpleStockPriceConsumer and look at record sizes, look at Producer metrics too.

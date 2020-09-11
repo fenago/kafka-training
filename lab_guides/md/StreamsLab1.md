@@ -8,7 +8,8 @@ You create two new Kafka topics, one called `streams-plaintext-input` and the ot
 You will then add some data to the input topic, start a consumer on the output topic so you can watch it, 
 and then run the Word Count Demo
 
-## ***ACTION*** - START ZooKeeper and Kafka Broker if needed.
+
+***ACTION*** - START ZooKeeper and Kafka Broker if needed.
 Only 1 broker is necessary.
 
 ## Create Kafka Topics
@@ -16,7 +17,8 @@ Only 1 broker is necessary.
 * Create a topic named `streams-plaintext-input` with 1 partition and a replication factor of 1.
 * Create a topic named `streams-wordcount-output` with 1 partition and a replication factor of 1.
 
-## ***ACTION*** - REVIEW `create-topics.sh`
+
+***ACTION*** - REVIEW `create-topics.sh`
 
 #### ~/kafka-training/stream-lab1/bin/create-topics.sh
 
@@ -43,7 +45,8 @@ kafka/bin/kafka-topics.sh --list \
     --zookeeper localhost:2181
 ```
 
-## ***ACTION*** - RUN `create-topics.sh` as follows:
+
+***ACTION*** - RUN `create-topics.sh` as follows:
 
 ```sh
 $ cd ~/kafka-training/stream-lab1/bin          
@@ -57,7 +60,8 @@ streams-wordcount-output
 ## Add data to the topic
 Now add data to the input topic by starting a console producer and entering data.
 
-## ***ACTION*** - REVIEW `start-producer-console-input.sh`
+
+***ACTION*** - REVIEW `start-producer-console-input.sh`
 
 #### ~/kafka-training/stream-lab1/bin/start-producer-console-input.sh
 
@@ -69,7 +73,8 @@ cd ~/kafka-training
 kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic streams-plaintext-input
 ```
 
-## ***ACTION*** - RUN `start-producer-console-input.sh`
+
+***ACTION*** - RUN `start-producer-console-input.sh`
 
 ```sh
 $ cd ~/kafka-training/stream-lab1
@@ -99,7 +104,8 @@ cd ~/kafka-training
 kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic streams-plaintext-input --from-beginning
 ```
 
-## ***ACTION*** - RUN `start-consumer-console-input.sh`
+
+***ACTION*** - RUN `start-consumer-console-input.sh`
 ```
 $ cd ~/kafka-training/stream-lab1/bin
 $ ./start-consumer-console-input.sh
@@ -119,7 +125,8 @@ Notice a few things about this consumer. These match the way the topic is popula
 * It has a message formatter specified.
 * It has key and value deserializers.
 
-## ***ACTION*** - EDIT `~/kafka-training/stream-lab1/bin/start-consumer-console-output.sh`, follow instructions in file.
+
+***ACTION*** - EDIT `~/kafka-training/stream-lab1/bin/start-consumer-console-output.sh`, follow instructions in file.
 
 #### ~/kafka-training/stream-lab1/start-consumer-console-output.sh
 ```sh
@@ -137,7 +144,8 @@ kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 \
     --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
 ```
 
-## ***ACTION*** - RUN `start-consumer-console-output.sh`
+
+***ACTION*** - RUN `start-consumer-console-output.sh`
 ```
 $ cd ~/kafka-training/stream-lab1/bin
 $ ./start-consumer-console-output.sh
@@ -153,7 +161,8 @@ It consumes, via the KStream dsl (java api) data from the input topic and writes
 
 Since the demo is included in the Kafka libraries, we can use Kafka's `kafka-run-class.sh` script to run it.
 
-## ***ACTION*** - REVIEW `run-word-count-demo.sh`
+
+***ACTION*** - REVIEW `run-word-count-demo.sh`
 
 #### ~/kafka-training/stream-lab1/run-word-count-demo.sh
 
@@ -164,7 +173,8 @@ cd ~/kafka-training
 kafka/bin/kafka-run-class.sh org.apache.kafka.streams.examples.wordcount.WordCountDemo
 ```
 
-## ***ACTION*** - RUN `run-word-count-demo.sh`
+
+***ACTION*** - RUN `run-word-count-demo.sh`
 
 ```sh
 $ cd ~/kafka-training/stream-lab1/bin

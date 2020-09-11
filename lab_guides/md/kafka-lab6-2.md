@@ -50,7 +50,8 @@ public enum SeekTo {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SeekTo.java` and follow the instructions in the file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SeekTo.java` and follow the instructions in the file.
 
 Use ***consumer.seek***(TopicPartition, long) to specify. ***E.g.*** `consumer.seekToBeginning(Collecion)` and `consumer.seekToEnd(Collection)`
 ***Use Case Time-sensitive record processing:*** Skip to most recent records.
@@ -140,7 +141,8 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the main method.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the main method.
 
 ### Controling Consumers Position Example
 
@@ -188,7 +190,8 @@ public class SeekToConsumerRebalanceListener implements ConsumerRebalanceListene
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SeekToConsumerRebalanceListener.java` and follow the instructions in file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SeekToConsumerRebalanceListener.java` and follow the instructions in file.
 
 
 #### ~/kafka-training/labs/lab6.2/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
@@ -240,7 +243,8 @@ public class SimpleStockPriceConsumer {
 
 Use SeekTo, Position and ReadCountStatusUpdate
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the runConsumer method.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the runConsumer method.
 
 
 #### ~/kafka-training/labs/lab6.2/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
@@ -283,13 +287,19 @@ public class SimpleStockPriceConsumer {
 
 Create ***SeekToConsumerRebalanceListener*** passing `SeekTo` and `location`
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the createConsumer method.
 
-## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
-## ***ACTION*** - RUN SimpleStockPriceConsumer run with moving to start of log
-## ***ACTION*** - RUN StockPriceKafkaProducer
-## ***ACTION*** - RUN SimpleStockPriceConsumer run with moving to end of log
-## ***ACTION*** - RUN SimpleStockPriceConsumer run with moving to a certain location in log
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions for the createConsumer method.
+
+
+***ACTION*** - RUN ZooKeeper and Brokers if needed.
+
+***ACTION*** - RUN SimpleStockPriceConsumer run with moving to start of log
+
+***ACTION*** - RUN StockPriceKafkaProducer
+
+***ACTION*** - RUN SimpleStockPriceConsumer run with moving to end of log
+
+***ACTION*** - RUN SimpleStockPriceConsumer run with moving to a certain location in log
 
 It should all run. Stop consumer and producer when finished.
 

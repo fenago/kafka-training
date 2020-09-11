@@ -76,7 +76,8 @@ To prevent forged certificates, you have to sign the certificates.  Certificate 
 
 ***Generate SSL key and certificate for each Kafka broker***
 
-## ***ACTION*** - EDIT `bin/create-ssl-key-keystore.sh` and follow instructions
+
+***ACTION*** - EDIT `bin/create-ssl-key-keystore.sh` and follow instructions
 
 ```sh
 #!/usr/bin/env bash
@@ -242,7 +243,8 @@ Import the Signed Cluster Certificate into the key store.
 Certificate reply was installed in keystore
 ```
 
-## ***ACTION*** - RUN `bin/create-ssl-key-keystore.sh`
+
+***ACTION*** - RUN `bin/create-ssl-key-keystore.sh`
 
 #### Copying cert files to /opt/kafka/
 
@@ -250,9 +252,11 @@ Certificate reply was installed in keystore
 $ sudo cp -R resources/opt/kafka/ /opt/
 ```
 
-## ***ACTION*** - COPY output of `bin/create-ssl-key-keystore.sh` to `/opt/kafka/`
 
-## ***ACTION*** - See files generated `ls /opt/kafka/conf/certs/` (5 files)
+***ACTION*** - COPY output of `bin/create-ssl-key-keystore.sh` to `/opt/kafka/`
+
+
+***ACTION*** - See files generated `ls /opt/kafka/conf/certs/` (5 files)
 
 ***ca-cert*** - Certificate Authority file  - don’t ship this around <br>
 ***kafka-cert*** - Kafka Certification File - public key and private key, don’t ship this around <br>
@@ -272,7 +276,8 @@ The setting `security.inter.broker.protocol=SSL` may not be needed if Kafka a cl
 a single private subnet. Remember that SSL makes it Kafka run slower, and adds extra CPU load
 on Kafka Brokers.
 
-## ***ACTION*** - EDIT `config/server-0.properties` and follow instructions
+
+***ACTION*** - EDIT `config/server-0.properties` and follow instructions
 
 ```sh
 broker.id=0
@@ -311,7 +316,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT `config/server-1.properties` and follow instructions
+
+***ACTION*** - EDIT `config/server-1.properties` and follow instructions
 
 ```sh
 broker.id=1
@@ -350,7 +356,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT `config/server-2.properties` and follow instructions
+
+***ACTION*** - EDIT `config/server-2.properties` and follow instructions
 
 ```sh
 broker.id=2
@@ -393,7 +400,8 @@ zookeeper.connection.timeout.ms=6000
 
 You will need to pass in truststore and keystore locations and passwords to the consumer.
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java` and follow instructions in file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java` and follow instructions in file.
 
 ```java
 package com.fenago.kafka.consumer;
@@ -457,7 +465,8 @@ public class ConsumerUtil {
 
 You will need to pass in truststore and keystore locations and passwords to the producer.
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/producer/support/ProducerUtils.java` and follow instructions in file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/producer/support/ProducerUtils.java` and follow instructions in file.
 
 ```java
 package com.fenago.kafka.producer.support;
@@ -508,9 +517,12 @@ public class StockPriceProducerUtils {
 
 ## Run the lab
 
-## ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
-## ***ACTION*** - RUN ConsumerBlueMain from the IDE
-## ***ACTION*** - RUN StockPriceProducer from the IDE
+
+***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
+
+***ACTION*** - RUN ConsumerBlueMain from the IDE
+
+***ACTION*** - RUN StockPriceProducer from the IDE
 
 ## Expected results
 You should be able to send records from the producer to the broker and read records from the consumer to the broker using SSL.

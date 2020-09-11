@@ -65,7 +65,8 @@ servers that we started up in the last lesson. Go ahead and make sure all
 three Kafka servers are running. The constant `TOPIC` gets set to the replicated
 Kafka topic that you created in the last lab.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and add the constants above.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and add the constants above.
 
 ____
 ### Create Kafka Consumer using Topic to Receive Records
@@ -129,7 +130,8 @@ Important notice that you need to subscribe the consumer to the topic
 The subscribe method takes a list of topics to subscribe to, and this list will replace the current subscriptions 
 if any.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and finish the createConsumer method.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and finish the createConsumer method.
 ____
 ### Process messages from Kafka with Consumer
 
@@ -183,9 +185,11 @@ Notice if you receive records (`consumerRecords.count()!=0`), then `runConsumer`
 `consumer.commitAsync()` which
 commit offsets returned on the last call to consumer.poll(...) for all the subscribed list of topic partitions.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and finish the runConsumer method.
 
-## ***ACTION*** - RUN src/main/java/com/fenago/kafka/KafkaConsumerExample.java from the IDE.
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and finish the runConsumer method.
+
+
+***ACTION*** - RUN src/main/java/com/fenago/kafka/KafkaConsumerExample.java from the IDE.
 
 
 ### Kafka Consumer Poll method
@@ -199,9 +203,12 @@ When new records become available, the poll method returns straight away.
 You can can control the maximum records returned by the poll() with `props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100);`. 
 The poll method is not thread safe and is not meant to get called from multiple threads.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and edit the createConsumer method to add `props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100)`.
-## ***ACTION*** - RE RUN Producer from last lab to create some more records.
-## ***ACTION*** - RUN src/main/java/com/fenago/kafka/KafkaConsumerExample.java from the IDE.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaConsumerExample.java and edit the createConsumer method to add `props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100)`.
+
+***ACTION*** - RE RUN Producer from last lab to create some more records.
+
+***ACTION*** - RUN src/main/java/com/fenago/kafka/KafkaConsumerExample.java from the IDE.
 
 
 ____

@@ -46,7 +46,8 @@ public class StockProducerInterceptor implements ProducerInterceptor {
 
 Notice that the StockProducerInterceptor implements ProducerInterceptor.
 
-## ***ACTION*** - EDIT StockProducerInterceptor.java and change it to implement ProducerInterceptor.
+
+***ACTION*** - EDIT StockProducerInterceptor.java and change it to implement ProducerInterceptor.
 
 
 ## ProducerInterceptor onSend
@@ -91,7 +92,8 @@ public class StockProducerInterceptor implements ProducerInterceptor {
 The `StockProducerInterceptor` overrides the onSend method and increments onSendCount.
 Every 100 onSendCount, we print out record data.
 
-## ***ACTION*** - EDIT StockProducerInterceptor.java and implement the onSend method something like above.
+
+***ACTION*** - EDIT StockProducerInterceptor.java and implement the onSend method something like above.
 
 
 
@@ -139,7 +141,8 @@ public class StockProducerInterceptor implements ProducerInterceptor {
 The StockProducerInterceptor overrides the onAck method and increments onAckCount.
 Every 100 onAckCount, we print out record data.
 
-## ***ACTION*** - EDIT StockProducerInterceptor.java and implement the `onAcknowledgement` method something like above.
+
+***ACTION*** - EDIT StockProducerInterceptor.java and implement the `onAcknowledgement` method something like above.
 
 
 ### ProducerInterceptor the rest
@@ -218,7 +221,8 @@ public class StockProducerInterceptor implements ProducerInterceptor {
 
 We have to override close and configure.
 
-## ***ACTION*** - EDIT StockProducerInterceptor.java and implement the `close` and `configure` methods.
+
+***ACTION*** - EDIT StockProducerInterceptor.java and implement the `close` and `configure` methods.
 
 Next we need to configure the StockProducerInterceptor in the StockPriceKafkaProducer producer config.
 
@@ -246,7 +250,8 @@ public class StockPriceKafkaProducer {
 
 The above sets the `StockProducerInterceptor.class.getName()` in the config property `ProducerConfig.INTERCEPTOR_CLASSES_CONFIG`.
 
-## ***ACTION*** - EDIT StockPriceKafkaProducer.java and configure ProducerConfig.INTERCEPTOR_CLASSES_CONFIG as described above.
+
+***ACTION*** - EDIT StockPriceKafkaProducer.java and configure ProducerConfig.INTERCEPTOR_CLASSES_CONFIG as described above.
 
 
 ### Run it. Run Servers. Run Producer. Results.
@@ -254,10 +259,14 @@ The above sets the `StockProducerInterceptor.class.getName()` in the config prop
 Next we startup ZooKeeper if needed, and start or restart Kafka brokers as before.
 Then run the `StockPriceKafkaProducer` and look for log message from `ProducerInterceptor` in output.
 
-## ***ACTION*** - START ZooKeeper and Kafka Brokers if needed
-## ***ACTION*** - RUN StockPriceKafkaProducer from the IDE
-## ***ACTION*** - RUN SimpleStockPriceConsumer from the IDE
-## ***ACTION*** - LOOK for onAck and onSend messages in the StockPriceKafkaProducer log.
+
+***ACTION*** - START ZooKeeper and Kafka Brokers if needed
+
+***ACTION*** - RUN StockPriceKafkaProducer from the IDE
+
+***ACTION*** - RUN SimpleStockPriceConsumer from the IDE
+
+***ACTION*** - LOOK for onAck and onSend messages in the StockPriceKafkaProducer log.
 
 
 ### Results ProducerInterceptor Output

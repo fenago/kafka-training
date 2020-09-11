@@ -91,11 +91,16 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement At-Least-Once Semantics
-## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
-## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumer and producer
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement At-Least-Once Semantics
+
+***ACTION*** - RUN ZooKeeper and Brokers if needed.
+
+***ACTION*** - RUN SimpleStockPriceConsumer from IDE
+
+***ACTION*** - RUN StockPriceKafkaProducer from IDE
+
+***ACTION*** - OBSERVE and then STOP consumer and producer
 
 ### "At-Most-Once" - Delivery Semantics
 
@@ -145,10 +150,14 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement At-Most-Once Semantics
-## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumer and producer
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement At-Most-Once Semantics
+
+***ACTION*** - RUN SimpleStockPriceConsumer from IDE
+
+***ACTION*** - RUN StockPriceKafkaProducer from IDE
+
+***ACTION*** - OBSERVE and then STOP consumer and producer
 
 ### Fine Grained "At-Least-Once"
 
@@ -201,10 +210,14 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Most-Once Semantics
-## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumer and producer
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Most-Once Semantics
+
+***ACTION*** - RUN SimpleStockPriceConsumer from IDE
+
+***ACTION*** - RUN StockPriceKafkaProducer from IDE
+
+***ACTION*** - OBSERVE and then STOP consumer and producer
 
 ### Fine Grained "At-Most-Once"
 
@@ -257,9 +270,13 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Least-Once Semantics
-## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumer and producer
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Least-Once Semantics
+
+***ACTION*** - RUN SimpleStockPriceConsumer from IDE
+
+***ACTION*** - RUN StockPriceKafkaProducer from IDE
+
+***ACTION*** - OBSERVE and then STOP consumer and producer
 
 It should all run. Stop consumer and producer when finished.

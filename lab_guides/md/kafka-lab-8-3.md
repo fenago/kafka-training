@@ -37,7 +37,8 @@ Server {
 ```
 Note we are using PlainLoginModule from Kafka.
 
-## ***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
+
+***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
 
 ## Modify ZooKeeper properties file add SASL config
 
@@ -59,7 +60,8 @@ jaasLoginRenew=3600000
 
 Note we are using SASLAuthenticationProvider from Kafka.
 
-## ***ACTION*** EDIT config/zookeeper.properties and follow instructions in file
+
+***ACTION*** EDIT config/zookeeper.properties and follow instructions in file
 
 
 ## Modify ZooKeeper startup script add JAAS config location
@@ -83,7 +85,8 @@ kafka/bin/zookeeper-server-start.sh \
 
 ```
 
-## ***ACTION*** EDIT bin/run-zookeeper.sh and follow instructions in file
+
+***ACTION*** EDIT bin/run-zookeeper.sh and follow instructions in file
 
 ## Create JAAS config for Kafka Brokers add users (admin, consumer, producer)
 
@@ -113,7 +116,8 @@ Client {
 
 ```
 
-## ***ACTION*** - EDIT `resources/opt/kafka/conf/security/kafka_broker_jaas.conf` and follow instructions in file
+
+***ACTION*** - EDIT `resources/opt/kafka/conf/security/kafka_broker_jaas.conf` and follow instructions in file
 
 
 ## Modify Kafka Brokers Config properties file add SASL config
@@ -163,7 +167,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-0.properties and follow directions
+
+***ACTION*** - EDIT config/server-0.properties and follow directions
 
 #### ~kafka-training/labs/lab8.3/config/server-1.properties
 ```sh
@@ -203,7 +208,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-1.properties and follow directions
+
+***ACTION*** - EDIT config/server-1.properties and follow directions
 
 #### ~kafka-training/labs/lab8.3/config/server-2.properties
 ```sh
@@ -245,7 +251,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-2.properties and follow directions
+
+***ACTION*** - EDIT config/server-2.properties and follow directions
 
 
 ## Modify Kafka Broker startup script add JAAS config location
@@ -265,7 +272,8 @@ kafka/bin/kafka-server-start.sh \
 
 ```
 
-## ***ACTION*** - EDIT bin/start-1st-server.sh and follow directions
+
+***ACTION*** - EDIT bin/start-1st-server.sh and follow directions
 
 #### ~kafka-training/labs/lab8.3/bin/start-1st-server.sh
 ```sh
@@ -282,7 +290,8 @@ kafka/bin/kafka-server-start.sh \
 
 ```
 
-## ***ACTION*** - EDIT bin/start-2nd-server.sh and follow directions
+
+***ACTION*** - EDIT bin/start-2nd-server.sh and follow directions
 
 #### ~kafka-training/labs/lab8.3/bin/start-1st-server.sh
 ```sh
@@ -299,7 +308,8 @@ kafka/bin/kafka-server-start.sh \
 
 ```
 
-## ***ACTION*** - EDIT bin/start-3rd-server.sh and follow directions
+
+***ACTION*** - EDIT bin/start-3rd-server.sh and follow directions
 
 
 ## Create JAAS config for Consumer add user
@@ -315,7 +325,8 @@ KafkaClient {
 };
 ```
 
-## ***ACTION*** - EDIT resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow directions
+
+***ACTION*** - EDIT resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow directions
 
 
 ## Modify Consumer createConsumer() add SASL config and JAAS config location
@@ -377,7 +388,8 @@ public class ConsumerUtil {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
 
 
 ## Create JAAS config for Producer add user
@@ -393,7 +405,8 @@ KafkaClient {
 };
 ```
 
-## ***ACTION*** - EDIT resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow directions
+
+***ACTION*** - EDIT resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow directions
 
 ## Modify Producer createProducer()  add SASL config and JAAS config location
 
@@ -452,14 +465,19 @@ public class StockPriceProducerUtils {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
-## ***ACTION*** - COPY JAAS files `cp -R resources/opt/kafka/conf/security /opt/kafka/conf/`
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
+
+***ACTION*** - COPY JAAS files `cp -R resources/opt/kafka/conf/security /opt/kafka/conf/`
 
 ## Run the lab
 
-## ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
-## ***ACTION*** - RUN ConsumerBlueMain from the IDE
-## ***ACTION*** - RUN StockPriceProducer from the IDE
+
+***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
+
+***ACTION*** - RUN ConsumerBlueMain from the IDE
+
+***ACTION*** - RUN StockPriceProducer from the IDE
 
 ## Expected results
 You should be able to send records from the producer to the broker

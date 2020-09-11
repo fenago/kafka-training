@@ -45,7 +45,8 @@ Lastly modify  `server-2.properties` to use `port` 9094, broker `id` 2, and `log
 
 You modify the port by modifying the listeners `listeners=PLAINTEXT://localhost:9092`.
 
-## ***ACTION*** COPY server.properites file three times to server-0.properties, server-1.properties and
+
+***ACTION*** COPY server.properites file three times to server-0.properties, server-1.properties and
 server-2.properties as follows:
 
 #### Copy server properties file
@@ -61,7 +62,8 @@ $ cp kafka/config/server.properties lab1.2/config/server-2.properties
 <br />
 
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/config/server-0.properties` as follows:
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/config/server-0.properties` as follows:
 
 With your favorite text editor change server-0.properties so that `log.dirs` is set to `./logs/kafka-0`.
 Leave the rest of the file the same. Make sure `log.dirs` is only defined once.
@@ -81,7 +83,8 @@ log.dirs=./logs/kafka-0
 
 <br />
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/config/server-1.properties` as follows:
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/config/server-1.properties` as follows:
 
 With your favorite text editor change `log.dirs`, `broker.id` and and `log.dirs` of `server-1.properties` as follows:
 
@@ -97,7 +100,8 @@ log.dirs=./logs/kafka-1
 
 <br />
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/config/server-2.properties` as follows:
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/config/server-2.properties` as follows:
 
 With your favorite text editor change `log.dirs`, `broker.id` and and `log.dirs` of `server-2.properties` as follows:
 
@@ -118,7 +122,8 @@ log.dirs=./logs/kafka-2
 
 The startup scripts will just run `kafka-server-start.sh` with the corresponding properties file.
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-1st-server.sh` and follow instructions in file.
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-1st-server.sh` and follow instructions in file.
 
 <br />
 
@@ -140,7 +145,8 @@ kafka/bin/kafka-server-start.sh \
 <br />
 
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-2nd-server.sh` and follow instructions in file.
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-2nd-server.sh` and follow instructions in file.
 
 
 #### ~/kafka-training/labs/lab1.2/start-2nd-server.sh
@@ -162,7 +168,8 @@ kafka/bin/kafka-server-start.sh \
 
 
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-3rd-server.sh` and follow instructions in file.
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-3rd-server.sh` and follow instructions in file.
 
 
 #### ~/kafka-training/labs/lab1.2/start-3rd-server.sh
@@ -184,7 +191,8 @@ kafka/bin/kafka-server-start.sh \
 
 Notice we are passing the Kafka server properties files that we created in the last step.
 
-## ***ACTION*** RUN all three Kafka servers as follows:
+
+***ACTION*** RUN all three Kafka servers as follows:
 
 Now run all three in separate terminals/shells.
 
@@ -219,7 +227,8 @@ Give the servers a minute to startup and connect to ZooKeeper.
 Now we will create a replicated topic that the console producers and console consumers can use.
 
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/create-replicated-topic.sh` and follow instructions in file.
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/create-replicated-topic.sh` and follow instructions in file.
 
 <br />
 
@@ -244,7 +253,8 @@ kafka/bin/kafka-topics.sh --create \
 Notice that the replication factor gets set to 3, and the topic name is `my-failsafe-topic`, and
 like before it has 13 partitions.
 
-## ***ACTION*** RUN `~/kafka-training/labs/lab1.2/create-replicated-topic.sh` as follows:
+
+***ACTION*** RUN `~/kafka-training/labs/lab1.2/create-replicated-topic.sh` as follows:
 
 Then we just have to run the script to create the topic.
 
@@ -280,7 +290,8 @@ kafka/bin/kafka-console-consumer.sh \
 
 ```
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-consumer-console-replicated.sh` and follow instructions in file.
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-consumer-console-replicated.sh` and follow instructions in file.
 
 
 <br />
@@ -322,12 +333,14 @@ kafka/bin/kafka-console-producer.sh \
 
 ```
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-consumer-producer-replicated.sh` and follow instructions in file.
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-consumer-producer-replicated.sh` and follow instructions in file.
 
 
 <br />
 
-## ***ACTION*** START `~/kafka-training/labs/lab1.2/start-consumer-producer-replicated.sh` as follows:
+
+***ACTION*** START `~/kafka-training/labs/lab1.2/start-consumer-producer-replicated.sh` as follows:
 
 Notice we start Kafka producer and pass it a list of Kafka Brokers to use via the parameter `--broker-list`.
 
@@ -345,7 +358,8 @@ $ ./start-consumer-producer-replicated.sh
 
 <br />
 
-## ***ACTION*** SEND messages with producer as follows:
+
+***ACTION*** SEND messages with producer as follows:
 
 ### Now send messages
 
@@ -368,7 +382,8 @@ Good!
 
 <br />
 
-## ***ACTION*** VIEW messages from consumer as follows:
+
+***ACTION*** VIEW messages from consumer as follows:
 
 #### Consumer Console
 ```sh
@@ -383,7 +398,8 @@ Good!
 
 <br />
 
-## ***ACTION*** START two more consumers and send more messages as follows:
+
+***ACTION*** START two more consumers and send more messages as follows:
 ### Now Start two more consumers and send more messages
 
 Now Start two more consumers in their own terminal window and send more messages from the producer.
@@ -466,7 +482,8 @@ This way the consumers will share the messages as each consumer in the *consumer
 of partitions.
 
 
-## ***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-consumer-console-replicated.sh` and add `--consumer-property group.id=mygroup` as follows:
+
+***ACTION*** EDIT `~/kafka-training/labs/lab1.2/start-consumer-console-replicated.sh` and add `--consumer-property group.id=mygroup` as follows:
 
 <br />
 
@@ -489,8 +506,10 @@ will put every consumer that runs with this script into the `mygroup` consumer g
 
 Now we just run the producer and three consumers.
 
-## ***ACTION*** SHUTDOWN old consumers
-## ***ACTION*** RUN three consumers in new terminals as follows:
+
+***ACTION*** SHUTDOWN old consumers
+
+***ACTION*** RUN three consumers in new terminals as follows:
 
 <br />
 
@@ -503,7 +522,8 @@ $ ./start-consumer-console-replicated.sh
 
 <br />
 
-## ***ACTION*** RUN producer and send more messages as follows:
+
+***ACTION*** RUN producer and send more messages as follows:
 
 #### Run Producer Console
 ```sh
@@ -534,7 +554,8 @@ m7
 
 <br />
 
-## ***ACTION*** Observer consumer behavior as follows:
+
+***ACTION*** Observer consumer behavior as follows:
 
 Notice that the messages are spread evenly among the consumers.
 
@@ -601,7 +622,8 @@ sending seven more messages. Kafka should divide up the work to the consumers th
 
 ## ***ACTION** First, kill the third consumer (CTRL-C in the consumer terminal does the trick).
 
-## ***ACTION*** Now send seven more messages with the Kafka console-producer.
+
+***ACTION*** Now send seven more messages with the Kafka console-producer.
 
 
 <br />
@@ -623,7 +645,8 @@ m14
 
 <br />
 
-## ***ACTION*** Observer consumer behavior after failover as follows:
+
+***ACTION*** Observer consumer behavior after failover as follows:
 
 Notice that the messages are spread evenly among the remaining consumers.
 
@@ -684,7 +707,8 @@ The  `---describe` will show  partitions, ISRs, and broker partition leadership.
 
 <br />
 
-## ***ACTION*** EDIT ~/kafka-training/labs/lab1.2/describe-topics.sh and follow instrucitons in file.
+
+***ACTION*** EDIT ~/kafka-training/labs/lab1.2/describe-topics.sh and follow instrucitons in file.
 
 #### ~/kafka-training/labs/lab1.2/describe-topics.sh
 ```sh
@@ -703,7 +727,8 @@ kafka/bin/kafka-topics.sh --describe \
 
 <br />
 
-## ***ACTION*** RUN ~/kafka-training/labs/lab1.2/describe-topics.sh as follows:
+
+***ACTION*** RUN ~/kafka-training/labs/lab1.2/describe-topics.sh as follows:
 
 Let's run `kafka-topics.sh --describe` and see the topology of our
 `my-failsafe-topic`.
@@ -751,7 +776,8 @@ Also, see how Kafka replicates the partitions on each broker.
 
 <br />
 
-## ***ACTION*** Kill first broker as follows:
+
+***ACTION*** Kill first broker as follows:
 
 ### Test Broker Failover by killing 1st server
 
@@ -775,7 +801,8 @@ Now that the first Kafka broker has stopped, let's use Kafka `topics describe` t
 
 <br />
 
-## ***ACTION*** Run describe-topics again to see leadership change as follows:
+
+***ACTION*** Run describe-topics again to see leadership change as follows:
 
 ```sh
 $ cd ~/kafka-training/labs/lab1.2/solution
@@ -810,7 +837,8 @@ Then notice if the consumers still get the messages.
 
 <br />
 
-## ***ACTION*** SEND the message m15 and m16 as follows:
+
+***ACTION*** SEND the message m15 and m16 as follows:
 
 #### Producer Console - send m15 and m16
 
@@ -826,7 +854,8 @@ m16
 <br />
 
 
-## ***ACTION*** OBSERVER consumer behavior as follows:
+
+***ACTION*** OBSERVER consumer behavior as follows:
 
 Notice that the messages are spread evenly among the remaining live consumers.
 

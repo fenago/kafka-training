@@ -71,12 +71,18 @@ Restart brokers and see the Producer recover. Also use replica verification to s
 broker catches up.
 
 
-## ***ACTION*** - EDIT StockPriceKafkaProducer and finish the setupRetriesInFlightTimeout using instructions in the file.
-## ***ACTION*** - START Kafka Brokers and ZooKeeper if needed.
-## ***ACTION*** - Run StockPriceKafkaProducer from the IDE.
-## ***ACTION*** - Run SimpleStockPriceConsumer from the IDE.
-## ***ACTION*** - KILL one Kafka Broker while StockPriceKafkaProducer is running.
-## ***ACTION*** - KILL two Kafka Broker while StockPriceKafkaProducer is running.
+
+***ACTION*** - EDIT StockPriceKafkaProducer and finish the setupRetriesInFlightTimeout using instructions in the file.
+
+***ACTION*** - START Kafka Brokers and ZooKeeper if needed.
+
+***ACTION*** - Run StockPriceKafkaProducer from the IDE.
+
+***ACTION*** - Run SimpleStockPriceConsumer from the IDE.
+
+***ACTION*** - KILL one Kafka Broker while StockPriceKafkaProducer is running.
+
+***ACTION*** - KILL two Kafka Broker while StockPriceKafkaProducer is running.
 
 
 

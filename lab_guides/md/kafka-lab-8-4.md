@@ -49,7 +49,8 @@ kafka/bin/kafka-configs.sh \
     --zookeeper localhost:2181 \
 ```
 
-## ***ACTION*** EDIT bin/create-scram-users.sh and follow instructions in file
+
+***ACTION*** EDIT bin/create-scram-users.sh and follow instructions in file
 
 ## Kafka Broker JAAS Scram Config
 
@@ -71,7 +72,8 @@ Client {
 };
 ```
 
-## ***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
+
+***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
 
 ## Kafka Consumer/Producer JAAS Scram Config
 
@@ -86,7 +88,8 @@ KafkaClient {
 };
 ```
 
-## ***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow instructions in file
+
+***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow instructions in file
 
 #### ~kafka-training/labs/lab8.4/solution/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf
 ```sh
@@ -97,7 +100,8 @@ KafkaClient {
 };
 ```
 
-## ***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow instructions in file
+
+***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow instructions in file
 
 ## Configure SCRAM in Producer
 
@@ -156,7 +160,8 @@ public class StockPriceProducerUtils {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
 
 
 ## Configure SCRAM in Consumer
@@ -220,7 +225,8 @@ public class ConsumerUtil {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
 
 
 ## Modify Kafka Brokers Config properties file add SCRAM config
@@ -270,7 +276,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-0.properties and follow directions
+
+***ACTION*** - EDIT config/server-0.properties and follow directions
 
 #### ~kafka-training/labs/lab8.4/config/server-1.properties
 ```sh
@@ -310,7 +317,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-1.properties and follow directions
+
+***ACTION*** - EDIT config/server-1.properties and follow directions
 
 #### ~kafka-training/labs/lab8.4/config/server-2.properties
 ```sh
@@ -352,13 +360,17 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-2.properties and follow directions
+
+***ACTION*** - EDIT config/server-2.properties and follow directions
 
 ## Run the lab
 
-## ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
-## ***ACTION*** - RUN ConsumerBlueMain from the IDE
-## ***ACTION*** - RUN StockPriceProducer from the IDE
+
+***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
+
+***ACTION*** - RUN ConsumerBlueMain from the IDE
+
+***ACTION*** - RUN StockPriceProducer from the IDE
 
 ## Expected results
 You should be able to send records from the producer to the broker

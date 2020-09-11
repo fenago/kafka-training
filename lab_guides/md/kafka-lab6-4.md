@@ -65,7 +65,8 @@ public class StockPriceRecord  {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/StockPriceRecord.java` follow the instructions in the file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/StockPriceRecord.java` follow the instructions in the file.
 
 ### DatabaseUtilities
 
@@ -111,7 +112,8 @@ public class DatabaseUtilities {
 
 To get exactly once, you need to save the offset and partition with the output of the consumer process.
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/DatabaseUtilities.java` follow the instructions in the file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/DatabaseUtilities.java` follow the instructions in the file.
 
 ### SimpleStockPriceConsumer
 
@@ -194,7 +196,8 @@ public class SimpleStockPriceConsumer
 
 Try to commit the DB transaction and if it succeeds, commit the offset position.
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` follow the instructions in the file to commit database transaction and Kafka log.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` follow the instructions in the file to commit database transaction and Kafka log.
 
 ## Initializing and saving offsets from ConsumerRebalanceListener
 
@@ -282,7 +285,8 @@ public class SeekToLatestRecordsConsumerRebalanceListener
 We load a map of max offset per TopicPartition from the database. We could (should) use SQL, but for this example, we just use a map and iterate through the current stock price records looking for max. The `maxOffsets` key is TopicPartition and value is the max offset for that partition.
 Then we seek to that position with consumer.seek
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SeekToLatestRecordsConsumerRebalanceListener.java` follow the instructions in the file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SeekToLatestRecordsConsumerRebalanceListener.java` follow the instructions in the file.
 
 ### SimpleStockPriceConsumer
 
@@ -341,19 +345,26 @@ public class SimpleStockPriceConsumer
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` method and follow the instructions to subscribe to topic using SeekToLatestRecordsConsumerRebalanceListener.
 
-## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
-## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumer and producer
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` method and follow the instructions to subscribe to topic using SeekToLatestRecordsConsumerRebalanceListener.
+
+
+***ACTION*** - RUN ZooKeeper and Brokers if needed.
+
+***ACTION*** - RUN SimpleStockPriceConsumer from IDE
+
+***ACTION*** - RUN StockPriceKafkaProducer from IDE
+
+***ACTION*** - OBSERVE and then STOP consumer and producer
 
 ## Expected behavior
 You should see offset messages from `SeekToLatestRecordsConsumerRebalanceListener`
 in the log for the consumer.
 
-## ***ACTION*** - STOP SimpleStockPriceConsumer from IDE (while you leave StockPriceKafkaProducer for 30 seconds)
-## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
+
+***ACTION*** - STOP SimpleStockPriceConsumer from IDE (while you leave StockPriceKafkaProducer for 30 seconds)
+
+***ACTION*** - RUN SimpleStockPriceConsumer from IDE
 
 
 ## Expected behavior

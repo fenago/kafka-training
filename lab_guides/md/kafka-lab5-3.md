@@ -18,7 +18,8 @@ In this lab we will configure producer durability.
 ## Set default acks to all
 
 
-## ***ACTION*** EDIT StockPriceKafkaProducer and set Producer config acks to all (this is the default).
+
+***ACTION*** EDIT StockPriceKafkaProducer and set Producer config acks to all (this is the default).
 This means that all ISRs in-sync replicas have to respond for producer write to go through.
 
 #### StockPriceKafkaProducer.java
@@ -49,9 +50,12 @@ NOTE: We have three brokers in this lab, thus all three have to be up for the Pr
 Ensure min.insync.replicas is set to three in all of the broker config files (server-0.properties, server-1.properties
  and server-2.properties).
 
-## ***ACTION*** EDIT config/server-0.properties and min.insync.replicas=3
-## ***ACTION*** EDIT config/server-1.properties and min.insync.replicas=3
-## ***ACTION*** EDIT config/server-2.properties and min.insync.replicas=3
+
+***ACTION*** EDIT config/server-0.properties and min.insync.replicas=3
+
+***ACTION*** EDIT config/server-1.properties and min.insync.replicas=3
+
+***ACTION*** EDIT config/server-2.properties and min.insync.replicas=3
 
 ###  Run this lab. Run it. Run Servers. Run Producer. Kill 1 Broker.
 
@@ -64,16 +68,26 @@ Note that the Messages are rejected since there are fewer in-sync replicas than 
 Repeat this with only 2 min.insync.replicas set. (Change config and restart brokers and restart producer).
 Observe the behavior of using 2 for min.insync.replicas vs. three.
 
-## ***ACTION*** RUN brokers and zookeeper if needed.
-## ***ACTION*** RUN StockPriceKafkaProducer from the IDE
-## ***ACTION*** KILL 1 of the Kafka Brokers
-## ***ACTION*** OBSERVE Producer terminal messages
-## ***ACTION*** EDIT config/server-0.properties and min.insync.replicas=2
-## ***ACTION*** EDIT config/server-1.properties and min.insync.replicas=2
-## ***ACTION*** EDIT config/server-2.properties and min.insync.replicas=2
-## ***ACTION*** RESTART brokers
-## ***ACTION*** KILL 1 of the Kafka Brokers
-## ***ACTION*** OBSERVE Producer terminal messages
+
+***ACTION*** RUN brokers and zookeeper if needed.
+
+***ACTION*** RUN StockPriceKafkaProducer from the IDE
+
+***ACTION*** KILL 1 of the Kafka Brokers
+
+***ACTION*** OBSERVE Producer terminal messages
+
+***ACTION*** EDIT config/server-0.properties and min.insync.replicas=2
+
+***ACTION*** EDIT config/server-1.properties and min.insync.replicas=2
+
+***ACTION*** EDIT config/server-2.properties and min.insync.replicas=2
+
+***ACTION*** RESTART brokers
+
+***ACTION*** KILL 1 of the Kafka Brokers
+
+***ACTION*** OBSERVE Producer terminal messages
 
 ### Why did the send fail?
 
@@ -92,11 +106,16 @@ From the IDE run StockPriceKafkaProducer again.
 From the terminal kill one of the Kafka Brokers.
 Notice that the StockPriceKafkaProducer now runs normally.
 
-## ***ACTION*** EDIT StockPriceKafkaProducer and set Producer config acks to "1".
-## ***ACTION*** RUN all brokers and zookeeper if needed.
-## ***ACTION*** RUN StockPriceKafkaProducer from the IDE
-## ***ACTION*** KILL 1 of the Kafka Brokers
-## ***ACTION*** OBSERVE Producer terminal messages or lack thereof
+
+***ACTION*** EDIT StockPriceKafkaProducer and set Producer config acks to "1".
+
+***ACTION*** RUN all brokers and zookeeper if needed.
+
+***ACTION*** RUN StockPriceKafkaProducer from the IDE
+
+***ACTION*** KILL 1 of the Kafka Brokers
+
+***ACTION*** OBSERVE Producer terminal messages or lack thereof
 
 ### Why did the send not fail for acks 1?
 
@@ -129,7 +148,8 @@ kafka/bin/kafka-topics.sh --describe \
 The script bin/describe-topics.sh calls kafka-topics.sh to describe the topic layout with regards to brokers 
 and partitions.
 
-## ***ACTION*** REPEAT Last experiment, but this time run bin/describe-topics.sh and observe.
+
+***ACTION*** REPEAT Last experiment, but this time run bin/describe-topics.sh and observe.
 
 ### Retry with acks = 0
 Run the last example again (servers, and producer), but this time set acks to 0.
@@ -141,10 +161,14 @@ When you are done, change acks back to acks=all.
 
 
 
-## ***ACTION*** EDIT StockPriceKafkaProducer and set Producer config acks to "0".
-## ***ACTION*** RUN all brokers and zookeeper if needed.
-## ***ACTION*** RUN StockPriceKafkaProducer from the IDE
-## ***ACTION*** REPEAT Last experiment, but this time run bin/describe-topics.sh and observe.
+
+***ACTION*** EDIT StockPriceKafkaProducer and set Producer config acks to "0".
+
+***ACTION*** RUN all brokers and zookeeper if needed.
+
+***ACTION*** RUN StockPriceKafkaProducer from the IDE
+
+***ACTION*** REPEAT Last experiment, but this time run bin/describe-topics.sh and observe.
 
 ### Lab Review
 

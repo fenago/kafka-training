@@ -15,7 +15,8 @@ and then run the Word Count Demo
 * Create a topic named `word-count-input` with 1 partition and a replication factor of 1.
 * Create a topic named `word-count-output` with 1 partition and a replication factor of 1.
 
-## ***ACTION*** - REVIEW `create-topics.sh`
+
+***ACTION*** - REVIEW `create-topics.sh`
 
 #### ~/kafka-training/stream-lab2/bin/create-topics.sh
 
@@ -42,10 +43,12 @@ kafka/bin/kafka-topics.sh --list \
     --zookeeper localhost:2181
 ```
 
-## ***ACTION*** - START ZooKeeper and Kafka Broker if needed.
+
+***ACTION*** - START ZooKeeper and Kafka Broker if needed.
 Only 1 broker is necessary.
 
-## ***ACTION*** - RUN `create-topics.sh` as follows:
+
+***ACTION*** - RUN `create-topics.sh` as follows:
 
 ```sh
 $ cd ~/kafka-training/stream-lab2/bin          
@@ -59,7 +62,8 @@ word-count-output
 ## Add data to the topic
 Now add data to the input topic by starting a console producer and entering data.
 
-## ***ACTION*** - REVIEW `start-producer-console-input.sh`
+
+***ACTION*** - REVIEW `start-producer-console-input.sh`
 
 #### ~/kafka-training/stream-lab2/bin/start-producer-console-input.sh
 
@@ -71,7 +75,8 @@ cd ~/kafka-training
 kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic streams-plaintext-input
 ```
 
-## ***ACTION*** - RUN `start-producer-console-input.sh`
+
+***ACTION*** - RUN `start-producer-console-input.sh`
 
 ```sh
 $ cd ~/kafka-training/stream-lab2
@@ -101,7 +106,8 @@ cd ~/kafka-training
 kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic streams-plaintext-input --from-beginning
 ```
 
-## ***ACTION*** - RUN `start-consumer-console-input.sh`
+
+***ACTION*** - RUN `start-consumer-console-input.sh`
 ```
 $ cd ~/kafka-training/stream-lab2/bin
 $ ./start-consumer-console-input.sh
@@ -121,7 +127,8 @@ Notice a few things about this consumer. These match the way the topic is popula
 * It has a message formatter specified.
 * It has key and value deserializers.
 
-## ***ACTION*** - EDIT `~/kafka-training/stream-lab2/bin/start-consumer-console-output.sh`, follow instructions in file.
+
+***ACTION*** - EDIT `~/kafka-training/stream-lab2/bin/start-consumer-console-output.sh`, follow instructions in file.
 
 #### ~/kafka-training/stream-lab2/start-consumer-console-output.sh
 ```sh
@@ -139,7 +146,8 @@ kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 \
     --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
 ```
 
-## ***ACTION*** - RUN `start-consumer-console-output.sh`
+
+***ACTION*** - RUN `start-consumer-console-output.sh`
 ```
 $ cd ~/kafka-training/stream-lab2/bin
 $ ./start-consumer-console-output.sh
@@ -149,9 +157,11 @@ There will be no output until the demo code runs. Keep this window open so you c
 
 ## Create and Run the Custom Word Count
 
-## ***ACTION*** - EDIT `~/kafka-training/stream-lab2/WordCount.java`, follow instructions in file.
 
-## ***ACTION*** - RUN `WordCount`
+***ACTION*** - EDIT `~/kafka-training/stream-lab2/WordCount.java`, follow instructions in file.
+
+
+***ACTION*** - RUN `WordCount`
 Run the java main.
 
 #### Consumer Console Output after running run-word-count-demo.sh

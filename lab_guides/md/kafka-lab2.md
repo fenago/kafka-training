@@ -23,7 +23,8 @@ ____
 
 Next, you need to create a replicated topic.
 
-## ***ACTION*** - EDIT `~/kafka-training/labs/lab2/create-topic.sh` and follow instructions in file.
+
+***ACTION*** - EDIT `~/kafka-training/labs/lab2/create-topic.sh` and follow instructions in file.
 
 #### ~/kafka-training/labs/lab2/create-topic.sh
 
@@ -49,7 +50,8 @@ kafka/bin/kafka-topics.sh --list \
 Above we create a topic named `my-example-topic` with 13 partitions and a replication factor of 3.
 Then we list the Kafka topics.
 
-## ***ACTION*** - RUN `create-topic.sh` as follows:
+
+***ACTION*** - RUN `create-topic.sh` as follows:
 
 #### Output from running create-topic.sh
 
@@ -68,7 +70,8 @@ ____
 
 For this example, we use gradle to build the project.
 
-## ***ACTION*** - EDIT `~/kafka-training/labs/lab2/solution/build.gradle` and follow the instructions in file.
+
+***ACTION*** - EDIT `~/kafka-training/labs/lab2/solution/build.gradle` and follow the instructions in file.
 
 
 #### ~/kafka-training/labs/lab2/solution/build.gradle
@@ -143,7 +146,8 @@ record value serializer. The constant `BOOTSTRAP_SERVERS` is set to
 that we started up in the last lesson. Go ahead and make sure all three Kafka servers are running.
 The constant `TOPIC` is set to the replicated Kafka topic that we just created.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaProducerExample.java and add constants as above.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/KafkaProducerExample.java and add constants as above.
 
 
 
@@ -195,7 +199,8 @@ that implements the Kafka Serializer interface. Notice that we set this to `Stri
  in our example are strings.
 
 
-## ***ACTION*** - EDIT KafkaProducerExample.java and finish createProducer.
+
+***ACTION*** - EDIT KafkaProducerExample.java and finish createProducer.
 
 ____
 ### Send records synchronously with Kafka Producer
@@ -251,7 +256,8 @@ that partition.
 Notice the call to flush and close. Kafka will auto flush on its own, but you can also call flush explicitly
  which will send the accumulated records now.  It is polite to close the connection when we are done.
 
-## ***ACTION*** - EDIT KafkaProducerExample.java and finish runProducer.
+
+***ACTION*** - EDIT KafkaProducerExample.java and finish runProducer.
 
 ____
 ### Running the Kafka Producer
@@ -273,8 +279,10 @@ public static void main(String... args) throws Exception {
 
 The `main` method just calls `runProducer`.
 
-## ***ACTION*** - EDIT KafkaProducerExample.java and finish main method.
-## ***ACTION*** - RUN KafkaProducerExample from the IDE
+
+***ACTION*** - EDIT KafkaProducerExample.java and finish main method.
+
+***ACTION*** - RUN KafkaProducerExample from the IDE
 
 ____
 ### Send records asynchronously with Kafka Producer
@@ -324,8 +332,10 @@ static void runProducer(final int sendMessageCount) throws InterruptedException 
 
 Notice the use of a CountDownLatch so we can send all N messages and then wait for them all to send.
 
-## ***ACTION*** - EDIT KafkaProducerExample.java and change runProducer method to use async API
-## ***ACTION*** - RUN KafkaProducerExample from the IDE
+
+***ACTION*** - EDIT KafkaProducerExample.java and change runProducer method to use async API
+
+***ACTION*** - RUN KafkaProducerExample from the IDE
 
 ____
 ### Async Interface Callback and Async Send Method

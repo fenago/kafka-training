@@ -99,7 +99,8 @@ Let's take a look at an example Avro schema.
 
 The above defines an employee record with firstName, lastName, age and phoneNumber.
 
-## ***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
+
+***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
 
 
 ## Avro schema generation tools
@@ -142,7 +143,8 @@ avro {
 }
 ```
 
-## ***ACTION*** - EDIT build.gradle and follow the instructions in the file.
+
+***ACTION*** - EDIT build.gradle and follow the instructions in the file.
 
 Notice that we did not generate setter methods, and we made the fields private.
 This makes the instances somewhat immutable.
@@ -173,7 +175,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
 ```
 
-## ***ACTION*** - RUN `gradle build` from the project folder
+
+***ACTION*** - RUN `gradle build` from the project folder
 
 The gradle plugin calls the Avro utilities which generates the files and puts them under
 `build/generated-main-avro-java`
@@ -262,8 +265,10 @@ final DataFileReader<Employee> dataFileReader = new DataFileReader<>(file, empRe
 ```
 
 
-## ***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTest.java` and follow the instructions in the file.
-## ***ACTION*** - RUN EmployeeTest from the IDE
+
+***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTest.java` and follow the instructions in the file.
+
+***ACTION*** - RUN EmployeeTest from the IDE
 
 ## Working with Generic Records
 
@@ -382,10 +387,14 @@ The [Avro schema and IDL specification document](https://avro.apache.org/docs/cu
 
  Let's add to the Employee schema and show some of the different types that Avro supports.
 
-## ***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTestNoGen.java` and follow the instructions in the file.
-## ***ACTION*** - RUN EmployeeTestNoGen from the IDE
-## ***ACTION*** - CHANGE Change a test and leave out the firstName what happens?
-## ***ACTION*** - CHANGE Change a test and use a string for age what happens?
+
+***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTestNoGen.java` and follow the instructions in the file.
+
+***ACTION*** - RUN EmployeeTestNoGen from the IDE
+
+***ACTION*** - CHANGE Change a test and leave out the firstName what happens?
+
+***ACTION*** - CHANGE Change a test and use a string for age what happens?
 
 
 ## Working with more advanced schema
@@ -420,8 +429,10 @@ The [Avro schema and IDL specification document](https://avro.apache.org/docs/cu
 }
 ```
 
-## ***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
-## ***ACTION*** - RUN gradle build again to generate classes
+
+***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
+
+***ACTION*** - RUN gradle build again to generate classes
 
 Avro record attributes are as follows:
 
@@ -480,7 +491,8 @@ public enum Status {
   ...
 ```
 
-## ***ACTION*** - MODIFY Using solution and slides as a guide modify unit tests to use Status and PhoneNumber. Then run tests.
+
+***ACTION*** - MODIFY Using solution and slides as a guide modify unit tests to use Status and PhoneNumber. Then run tests.
 
 
 #### Tips for using Avro with Kafka and Hadoop

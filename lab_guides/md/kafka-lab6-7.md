@@ -138,15 +138,22 @@ public class StockPriceConsumerRunnable implements Runnable {
 
 Use the slides for Session 6 as a guide.
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/ConsumerMain.java` and follow the instructions in the file.
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java` and follow the instructions in the file.
-## ***ACTION*** - RECREATE the topic with five partitions (HINT: bin/create-topic.sh) and use 5 partitions.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/ConsumerMain.java` and follow the instructions in the file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/StockPriceConsumerRunnable.java` and follow the instructions in the file.
+
+***ACTION*** - RECREATE the topic with five partitions (HINT: bin/create-topic.sh) and use 5 partitions.
 
 
-## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
-## ***ACTION*** - RUN ConsumerMain from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumers and producer
+
+***ACTION*** - RUN ZooKeeper and Brokers if needed.
+
+***ACTION*** - RUN ConsumerMain from IDE
+
+***ACTION*** - RUN StockPriceKafkaProducer from IDE
+
+***ACTION*** - OBSERVE and then STOP consumers and producer
 
 ## Expected behavior
 It should run and should get messages like this:

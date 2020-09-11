@@ -157,7 +157,8 @@ public class StockPrice {
 StockPrice is just a POJO.
 
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/model/StockPrice.java and follow the instructions.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/model/StockPrice.java and follow the instructions.
 
 
 
@@ -207,7 +208,8 @@ public class StockPriceKafkaProducer {
 The above code imports Kafka classes and sets up the logger and calls createProducer
 to create a KafkaProducer. The `createProducer()` calls `setupBoostrapAndSerializers()`.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in createProducer.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in createProducer.
 
 
 
@@ -235,7 +237,8 @@ public class StockPriceKafkaProducer {
 The `setupBootstrapAndSerializers` method initializes bootstrap servers, client id, key serializer and
 custom serializer (StockPriceSerializer). The `StockPriceSerializer` will serialize `StockPrice` into bytes.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in setupBootstrapAndSerializers.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in setupBootstrapAndSerializers.
 
 
 #### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
@@ -269,7 +272,8 @@ instance the producer.
 It then creates a thread pool (`executorService`) and runs each `StockSender`, which is runnable, in its own thread
 from the thread pool.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in main.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in main.
 
 
 #### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
@@ -307,7 +311,8 @@ from the thread pool.
 
 The getStockSenderList of StockPriceKafkaProducer just creates a list of StockSenders.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in getStockSenderList.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in getStockSenderList.
 
 
 ### StockPriceSerializer
@@ -343,7 +348,8 @@ public class StockPriceSerializer implements Serializer<StockPrice> {
 Notice the StockPriceSerializer converts a StockPrice into a byte array by calling
 StockPrice.toJson.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceSerializer.java and follow the instructions.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceSerializer.java and follow the instructions.
 
 
 ### StockAppConstants
@@ -528,7 +534,8 @@ Every 100 records StockSender displayRecordMetaData method gets called, which pr
 key, JSON value, topic, partition, offset, time. The `displayRecordMetaData` uses the `Future` from the call
 to `producer.send()`.
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockSender.java and follow the instructions.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockSender.java and follow the instructions.
 
 
 ### Running the example

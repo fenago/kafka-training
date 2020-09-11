@@ -173,14 +173,20 @@ public class ConsumerMain {
 
 ## Lab Work
 
-## ***ACTION*** - EDIT `com.fenago.kafka.consumer.StockPriceConsumerRunnable` and follow the instructions in the file.
-## ***ACTION*** - EDIT `com.fenago.kafka.consumer.ConsumerMain` and follow the instructions in the file.
+
+***ACTION*** - EDIT `com.fenago.kafka.consumer.StockPriceConsumerRunnable` and follow the instructions in the file.
+
+***ACTION*** - EDIT `com.fenago.kafka.consumer.ConsumerMain` and follow the instructions in the file.
 
 
-## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
-## ***ACTION*** - RUN ConsumerMain from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumers and producer
+
+***ACTION*** - RUN ZooKeeper and Brokers if needed.
+
+***ACTION*** - RUN ConsumerMain from IDE
+
+***ACTION*** - RUN StockPriceKafkaProducer from IDE
+
+***ACTION*** - OBSERVE and then STOP consumers and producer
 
 ## Expected behavior
 It should run and should get messages like this:

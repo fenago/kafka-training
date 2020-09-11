@@ -136,7 +136,8 @@ public class MetricsProducerReporter implements Runnable {
 
 ```
 
-## ***ACTION*** - Edit MetricsProducerReporter.java and follow the instructions.
+
+***ACTION*** - Edit MetricsProducerReporter.java and follow the instructions.
 
 The run method calls `producer.metrics()` every 10 seconds in a while loop, and print out
 `MetricName` and `Metric` value. It only prints out the names that are in metricsNameFilter.
@@ -179,7 +180,8 @@ The main method of StockPriceKafkaProducer increases thread pool size by 1 to fi
 Then submits a new instance of MetricsProducerReporter to the ExecutorService. The new MetricsProducerReporter is
 passed the producer from createProducer.
 
-## ***ACTION*** - Edit StockPriceKafkaProducer.java and follow the instructions.
+
+***ACTION*** - Edit StockPriceKafkaProducer.java and follow the instructions.
 
 ### Run it. Run Servers. Run Producer.
 
@@ -187,8 +189,10 @@ If not already, startup ZooKeeper as before and then startup the three Kafka bro
  described earlier. Then from the IDE run StockPriceKafkaProducer (ensure acks are set to all first).
 Observe metrics which print out every ten seconds.
 
-## ***ACTION*** - Run ZooKeeper (if needed) and three brokers (like before).
-## ***ACTION*** - Run StockPriceKafkaProducer from the IDE.
+
+***ACTION*** - Run ZooKeeper (if needed) and three brokers (like before).
+
+***ACTION*** - Run StockPriceKafkaProducer from the IDE.
 
 #### Expected output from  MetricsProducerReporter
 ```sh
@@ -248,8 +252,10 @@ $ bin/replica-verification.sh
 While running `StockPriceKafkaProducer` from the command line, we kill one of the Kafka
 brokers and watch the max lag increase.
 
-## ***ACTION*** - EDIT bin/replica-verification.sh and follow the instructions
-## ***ACTION*** - RUN bin/replica-verification.sh as described above
+
+***ACTION*** - EDIT bin/replica-verification.sh and follow the instructions
+
+***ACTION*** - RUN bin/replica-verification.sh as described above
 
 
 #### Running replica-verification.sh and describe-topics.sh after killing one broker while running StockPriceKafkaProducer
@@ -276,8 +282,10 @@ Topic:stock-prices	PartitionCount:3	ReplicationFactor:3	Configs:min.insync.repli
 
 Notice that one of the servers are down and one brokers owns two partitions.
 
-## ***ACTION*** - KILL one broker
-## ***ACTION*** - RUN bin/replica-verification.sh and bin/describe-topics.sh (notice leadership change and max lag increasing)
+
+***ACTION*** - KILL one broker
+
+***ACTION*** - RUN bin/replica-verification.sh and bin/describe-topics.sh (notice leadership change and max lag increasing)
 
 ### Change min.insync.replicas
 
@@ -290,7 +298,8 @@ different Kafka Brokers while `StockPriceKafkaProducer` is running. Be sure to o
 changes. Also run replication verification utility in one terminal while checking topics stats in another with
 `describe-topics.sh` in another terminal.
 
-## ***ACTION*** - PERFORM the min.insync.replicas as decribed above
+
+***ACTION*** - PERFORM the min.insync.replicas as decribed above
 
 ### Expected output from changing min.insync.replicas
 
@@ -305,7 +314,8 @@ notice that the replication lag can get really far behind.
 Shutdown all brokers, change the all the broker config back to min.insync.replicas=3 (broker config for servers).
 Restart the brokers.
 
-## ***ACTION*** - SET min.insync.replicas back to 3 in all broker config.
+
+***ACTION*** - SET min.insync.replicas back to 3 in all broker config.
 
 ### Change min.insync.replicas at the topic level
 
@@ -340,7 +350,8 @@ $ bin/create-topic.sh
 Created topic "stock-prices".
 
 ```
-## ***ACTION*** - PERFORM the min.insync.replicas at topic level as decribed above
+
+***ACTION*** - PERFORM the min.insync.replicas at topic level as decribed above
 ## ***HINT*** - Edit create-topics.sh. Use delete-topics to delete and then recreate
 
 

@@ -65,7 +65,8 @@ public class StockDeserializer implements Deserializer<StockPrice> {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/StockPriceDeserializer.java` and follow the instructions in the file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/StockPriceDeserializer.java` and follow the instructions in the file.
 
 
 #### ~/kafka-training/labs/lab6.1/src/main/java/com/fenago/kafka/model/StockPrice.java
@@ -91,7 +92,8 @@ public class StockPrice {
 
 Fix the constructor by using the hint which calls the JSON parser.
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/model/StockPrice.java` and follow the instructions in the file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/model/StockPrice.java` and follow the instructions in the file.
 
 ### SimpleStockPriceKafkaConsumer
 
@@ -185,7 +187,8 @@ public class SimpleStockPriceConsumer {
 
 ```
 
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions in the file.
+
+***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and follow the instructions in the file.
 
 ### Running the example
 

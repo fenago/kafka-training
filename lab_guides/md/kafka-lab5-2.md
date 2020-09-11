@@ -78,5 +78,7 @@ Notice we add a shutdown hook using Runtime.getRuntime().addShutdownHook and thi
 shuts down the thread pool, then calls flush on the producer and then closes the producer whilst waiting 10 seconds for the close to happen.
 
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and add a shutdown hook to main.
-## ***ACTION*** - RUN this StockPriceKafkaProducer and try shutting it down.
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and add a shutdown hook to main.
+
+***ACTION*** - RUN this StockPriceKafkaProducer and try shutting it down.
