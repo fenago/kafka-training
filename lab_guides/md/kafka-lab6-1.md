@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 6.1: Kafka Advanced Consumer Part 1
 
 Welcome to the session 6 lab 1. The work for this lab is done in `~/kafka-training/labs/lab6.1`.

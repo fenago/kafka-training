@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 5.4: Kafka Metrics and Replication Verification
 
 Welcome to the session 5 lab 4. The work for this lab is done in `~/kafka-training/labs/lab5.4`.

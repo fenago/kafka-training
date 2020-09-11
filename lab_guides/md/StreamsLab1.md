@@ -1,3 +1,4 @@
+<img align="right" src="./logo.png">
 
 # LAB Stream 1-1 Kafka Word Count Example
 

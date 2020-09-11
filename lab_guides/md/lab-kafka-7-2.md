@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 7.2: Kafka Schema Registry with Avro.
 
 Welcome to the session 7 lab 2. The work for this lab is done in `~/kafka-training/labs/lab7.2`.

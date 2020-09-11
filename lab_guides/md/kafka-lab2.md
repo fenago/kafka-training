@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 
 # LAB 2 Writing a Kafka Producer in Java
 

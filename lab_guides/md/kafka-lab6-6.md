@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 6.6: Consumer with many threads
 
 Welcome to the session 6 lab 6. The work for this lab is done in `~/kafka-training/labs/lab6.6`.

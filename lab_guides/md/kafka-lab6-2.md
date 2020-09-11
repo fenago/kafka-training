@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 6.2: StockPriceConsumer Controlling Consumer Position
 
 Welcome to the session 6 lab 2. The work for this lab is done in `~/kafka-training/labs/lab6.2`.

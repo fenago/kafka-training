@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 6.5: Thread per Consumer
 
 Welcome to the session 6 lab 5. The work for this lab is done in `~/kafka-training/labs/lab6.5`.

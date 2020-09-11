@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 6.4: StockPriceConsumer Exactly Once Consumer Messaging Semantics
 
 Welcome to the session 6 lab 4. The work for this lab is done in `~/kafka-training/labs/lab6.4`.

@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 5.3: Configuring Producer Durability
 
 Welcome to the session 5 lab 3. The work for this lab is done in `~/kafka-training/labs/lab5.3`.

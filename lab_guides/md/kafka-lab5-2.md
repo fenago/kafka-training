@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 5.2: Adding a clean shutdown to our producer
 
 Welcome to the session 5 lab 2. The work for this lab is done in `~/kafka-training/labs/lab5.2`.

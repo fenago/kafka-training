@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 
 # Lab 5.6: Kafka Retry, in-flight, request timeout, and retry backoff
 

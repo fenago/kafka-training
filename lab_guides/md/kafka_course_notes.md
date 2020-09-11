@@ -1,3 +1,6 @@
+<img align="right" src="./logo.png">
+
+
 ## Kafka Course
 
 Review the course outline: [Course outline](https://github.com/fenago/kafka-training/blob/master/lab_guides/kafka_course_detailed_outline.pdf)

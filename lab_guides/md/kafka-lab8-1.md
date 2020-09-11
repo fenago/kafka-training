@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 8.1: Kafka SSL
 
 Welcome to the session 8 lab 1. The work for this lab is done in `~/kafka-training/labs/lab8.1`.

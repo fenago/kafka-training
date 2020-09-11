@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 9: Kafka MirrorMaker
 
 Welcome to the session 9 lab. The work for this lab is done in `~/kafka-training/labs/lab9`.

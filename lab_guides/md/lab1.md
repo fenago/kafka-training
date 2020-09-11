@@ -1,3 +1,4 @@
+<img align="right" src="./logo.png">
 
 
 # Getting started with Kafka Lab

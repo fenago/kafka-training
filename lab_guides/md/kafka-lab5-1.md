@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 5.1: Creating Advanced Kafka Producers in Java
 
 Welcome to the session 5 lab 1. The work for this lab is done in

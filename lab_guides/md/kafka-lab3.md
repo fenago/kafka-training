@@ -1,5 +1,6 @@
-# Lab 3: Writing a Kafka Consumer in Java
+<img align="right" src="./logo.png">
 
+# Lab 3: Writing a Kafka Consumer in Java
 
 Welcome to the session 3 lab. The work for this lab is done in `~/kafka-training/labs/lab3`.
 In this lab, you are going to create simple Java Kafka consumer.

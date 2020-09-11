@@ -1,6 +1,8 @@
+<img align="right" src="./logo.png">
+
 
 # Lab 1.2 Getting started with Kafka cluster
-## Understanding Kafka Failover
+#### Understanding Kafka Failover
 
 Welcome to session 1 lab 2.
 The work for this lab is done in `~/kafka-training/labs/lab1.2`.

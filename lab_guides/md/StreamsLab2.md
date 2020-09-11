@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 
 # LAB Stream 1-2 Custom Word Count Example
 

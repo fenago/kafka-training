@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 
 # Lab 5.7: Kafka Interceptor
 

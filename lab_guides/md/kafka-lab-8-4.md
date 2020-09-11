@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 # Lab 8.4: Kafka and SASL SCRAM
 
 Welcome to the session 8 lab 4. The work for this lab is done in `~/kafka-training/labs/lab8.4`.

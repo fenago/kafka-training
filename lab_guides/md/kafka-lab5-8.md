@@ -1,3 +1,5 @@
+<img align="right" src="./logo.png">
+
 
 # Lab 5.8: Kafka Custom Partitioner
 
