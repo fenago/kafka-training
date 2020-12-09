@@ -53,9 +53,9 @@ server-2.properties as follows:
 ```sh
 $ cd ~/kafka-training
 $ mkdir -p lab1.2/config
-$ cp kafka/config/server.properties lab1.2/config/server-0.properties
-$ cp kafka/config/server.properties lab1.2/config/server-1.properties
-$ cp kafka/config/server.properties lab1.2/config/server-2.properties
+$ cp kafka/config/server.properties labs/lab1.2/config/server-0.properties
+$ cp kafka/config/server.properties labs/lab1.2/config/server-1.properties
+$ cp kafka/config/server.properties labs/lab1.2/config/server-2.properties
 ```
 
 
