@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package com.codingharbour.protobuf;
+package com.fenago.protobuf;
 option java_outer_classname = "SimpleMessageProtos";
 
 message SimpleMessage {

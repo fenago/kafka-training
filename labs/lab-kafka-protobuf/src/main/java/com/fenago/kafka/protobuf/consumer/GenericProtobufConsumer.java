@@ -1,4 +1,4 @@
-package com.codingharbour.kafka.protobuf.consumer;
+package com.fenago.kafka.protobuf.consumer;
 
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.FieldDescriptor;

@@ -1,4 +1,4 @@
-package com.codingharbour.kafka.protobuf.consumer;
+package com.fenago.kafka.protobuf.consumer;
 
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer;
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializerConfig;
@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
-import static com.codingharbour.protobuf.SimpleMessageProtos.SimpleMessage;
+import static com.fenago.protobuf.SimpleMessageProtos.SimpleMessage;
 
 public class ProtobufConsumer {
 

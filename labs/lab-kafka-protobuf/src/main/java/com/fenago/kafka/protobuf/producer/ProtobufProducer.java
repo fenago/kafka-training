@@ -1,6 +1,6 @@
-package com.codingharbour.kafka.protobuf.producer;
+package com.fenago.kafka.protobuf.producer;
 
-import com.codingharbour.protobuf.SimpleMessageProtos.SimpleMessage;
+import com.fenago.protobuf.SimpleMessageProtos.SimpleMessage;
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer;
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializerConfig;
 import org.apache.kafka.clients.producer.KafkaProducer;
