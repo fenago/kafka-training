@@ -3,9 +3,9 @@
 Welcome to the session 7 lab 2. The work for this lab is done in `~/kafka-training/lab7.2`.
 In this lab, you are going to use the Schema Registry with Avro.
 
-Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/dfa076b30fcae0d8b5672265c63a8bba).
+
+
 
 
 ## Kafka Lab: Kafka, Avro Serialization and the Schema Registry

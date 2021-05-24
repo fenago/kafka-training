@@ -6,9 +6,9 @@ Welcome to session 1 lab 2.
 The work for this lab is done in `~/kafka-training/lab1.2`.
 This Kafka lab picks up right where the first lab left off.
 The first lab has instructions on how to run ZooKeeper and use Kafka utils.
-Please refer to Kafka [course notes](https://gist.github.com/RichardHightower/c6fe36856a581728b4187e4d38232903)
+Please refer to Kafka [course notes](https://github.com/fenago/kafka-training/tree/master/lab_guides)
 for any changes. The latest version of this lab instructions can be found
-[here](https://gist.github.com/RichardHightower/42c78c0764990a76b8ed4b20e479fe98).
+[here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 In this lab, we are going to run many Kafka Nodes on our development machine so that you
 will need at least 16 GB of RAM for local dev machine. You can run just two servers if

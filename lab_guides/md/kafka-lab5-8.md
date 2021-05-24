@@ -8,7 +8,7 @@ In this lab, you are going to set up a Kafka custom Partitioner.
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 
 ## Lab Write Custom Partitioner

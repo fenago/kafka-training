@@ -3,9 +3,9 @@
 Welcome to the session 7 lab 1. The work for this lab is done in `~/kafka-training/lab7.1`.
 In this lab, you are going to use Avro.
 
-Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/2f6ea2599ef66814668ee680ff9c0649).
+
+
 
 ## Avro Introduction for Big Data and Data Streaming Architectures
 

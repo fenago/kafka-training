@@ -7,7 +7,7 @@ In this lab, you are going to implement a thread per consumer.
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 
 ## Lab Thread per consumer

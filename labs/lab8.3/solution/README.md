@@ -3,7 +3,7 @@
 Welcome to the session 8 lab 3. The work for this lab is done in `~/kafka-training/lab8.3`.
 In this lab, you are going to Kafka SASL PLAIN.
 
-Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
+
 
 Find the latest version of this lab [here]().
 

@@ -7,7 +7,7 @@ In this lab, you are going to implement ***Exactly Once*** messaging semantics.
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 
 ## Lab Exactly Once Semantics

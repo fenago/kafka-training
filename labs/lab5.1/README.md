@@ -9,7 +9,7 @@ Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates 
 changes to this lab.
 
 Find the lastest version of this lab
-[here](https://gist.github.com/RichardHightower/d6648b2812d3eefb9bc46752c09c5ca6).
+[here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
 
 
 ### Kafka Producers

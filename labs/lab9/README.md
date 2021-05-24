@@ -3,9 +3,9 @@
 Welcome to the session 9 lab. The work for this lab is done in `~/kafka-training/lab9`.
 In this lab, you are going to set up Kafka MirrorMaker.
 
-Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/00fa622c4128bbf25a796029882a90aa).
+
+
 
 ## Kafka MirrorMaker
 

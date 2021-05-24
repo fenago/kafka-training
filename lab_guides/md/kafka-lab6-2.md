@@ -7,7 +7,7 @@ In this lab, you are going to control consumer position.
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 ## Lab Control Consumer Position
 

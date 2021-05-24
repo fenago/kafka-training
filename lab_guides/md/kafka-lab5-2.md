@@ -7,7 +7,7 @@ In this lab, you are going to create a clean shutdown for our advanced Producer.
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 
 

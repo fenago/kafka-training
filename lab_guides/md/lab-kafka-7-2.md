@@ -7,7 +7,7 @@ In this lab, you are going to use the Schema Registry with Avro.
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 
 ## Kafka Lab: Kafka, Avro Serialization and the Schema Registry

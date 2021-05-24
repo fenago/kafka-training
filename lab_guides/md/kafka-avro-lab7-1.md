@@ -7,7 +7,7 @@ Welcome to the session 7 lab 1. The work for this lab is done in `~/kafka-traini
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 ## Avro Introduction for Big Data and Data Streaming Architectures
 
@@ -261,7 +261,7 @@ Another way to read is using forEach as follows:
 #### Reading a list of employees from an avro file using forEach
 ```java
 final DataFileReader<Employee> dataFileReader = new DataFileReader<>(file, empReader);
- dataFileReader.forEach(employeeList::add);
+dataFileReader.forEach(employeeList::add);
 ```
 
 

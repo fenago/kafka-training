@@ -4,9 +4,9 @@
 Welcome to the session 5 lab 8. The work for this lab is done in `~/kafka-training/lab5.8`.
 In this lab, you are going to set up a Kafka custom Partitioner.
 
-Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/bbb6ea6f059cf757810ef470f5eddaf8).
+
+
 
 
 ## Lab Write Custom Partitioner

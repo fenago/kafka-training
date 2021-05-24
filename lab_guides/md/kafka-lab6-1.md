@@ -8,7 +8,7 @@ In this lab, you are going to set up an advanced Kafka Consumer.
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 
 ### Kafka Consumers

@@ -8,7 +8,7 @@ consumer perspective.
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 ## Lab At-Most-Once and At-Least-Once Semantics
 

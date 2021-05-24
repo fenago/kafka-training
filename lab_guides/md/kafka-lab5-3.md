@@ -7,7 +7,7 @@ In this lab, you are going to set up producer durability for our advanced produc
 
 
 
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+
 
 
 

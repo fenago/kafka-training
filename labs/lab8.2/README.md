@@ -3,9 +3,9 @@
 Welcome to the session 8 lab 2. The work for this lab is done in `~/kafka-training/lab8.2`.
 In this lab, you are going to setup Kafka SSL support.
 
-Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or changes to this lab.
 
-Find the latest version of this lab [here](https://gist.github.com/RichardHightower/965b627ab7b67eb35c8fe7dc9e4fb710). ***(Please input the correct link)***
+
+Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides)***
 
 ## Authentication
 

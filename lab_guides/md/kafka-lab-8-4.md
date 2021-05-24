@@ -6,9 +6,6 @@ Welcome to the session 8 lab 4. The work for this lab is done in `~/kafka-traini
 In this lab, you are going to Kafka SASL SCRAM.
 
 
-
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides). - Please input the correct link
-
 ## Kafka and SASL SCRAM
 
 ***SCRAM*** is *Salted Challenge Response Authentication Mechanism* (RFC 5802). SCRAM is a ***SASL*** mechanism that addresses security concerns with traditional mechanisms and is better than PLAIN and DIGEST-MD5. <br>
