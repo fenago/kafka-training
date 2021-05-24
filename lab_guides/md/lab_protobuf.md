@@ -1,6 +1,9 @@
+<img align="right" src="./logo.png">
 
-Working with Protobuf in Apache Kafka
-===================================================
+
+
+Lab : Working with Protobuf in Apache Kafka
+============================================
 
 Since Confluent Platform version 5.5 Avro is no longer the only schema
 in town. Protobuf and JSON schemas are now supported as the first-class
@@ -30,34 +33,69 @@ when the message is serialized to the Protobuf binary format. Google
 suggests using numbers 1 through 15 for most frequently used fields
 because it takes one byte to encode them.
 
-Protobuf supports common scalar types like string, int32, int64 (long),
-double, bool etc. For the full list of all scalar types in Protobuf
-check the [Protobuf documentation](https://developers.google.com/protocol-buffers/docs/overview#scalar).
 
-Besides scalar types, it is possible to use complex data types. Below we
-see two schemas, Order and Product, where Order can contain zero, one or
-more Products:
+Running a local Kafka cluster
+=============================
+
+Before we get started, let’s boot up a local Kafka cluster with the
+Schema Registry, so we can try our out code right away.
+
+Make sure that Zookeeper and Kafka are already running. Start them by running following script incase they are not running:
+
+
+`~/kafka-training/run-zookeeper.sh`
+
+Wait about 30 seconds or so for ZooKeeper to startup.
+
+`~/kafka-training/run-kafka.sh`
+
+
+
+#### Start Schema Registry
+
+Confluence 6.1.1 has already been downloaded and extracted at following path `~/kafka-training/confluent-6.1.1` . Start schema registry by running following script in the terminal:
+
+`~/kafka-training/run-schema_registry.sh`
+
+
+Your local Kafka cluster is now ready to be used. Kafka broker is available on
+port 9092, while the Schema Registry runs on port 8081. Make a note of
+that, because we’ll need it soon.
+
+
+
+#### Lab Solution 
+
+Complete lab solution is available at following path. Run mvn commands to compile using maven cli.
+
 
 ```
-message Order {
- int64 order_id = 1;
- int64 date_time = 2;
- Product product = 3;
-}
+cd ~/kafka-training/labs/lab-kafka-protobuf
 
-message Product {
- int32 product_id = 1;
- string name = 2;
- string description = 3;
-}
+mvn clean
+
+mvn install
 ```
+
+#### Intellij IDE
+
+Open Intellij IDE and open following project headless/kafka-training/labs/lab-kafka-protobuf
+
+![](./images/1.png)
+
+
+Wait for some time for project to be imported
+
+![](./images/2.png)
+
+
 
 
 
 Code generation in Java
 =======================
 
-Ok, now we know how a protobuf schema looks and we know how it ends up
+Now we know how a protobuf schema looks and we know how it ends up
 in Schema Registry. Let’s see now how we use protobuf schemas from Java.
 
 The first thing that you need is a protobuf-java library. In these
@@ -121,35 +159,6 @@ mvn clean generate-sources
 Ok, now that we have our class generated, let’s send it to Kafka using
 the new Protobuf serializer.
 
-Running a local Kafka cluster
-=============================
-
-Before we get started, let’s boot up a local Kafka cluster with the
-Schema Registry, so we can try our out code right away. We will run our
-cluster using docker-compose.
-
-
-I’ve prepared a docker-compose file with one Zookeeper, one Kafka broker
-and the Schema Registry.
-
-Navigate to **single-node-avro-kafka** folder and run:
-
-```
-docker-compose up -d
-```
-
-The output should look similar to this:
-
-```
-Starting sna-zookeeper ... done
-Starting sna-kafka     ... done
-Starting sna-schema-registry ... done
-```
-
-Your local Kafka cluster is now ready to be used. By running
-**docker-compose ps**, we can see that the Kafka broker is available on
-port 9092, while the Schema Registry runs on port 8081. Make a note of
-that, because we’ll need it soon.
 
 Writing a Protobuf Producer
 ===========================
@@ -346,7 +355,47 @@ we can simply iterate through them and print the value of each field.
 Check out the JavaDoc to find out more about
 [DynamicMessage](https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/DynamicMessage).
 
-That wraps our Kafka Protobuf guide. Now you’re ready to start writing
-producers and consumers that send Protobuf messages to Apache Kafka with
+
+#### Running Solution with Intellij
+
+**Starting Producer**
+
+![](./images/3.png)
+
+![](./images/4.png)
+
+**Starting Consumer**
+
+![](./images/5.png)
+
+![](./images/6.png)
+
+
+#### Running Solution with Intellij
+
+**Step 1: Compile**
+
+```
+cd ~/kafka-training/labs/lab-kafka-protobuf
+
+mvn clean compile
+```
+
+**Step 2: Run ProtobufProducer**
+
+Execute the class, ProtobufProducer by running:
+
+mvn exec:java -Dexec.mainClass="com.fenago.kafka.protobuf.producer.ProtobufConsumer"
+
+
+**Step 3: Run ProtobufConsumer**
+
+Execute the class, ProtobufConsumer by running:
+
+mvn exec:java -Dexec.mainClass="com.fenago.kafka.protobuf.consumer.ProtobufConsumer"
+
+
+
+Now you’re ready to start writing producers and consumers that send Protobuf messages to Apache Kafka with
 help of Schema Registry.
 

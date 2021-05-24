@@ -341,6 +341,7 @@ I suggest running the example and trying to force incompatible schemas to the Sc
 note the behavior for the various compatibility settings.
 
 #### Running Schema Registry
+
 ```
 $ cat ~/kafka-training/confluent/etc/schema-registry/schema-registry.properties
 
@@ -348,7 +349,12 @@ listeners=http://0.0.0.0:8081
 kafkastore.connection.url=localhost:2181
 kafkastore.topic=_schemas
 debug=false
+```
 
+Run following command in the terminal to start schema registry:
+
+```
+$ 
 ~/kafka-training/confluent/bin/schema-registry-start  ~/kafka-training/confluent/etc/schema-registry/schema-registry.properties
 ```
 
