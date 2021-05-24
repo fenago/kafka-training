@@ -66,7 +66,7 @@ that, because we’ll need it soon.
 
 #### Lab Solution 
 
-Complete lab solution is available at following path. Run mvn commands to compile using maven cli.
+Complete lab solution is available at following path. Run mvn commands to compile using maven cli:
 
 
 ```
@@ -371,9 +371,10 @@ Check out the JavaDoc to find out more about
 ![](./images/6.png)
 
 
-#### Running Solution with Intellij
 
-**Step 1: Compile**
+#### Running Solution with Maven
+
+**Step 1: Compile** (Terminal 1)
 
 ```
 cd ~/kafka-training/labs/lab-kafka-protobuf
@@ -381,19 +382,29 @@ cd ~/kafka-training/labs/lab-kafka-protobuf
 mvn clean compile
 ```
 
-**Step 2: Run ProtobufProducer**
-
-Execute the class, ProtobufProducer by running:
-
-mvn exec:java -Dexec.mainClass="com.fenago.kafka.protobuf.producer.ProtobufConsumer"
-
-
-**Step 3: Run ProtobufConsumer**
+ 
+**Step 2: Run ProtobufConsumer** (Terminal 1)
 
 Execute the class, ProtobufConsumer by running:
 
+```
 mvn exec:java -Dexec.mainClass="com.fenago.kafka.protobuf.consumer.ProtobufConsumer"
+```
 
+Open new terminal before proceeding to next step.
+
+
+**Step 3: Run ProtobufProducer** (Terminal 2)
+
+Execute the class, ProtobufProducer by running:
+
+```
+mvn exec:java -Dexec.mainClass="com.fenago.kafka.protobuf.producer.ProtobufProducer"
+```
+
+Run producer class multiple times and verify that message is displayed in consumer logs:
+
+![](./images/7.png)
 
 
 Now you’re ready to start writing producers and consumers that send Protobuf messages to Apache Kafka with
