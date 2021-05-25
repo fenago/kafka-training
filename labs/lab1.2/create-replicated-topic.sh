@@ -2,7 +2,7 @@
 
 cd ~/kafka-training
 
-## TODO run kafka/bin/kafka-topics.sh --create \
+kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 13 --topic my-failsafe-topic
 ## TODO Pass zookeeper address
 # HINT --zookeeper localhost:2181 \
 ## TODO Set replication factor to 3
