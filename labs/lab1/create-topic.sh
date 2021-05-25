@@ -6,7 +6,7 @@ cd ~/kafka-training
 # TODO Pass topic name my-topic, number of partitions 13 and replication factor 1.
 # ZooKeeper is running on port 2181 be sure to pass zookeeper's address.
 
-kafka/bin/kafka-topics.sh
+kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 13 --topic my-topic
 
 # HINT --create --zookeeper localhost:2181 \
 # --replication-factor 1 --partitions 13 --topic my-topic
