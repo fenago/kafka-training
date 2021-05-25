@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 CONFIG=`pwd`/config
 cd ~/kafka-training
+kafka/bin/kafka-server-start.sh "$CONFIG/server-2.properties"
 
 ## TODO Run Kafka
 # HINT: kafka/bin/kafka-server-start.sh \
