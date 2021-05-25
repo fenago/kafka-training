@@ -3,7 +3,7 @@ cd ~/kafka-training
 
 
 ## TODO Run the consumer console.
-# HINT: kafka/bin/kafka-console-consumer.sh \
+kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-topic
 ## TODO pass the broker address.
 # HINT:    --bootstrap-server localhost:9092 \
 ## TODO pass the topic that you just created.
