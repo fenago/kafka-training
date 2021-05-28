@@ -1,0 +1,14 @@
+import ...
+public final class PlainStreamsProcessor {
+  private final String brokers;
+  public PlainStreamsProcessor(String brokers) {
+    super();
+    this.brokers = brokers;
+  }
+  public final void process() {
+    // below we will see the contents of this method 
+  }
+  public static void main(String[] args) {
+    (new PlainStreamsProcessor("localhost:9092")).process();
+  }
+}

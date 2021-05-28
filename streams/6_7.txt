@@ -1,0 +1,17 @@
+private void produce() {
+  long now = System.currentTimeMillis();
+  long delay = 1300 - Math.floorMod(now, 1000);
+  Timer timer = new Timer();
+  timer.schedule(new TimerTask() {
+    public void run() {
+      long ts = System.currentTimeMillis();
+      long second = Math.floorMod(ts / 1000, 60);
+      if (second != 54) {
+        EventProducer.this.sendMessage(second, ts, "on time");
+      }
+      if (second == 6) {
+        EventProducer.this.sendMessage(54, ts - 12000, "late");
+      }
+    }
+  }, delay, 1000);
+}

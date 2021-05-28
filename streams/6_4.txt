@@ -1,0 +1,13 @@
+KStream healthCheckStream = avroStream.mapValues((v -> {
+  GenericRecord healthCheckAvro = (GenericRecord) v;
+  HealthCheck healthCheck = new HealthCheck(
+    healthCheckAvro.get("event").toString(),
+    healthCheckAvro.get("factory").toString(),
+    healthCheckAvro.get("serialNumber").toString(),
+    healthCheckAvro.get("type").toString(),
+    healthCheckAvro.get("status").toString(),
+    new Date((Long) healthCheckAvro.get("lastStartedAt")),
+    Float.parseFloat(healthCheckAvro.get("temperature").toString()),
+    healthCheckAvro.get("ipAddress").toString());
+  return healthCheck;
+}));

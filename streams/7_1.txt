@@ -1,0 +1,13 @@
+Name          : HEALTHCHECKS
+Field         | Type
+-------------------------------------------
+ROWTIME       | BIGINT           (system)
+ROWKEY        | VARCHAR(STRING)  (system)
+EVENT         | VARCHAR(STRING)
+FACTORY       | VARCHAR(STRING)
+SERIALNUMBER  | VARCHAR(STRING)
+TYPE          | VARCHAR(STRING)
+STATUS        | VARCHAR(STRING)
+LASTSTARTEDAT | VARCHAR(STRING)
+TEMPERATURE   | DOUBLE
+IPADDRESS     | VARCHAR(STRING)

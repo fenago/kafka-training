@@ -1,0 +1,21 @@
+package kioto.plain;
+import ...
+public final class AvroProcessor {
+  private Consumer<String, GenericRecord> consumer;
+  private Producer<String, String> producer;
+
+  public AvroProcessor(String brokers , String schemaRegistryUrl) {
+    Properties consumerProps = new Properties();
+    consumerProps.put("bootstrap.servers", brokers);
+    consumerProps.put("group.id", "healthcheck-processor");
+    consumerProps.put("key.deserializer", StringDeserializer.class);
+    consumerProps.put("value.deserializer", KafkaAvroDeserializer.class);
+    consumerProps.put("schema.registry.url", schemaRegistryUrl);
+    consumer = new KafkaConsumer<>(consumerProps);
+
+    Properties producerProps = new Properties();
+    producerProps.put("bootstrap.servers", brokers);
+    producerProps.put("key.serializer", StringSerializer.class);
+    producerProps.put("value.serializer", StringSerializer.class);
+    producer = new KafkaProducer<>(producerProps);
+ }

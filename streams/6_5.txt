@@ -1,0 +1,19 @@
+KStream uptimeStream = healthCheckStream.map(((KeyValueMapper)(k, v)-> {
+  HealthCheck healthCheck = (HealthCheck) v;
+  LocalDate startDateLocal = healthCheck.getLastStartedAt().toInstant()
+               .atZone(ZoneId.systemDefault()).toLocalDate();
+  int uptime =
+     Period.between(startDateLocal, LocalDate.now()).getDays();
+  return new KeyValue<>(
+     healthCheck.getSerialNumber(), String.valueOf(uptime));
+}));
+
+uptimeStream.to( Constants.getUptimesTopic(),
+      Produced.with(Serdes.String(), Serdes.String()));
+
+Topology topology = streamsBuilder.build();
+Properties props = new Properties();
+props.put("bootstrap.servers", this.brokers);
+props.put("application.id", "kioto");
+KafkaStreams streams = new KafkaStreams(topology, props);
+streams.start();

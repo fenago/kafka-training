@@ -1,0 +1,14 @@
+package kioto.events;
+import ...
+public final class EventProcessor {
+  private final String brokers;
+  private EventProcessor(String brokers) {
+    this.brokers = brokers;
+  }
+  private void process() {
+    // ...
+  }
+  public static void main(String[] args) {
+    (new EventProcessor("localhost:9092")).process();
+  }
+}

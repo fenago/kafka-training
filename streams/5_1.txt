@@ -1,0 +1,29 @@
+import io.confluent.kafka.serializers.KafkaAvroSerializer; 
+import org.apache.avro.Schema;
+import org.apache.avro.Schema.Parser;
+import org.apache.avro.generic.GenericRecord;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.common.serialization.StringSerializer;
+
+public final class AvroProducer {
+  private final Producer<String, GenericRecord> producer; //1
+  private Schema schema;
+
+  public AvroProducer(String brokers, String schemaRegistryUrl) { //2
+    Properties props = new Properties();
+    props.put("bootstrap.servers", brokers);
+    props.put("key.serializer", StringSerializer.class); //3
+    props.put("value.serializer", KafkaAvroSerializer.class); //4
+    props.put("schema.registry.url", schemaRegistryUrl) //5
+    producer = new KafkaProducer<>(props);
+
+    try {
+      schema = (new Parser()).parse( new 
+      File("src/main/resources/healthcheck.avsc")); //6
+    } catch (IOException e) {
+      // deal with the Exception
+    }
+  }
+  ...
+}

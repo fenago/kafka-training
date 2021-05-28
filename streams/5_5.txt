@@ -1,0 +1,41 @@
+public final void process() {
+  consumer.subscribe(Collections.singletonList(
+    Constants.getHealthChecksAvroTopic())); //1
+    while(true) {
+      ConsumerRecords records = consumer.poll(Duration.ofSeconds(1L));
+      for(Object record : records) {
+        ConsumerRecord it = (ConsumerRecord) record;
+        GenericRecord healthCheckAvro = (GenericRecord) it.value(); //2
+        HealthCheck healthCheck = new HealthCheck ( //3
+          healthCheckAvro.get("event").toString(),
+          healthCheckAvro.get("factory").toString(),
+          healthCheckAvro.get("serialNumber").toString(),
+          healthCheckAvro.get("type").toString(),
+          healthCheckAvro.get("status").toString(),
+          new Date((Long)healthCheckAvro.get("lastStartedAt")),
+          Float.parseFloat(healthCheckAvro.get("temperature").toString()),
+          healthCheckAvro.get("ipAddress").toString());
+          LocalDate startDateLocal= 
+          healthCheck.getLastStartedAt().toInstant()
+                      .atZone(ZoneId.systemDefault()).toLocalDate(); //4
+          int uptime = Period.between(startDateLocal,     
+          LocalDate.now()).getDays(); //5
+          Future future =
+               producer.send(new ProducerRecord<>(
+                             Constants.getUptimesTopic(),
+                             healthCheck.getSerialNumber(),
+                             String.valueOf(uptime))); //6
+          try {
+            future.get();
+          } catch (InterruptedException | ExecutionException e) {
+            // deal with the exception
+          }
+        }
+      }
+    }
+
+    public static void main(String[] args) {
+       new      
+  AvroProcessor("localhost:9092","http://localhost:8081").process();//7
+    }
+}

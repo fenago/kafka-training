@@ -1,0 +1,17 @@
+import ...
+public final class AvroStreamsProcessor {
+  private final String brokers;
+  private final String schemaRegistryUrl;
+  public AvroStreamsProcessor(String brokers, String schemaRegistryUrl) {
+    super();
+    this.brokers = brokers;
+    this.schemaRegistryUrl = schemaRegistryUrl;
+  }
+  public final void process() {
+    // below we will see the contents of this method
+  }
+  public static void main(String[] args) {
+    (new AvroStreamsProcessor("localhost:9092", 
+        "http://localhost:8081")).process();
+  }
+}
