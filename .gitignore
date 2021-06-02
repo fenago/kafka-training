@@ -2,5 +2,5 @@ extra/
 extra/.git
 
 **/confluent-6.1.1
-**/kafka/logs/*
+#**/kafka/logs/*
 kafka_old
