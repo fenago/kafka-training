@@ -309,7 +309,7 @@ Next, we create a script that starts the producer. Then launch the producer with
 
 <br />
 
-#### ~/kafka-training/lab1.2/start-consumer-producer-replicated.sh
+#### ~/kafka-training/lab1.2/start-producer-console-replicated.sh
 ```sh
 #!/usr/bin/env bash
 cd ~/kafka-training
@@ -320,12 +320,12 @@ kafka/bin/kafka-console-producer.sh \
 
 ```
 
-## ***ACTION*** EDIT `~/kafka-training/lab1.2/start-consumer-producer-replicated.sh` and follow instructions in file.
+## ***ACTION*** EDIT `~/kafka-training/lab1.2/start-producer-console-replicated.sh` and follow instructions in file.
 
 
 <br />
 
-## ***ACTION*** START `~/kafka-training/lab1.2/start-consumer-producer-replicated.sh` as follows:
+## ***ACTION*** START `~/kafka-training/lab1.2/start-producer-console-replicated.sh` as follows:
 
 Notice we start Kafka producer and pass it a list of Kafka Brokers to use via the parameter `--broker-list`.
 
@@ -337,7 +337,7 @@ Now use the start producer script to launch the producer as follows.
 #### Run start-producer-console-replicated.sh
 ```sh
 $ cd ~/kafka-training/lab1.2
-$ ./start-consumer-producer-replicated.sh
+$ ./start-producer-console-replicated.sh
 ```
 
 
@@ -356,7 +356,7 @@ Now send some message from the producer to Kafka and see those messages consumed
 #### Producer Console
 ```sh
 ~/kafka-training/lab1.2
-$ ./start-consumer-producer-replicated.sh
+$ ./start-producer-console-replicated.sh
 Hi Mom
 How are you?
 How are things going?
@@ -390,7 +390,7 @@ Now Start two more consumers in their own terminal window and send more messages
 #### Producer Console
 ```sh
 ~/kafka-training/lab1.2
-$ ./start-consumer-producer-replicated.sh
+$ ./start-producer-console-replicated.sh
 Hi Mom
 How are you?
 How are things going?
@@ -506,7 +506,7 @@ $ ./start-consumer-console-replicated.sh
 #### Run Producer Console
 ```sh
 ~/kafka-training/lab1.2
-$ ./start-consumer-producer-replicated.sh
+$ ./start-producer-console-replicated.sh
 
 ```
 
@@ -519,7 +519,7 @@ Now send seven messages from the Kafka producer console.
 #### Producer Console
 ```sh
 ~/kafka-training/lab1.2
-$ ./start-consumer-producer-replicated.sh
+$ ./start-producer-console-replicated.sh
 m1
 m2
 m3
@@ -607,7 +607,7 @@ sending seven more messages. Kafka should divide up the work to the consumers th
 #### Producer Console - send seven more messages m8 through m14
 ```sh
 ~/kafka-training/lab1.2
-$ ./start-consumer-producer-replicated.sh
+$ ./start-producer-console-replicated.sh
 m1
 ...
 m8
@@ -814,7 +814,7 @@ Then notice if the consumers still get the messages.
 
 ```sh
 ~/kafka-training/lab1.2
-$ ./start-consumer-producer-replicated.sh
+$ ./start-producer-console-replicated.sh
 m1
 ...
 m15
