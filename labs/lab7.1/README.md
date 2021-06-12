@@ -255,7 +255,7 @@ Another way to read is using forEach as follows:
 #### Reading a list of employees from an avro file using forEach
 ```java
 final DataFileReader<Employee> dataFileReader = new DataFileReader<>(file, empReader);
- dataFileReader.forEach(employeeList::add);
+dataFileReader.forEach(employeeList::add);
 ```
 
 
