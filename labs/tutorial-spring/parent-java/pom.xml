@@ -10,7 +10,7 @@
     <description>Parent for all java modules</description>
 
     <parent>
-        <groupId>com.baeldung</groupId>
+        <groupId>com.fenago</groupId>
         <artifactId>parent-modules</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../</relativePath>
