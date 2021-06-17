@@ -39,8 +39,13 @@ cd ~/kafka-training/labs/lab-pattern-exception
 chmod +x *.sh
 
 ./install-mvn.sh
+
+source ~/.bashrc
+
+mvn --version
 ```
 
+**Make sure to install maven before proceeding.**
 
 
 ## Overview
