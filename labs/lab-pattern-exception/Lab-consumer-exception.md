@@ -1,11 +1,11 @@
-# Experiments with Kafka clients and Spring Kafka
+# Kafka Client Types and Exception Handling
 
-- basic plain Java producer/consumer clients with minimal dependencies.
-- a Spring Boot application with Kafka consumer endpoints, internal storage and
+- Java producer/consumer clients with minimal dependencies.
+- A Spring Boot application with Kafka consumer endpoints, internal storage and
   web interfaces. Demonstrates setup of batch processing and batch error handling.
-- tutorials, experiments, demos, samples, learn by doing
 
-## Purpose
+
+#### Purpose
 
 - Get quickly up and running with Kafka using the standard Java Kafka clients.
 - Experiment with the console clients to learn about communication patterns
@@ -18,18 +18,26 @@
 - Learn about batch error handling strategies in Spring Kafka.
 - Contains code and examples of tests that use a local temporary Kafka
   environment to execute.
-- Even though not the primary purpose of this project: Learn about Java module
-  system and modular Maven builds.
   
 
-## Requirements
+#### Requirements
 
 - [JDK 11+][1]
 - [Maven][2] 3.6.X (must be able to handle modular Java project)
 
 
+#### Lab Solution 
 
-## Index
+Complete lab solution is available at following path:
+
+
+```
+cd ~/kafka-training/labs/lab-pattern-exception
+```
+
+
+
+## Overview
 
 1. [Getting started](#getting-started)
 2. [Communication patterns with Kafka](#kafka-patterns)
@@ -73,8 +81,7 @@ The project consists of three Maven modules:
 The `messages` module is used by both the Spring application and regular command
 line clients and contains various messages types and handling of them.
 
-The build process is boring and very standard, but does test that Docker and
-docker-compose works on your host:
+The build process is standard:
 
     mvn install
     
@@ -89,12 +96,14 @@ top directory, or alternatively using `java -jar clients/target/clients*.jar`.
 
 ### Running a Kafka environment on localhost             <a name="local-kafka"/>
 
-Ensure the can you can get Kafka up and running on localhost. For running the
-command line clients or Spring boot application of kafka-sandbox, all you need
-to do is run the following in a dedicated terminal with current directory being
-the kafka-sandbox project directory:
+Make sure that Zookeeper and Kafka are already running. Start them by running following script incase they are not running:
 
-    docker-compose up
+`~/kafka-training/run-zookeeper.sh`
+
+Wait about 30 seconds or so for ZooKeeper to startup.
+
+`~/kafka-training/run-kafka.sh`
+
 
 ### Running the kafka-sandbox command line clients
 
@@ -144,12 +153,6 @@ deserialization errors for consumers expecting JSON payload.
 The commands 'newtopic', 'deltopic' and 'showtopics' allow simple administration
 of Kafka topics for testing purposes.
 
-### Running directly from IntelliJ
-
-You can create run configurations in IntelliJ for all the examples, by starting
-the `no.nav.kafka.sandbox.Bootstrap` class with the arguments and create a
-Spring boot run configuration for the `Application` class in `clients-spring`.
-So a shell is not strictly required.
 
 
 ## Communication patterns with Kafka                 <a name="kafka-patterns"/>
@@ -385,7 +388,7 @@ Run a producer and a consumer in two windows:
 Then pause the docker container with the broker to simulate that it stops
 responding:
 
-    docker-compose pause broker
+**Stop the run-kafka script and quickly run again**
     
 Now watch the error messages from the producer that will eventually appear. A
 prolonged pause will actually cause messages to be lost with the current
@@ -394,23 +397,16 @@ what happens to already dispatched ones. Depending on use case, this may not be
 desirable, and one may need to develop code that always retries failed sends to
 avoid losing events.
 
-Make the broker respond again:
 
-    docker-compose unpause broker
     
 The producer recovers and sends its internal buffer of messages that have not
 yet expired due to timeouts.
 
-You may also restart the broker entirely, which causes it to lose its runtime
-state, and see what happens with the clients:
+You may also stop the broker entirely for some time , which causes it to lose its runtime state, and see what happens with the clients:
 
-    docker-compose restart broker
+
+**Stop the run-kafka script, wait for some time and run the script again to start Kafka**
     
-or:
-
-    docker-compose stop broker
-    # wait a while..
-    docker-compose start broker
 
 You'll notice that the clients recover eventually, but if it is down for too
 long, messages will be lost. Also, you will notice rebalance notifications from
@@ -421,11 +417,7 @@ support. You can experiment and modify config by editing the code in
 `no.nav.kafka.sandbox.KafkaConfig`, see `#kafkaProducerProps()` and
 `#kafkaConsumerProps(String)`.
 
-Useful URLs for Kafka configuration docs:
 
-http://kafka.apache.org/documentation.html#consumerconfigs
-
-http://kafka.apache.org/documentation.html#producerconfigs
 
 ### Error handling: detecting message loss with sequence-producer/consumer   <a name="kafka-message-loss"/>
 
@@ -455,7 +447,7 @@ the error count is 0.
 
 While they are running, restart the Kafka broker:
 
-    docker-compose restart broker
+**Kill the run-kafka script and quickly run again.**
     
 You should see the producer keeps sending messages, but does not receive
 acknowledgements. Eventually it will log errors about expired messages. The
