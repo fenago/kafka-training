@@ -1,4 +1,7 @@
-# Kafka Client Types and Exception Handling
+<img align="right" src="./logo.png">
+
+
+## Kafka Client Types and Exception Handling
 
 - Java producer/consumer clients with minimal dependencies.
 - A Spring Boot application with Kafka consumer endpoints, internal storage and
@@ -22,8 +25,8 @@
 
 #### Requirements
 
-- [JDK 11+][1]
-- [Maven][2] 3.6.X (must be able to handle modular Java project)
+- JDK 11+
+- Maven 3.6.X (must be able to handle modular Java project)
 
 
 #### Lab Solution 
@@ -33,6 +36,9 @@ Complete lab solution is available at following path:
 
 ```
 cd ~/kafka-training/labs/lab-pattern-exception
+chmod +x *.sh
+
+./install-mvn.sh
 ```
 
 

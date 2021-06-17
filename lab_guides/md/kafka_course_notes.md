@@ -3,7 +3,6 @@
 
 ## Kafka Course
 
-Review the course outline: [Course outline](https://github.com/fenago/kafka-training/blob/master/lab_guides/kafka_course_detailed_outline.pdf)
 
 ### Files 
 * The ***course files*** can be found [here](https://github.com/fenago/kafka-training).
@@ -45,9 +44,11 @@ The latest instructions for the labs can be found below.
 1. [Lab 8.3](https://github.com/fenago/kafka-training/tree/master/lab_guides) Kafka Security SASL PLAIN 
 1. [Lab 8.4](https://github.com/fenago/kafka-training/tree/master/lab_guides) Kafka Security SASL SCRAM 
 1. [Lab 9](https://github.com/fenago/kafka-training/tree/master/lab_guides) Kafka MirrorMaker 
-1. Lab 10 DEMO walk through
 1. [Lab Streams 1](https://github.com/fenago/kafka-training/tree/master/lab_guides) Kafka Streams Lab 1
 1. [Lab Streams 2](https://github.com/fenago/kafka-training/tree/master/lab_guides) Kafka Streams Lab 2
+1. [Lab Protobuf](https://github.com/fenago/kafka-training/tree/master/lab_guides) Working with Protobuf
+1. [Lab Consumer Types & Error Handling](https://github.com/fenago/kafka-training/tree/master/lab_guides) Consumer Types & Error Handling
+1. [Lab Kafka + Spring](https://github.com/fenago/kafka-training/tree/master/lab_guides) Kafka Spring Lab
 
 
 
