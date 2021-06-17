@@ -527,6 +527,9 @@ consumed messages are stored in-memory in a fixed size event store.
 A web page showing measurements/"sensor event" messages from Kafka. It uses an
 API endpoint available at http://localhost:8080/measurements/api
  
+
+![](./images/e1.png)
+
 #### http://localhost:8080/messages.html
 
 A web page showing "console message" events from Kafka. It uses an API endpoint
@@ -551,6 +554,9 @@ available at http://localhost:8080/messages/api
 4. Type a message into the terminal. As soon as the Spring application has
    consumed the message from Kafka, the web page will display it.
    
+![](./images/e2.png)
+
+
 ### Show live view of measurements as they are consumed by Spring application
 
 1. In one terminal, start the Spring boot application as described earlier.
