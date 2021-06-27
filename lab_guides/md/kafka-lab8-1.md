@@ -272,9 +272,6 @@ The plaintext important for tools, and you could block Plaintext at firewalls or
 
 You will need to pass in the truststore and keystore locations and passwords.
 
-The setting `security.inter.broker.protocol=SSL` may not be needed if Kafka a cluster runs in
-a single private subnet. Remember that SSL makes it Kafka run slower, and adds extra CPU load
-on Kafka Brokers.
 
 
 ***ACTION*** - EDIT `config/server-0.properties` and follow instructions
@@ -288,7 +285,6 @@ ssl.key.password=kafka123
 ssl.truststore.location=/opt/kafka/conf/certs/kafka.truststore
 ssl.truststore.password=kafka123
 ssl.client.auth=required
-security.inter.broker.protocol=SSL
 
 log.dirs=./logs/kafka-0
 default.replication.factor=3
@@ -328,7 +324,6 @@ ssl.key.password=kafka123
 ssl.truststore.location=/opt/kafka/conf/certs/kafka.truststore
 ssl.truststore.password=kafka123
 ssl.client.auth=required
-security.inter.broker.protocol=SSL
 
 log.dirs=./logs/kafka-1
 default.replication.factor=3
@@ -368,7 +363,6 @@ ssl.key.password=kafka123
 ssl.truststore.location=/opt/kafka/conf/certs/kafka.truststore
 ssl.truststore.password=kafka123
 ssl.client.auth=required
-security.inter.broker.protocol=SSL
 
 log.dirs=./logs/kafka-2
 default.replication.factor=3
