@@ -213,7 +213,7 @@ to create a KafkaProducer. The `createProducer()` calls `setupBoostrapAndSeriali
 
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer imports, createProducer
 ```java
 
@@ -241,7 +241,7 @@ custom serializer (StockPriceSerializer). The `StockPriceSerializer` will serial
 ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in setupBootstrapAndSerializers.
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer.main - start thread pool
 ```java
 
@@ -276,7 +276,7 @@ from the thread pool.
 ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java and follow the instructions in main.
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
 #### Kafka Producer:  StockPriceKafkaProducer.getStockSenderList - create list of StockSenders
 ```java
 
@@ -358,7 +358,7 @@ The StockAppConstants defines a few constants, namely, topic name and a comma de
 
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/StockAppConstants.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/StockAppConstants.java
 #### Kafka Producer:  StockAppConstants defines constants
 ```java
 package com.fenago.kafka;
@@ -380,7 +380,7 @@ The `StockSender` is used to show using `KafkaProducer` from many threads.
 The `StockSender` delays a random time duration between delayMin and delayMax, then sends a random `StockPrice` between
 `stockPriceHigh` and `stockPriceLow`.
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender imports, Runnable
 ```java
 package com.fenago.kafka.producer;
@@ -405,7 +405,7 @@ public class StockSender implements Runnable{
 The `StockSender` imports Kafka Producer, `ProducerRecord`, `RecordMetadata`, and `StockPrice`.
 It implements `Runnable`, and can be submitted to an `ExecutionService` (thread pool).
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender fields
 ```java
 public class StockSender implements Runnable{
@@ -436,7 +436,7 @@ public class StockSender implements Runnable{
 The `StockSender` takes a topic, high & low stockPrice, producer, and delay min & max.
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender run method
 ```java
 public class StockSender implements Runnable{
@@ -472,7 +472,7 @@ The StockSender run methods in a forever loop creates random record, sends the r
 and then repeats.
 
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender createRandomRecord
 ```java
 public class StockSender implements Runnable{
@@ -505,7 +505,7 @@ public class StockSender implements Runnable{
 The StockSender createRandomRecord method uses randomIntBetween. The createRandomRecord creates StockPrice and then
 wraps StockPrice in ProducerRecord.
 
-#### ~/kafka-training/labs/lab5.1/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
+#### ~/kafka-training/labs/lab5.1/src/main/java/com/fenago/kafka/producer/StockSender.java
 #### Kafka Producer:  StockSender displayRecordMetaData
 ```java
 public class StockSender implements Runnable{

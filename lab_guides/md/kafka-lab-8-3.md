@@ -25,7 +25,7 @@ You would configure this via JAAS file called `zookeeper_jass.conf`. <br>
 which will live under `/opt/kafka/config/security/zookeeper_jass.conf`.
 
 #### ZooKeeper JAAS file
-#### ~kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_broker_jaas.conf
+#### ~/kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_broker_jaas.conf
 ```sh
 // Zookeeper server authentication
 Server {
@@ -46,7 +46,7 @@ We need ZooKeeper to use `org.apache.zookeeper.server.auth.SASLAuthenticationPro
 as its authProvider. This `authProvider` requires JaaS login via SASL config/zookeeper.properties.
 
 #### Use Kafka SASLAuthenticationProvider from ZooKeeper
-#### ~kafka-training/labs/lab8.3/config/zookeeper.properties
+#### ~/kafka-training/labs/lab8.3/config/zookeeper.properties
 ```sh
 dataDir=/tmp/zookeeper-secure2
 clientPort=2181
@@ -70,7 +70,7 @@ We need to copy JAAS config files to `/opt/kafka/config/security ( cp -R resourc
 ***KAFKA_OPTS*** used by kafka startup scripts to pass extra args to JVM.
 
 #### Make ZooKeeper use JAAS config file
-#### ~kafka-training/labs/lab8.3/bin/run-zookeeper.sh
+#### ~/kafka-training/labs/lab8.3/bin/run-zookeeper.sh
 ```sh
 #!/usr/bin/env bash
 CONFIG=`pwd`/config
@@ -96,7 +96,7 @@ This JAAS config file will set up users for admin for zookeeper,
 and for inter-broker communication, as well as set up users for consumers and producers.
 
 #### JAAS config file for Broker
-#### ~kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_broker_jaas.conf
+#### ~/kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_broker_jaas.conf
 ```sh
 KafkaServer {
   org.apache.kafka.common.security.plain.PlainLoginModule required
@@ -126,7 +126,7 @@ We will need to edit config files `config/server-0.properties`, `config/server-1
 Enabled ***SASL*** support to use ***PLAIN SASL***. <br>
 Inter-broker communication is using ***SASL_SSL*** and config producers and consumers to use ***10092, 10093, 10094*** with ***SASL_SSL*** protocol.
 
-#### ~kafka-training/labs/lab8.3/config/server-0.properties
+#### ~/kafka-training/labs/lab8.3/config/server-0.properties
 ```sh
 broker.id=0
 
@@ -170,7 +170,7 @@ zookeeper.connection.timeout.ms=6000
 
 ***ACTION*** - EDIT config/server-0.properties and follow directions
 
-#### ~kafka-training/labs/lab8.3/config/server-1.properties
+#### ~/kafka-training/labs/lab8.3/config/server-1.properties
 ```sh
 broker.id=1
 listeners=PLAINTEXT://localhost:9093,SASL_SSL://localhost:10093
@@ -211,7 +211,7 @@ zookeeper.connection.timeout.ms=6000
 
 ***ACTION*** - EDIT config/server-1.properties and follow directions
 
-#### ~kafka-training/labs/lab8.3/config/server-2.properties
+#### ~/kafka-training/labs/lab8.3/config/server-2.properties
 ```sh
 broker.id=2
 
@@ -257,7 +257,7 @@ zookeeper.connection.timeout.ms=6000
 
 ## Modify Kafka Broker startup script add JAAS config location
 
-#### ~kafka-training/labs/lab8.3/bin/start-1st-server.sh
+#### ~/kafka-training/labs/lab8.3/bin/start-1st-server.sh
 ```sh
 #!/usr/bin/env bash
 CONFIG=`pwd`/config
@@ -275,7 +275,7 @@ kafka/bin/kafka-server-start.sh \
 
 ***ACTION*** - EDIT bin/start-1st-server.sh and follow directions
 
-#### ~kafka-training/labs/lab8.3/bin/start-1st-server.sh
+#### ~/kafka-training/labs/lab8.3/bin/start-1st-server.sh
 ```sh
 #!/usr/bin/env bash
 CONFIG=`pwd`/config
@@ -293,7 +293,7 @@ kafka/bin/kafka-server-start.sh \
 
 ***ACTION*** - EDIT bin/start-2nd-server.sh and follow directions
 
-#### ~kafka-training/labs/lab8.3/bin/start-1st-server.sh
+#### ~/kafka-training/labs/lab8.3/bin/start-1st-server.sh
 ```sh
 #!/usr/bin/env bash
 CONFIG=`pwd`/config
@@ -316,7 +316,7 @@ kafka/bin/kafka-server-start.sh \
 
 We will need to configure username and password in JAAS file to log into Kafka Brokers.
 
-#### ~kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf
+#### ~/kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf
 ```sh
 KafkaClient {
   org.apache.kafka.common.security.plain.PlainLoginModule required
@@ -331,7 +331,7 @@ KafkaClient {
 
 ## Modify Consumer createConsumer() add SASL config and JAAS config location
 
-#### ~kafka-training/labs/lab8.3/src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java
+#### ~/kafka-training/labs/lab8.3/src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java
 ```java
 package com.fenago.kafka.consumer;
 
@@ -396,7 +396,7 @@ public class ConsumerUtil {
 
 We will need to configure username and password in JAAS file to log into Kafka Brokers.
 
-#### ~kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf
+#### ~/kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf
 ```sh
 KafkaClient {
   org.apache.kafka.common.security.plain.PlainLoginModule required
@@ -410,7 +410,7 @@ KafkaClient {
 
 ## Modify Producer createProducer()  add SASL config and JAAS config location
 
-#### ~kafka-training/labs/lab8.3/src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java
+#### ~/kafka-training/labs/lab8.3/src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java
 ```java
 package com.fenago.kafka.producer.support;
 

@@ -415,7 +415,7 @@ avro {
 ```
 
 
-***ACTION*** - MODIFY build.gradle then RUN it.
+***ACTION*** - MODIFY build.gradle and save it.
 
 Notice that we include the Kafka Avro Serializer lib (`io.confluent:kafka-avro-serializer:3.2.1`)
 and the Avro lib (`org.apache.avro:avro:1.8.1`).
