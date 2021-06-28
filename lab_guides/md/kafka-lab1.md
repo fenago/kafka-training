@@ -7,10 +7,6 @@ Let's do a simple lab showing how to use producers and consumers from the Kafka 
 
 These files should be setup on your lab environment. You do the work for this lab
 in the directory `~/kafka-training/labs/lab1`.
-You can find the latest versions of the instructions for
-Lab1 [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
-
-
 
 Next, we are going to run *ZooKeeper* and then run *Kafka Server/Broker*.
 We will use some Kafka command line utilities, to create Kafka topics,
@@ -18,7 +14,19 @@ send messages via a producer and consume messages from the command line.
 
 You do the work for this lab in the directory `~/kafka-training/labs/lab1`.
 
-<br />
+**Hint:**  Use VSCode for all exercises because it supports copy and paste in the lab environment.
+
+![](./images/vscode.png)
+
+Right click file to preview md file in vscode.
+
+![](./images/vscode2.png)
+
+### Lab Solution
+Lab solution is available in following directory:
+
+`~/kafka-training/labs/lab1/solution`
+
 
 ### Run ZooKeeper for Kafka
 Kafka relies on ZooKeeper. To keep things simple, we will use a single ZooKeeper node.
