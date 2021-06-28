@@ -16,9 +16,15 @@ To start Kafka and ZooKeeper use the same technique you did in lab1.2. You can u
 scripts that you wrote in lab1.2.
 
 
+**Note:** Lab solution is available in following directory:
+
+`~/kafka-training/labs/lab2/solution`
+
+![](./images/intellij.png)
+
+You can open `Intellij_IDE_guide.pdf` to learn how to open and run java project in intelliJ.
 
 
-____
 ## Create Replicated Kafka Topic
 
 Next, you need to create a replicated topic.
@@ -65,16 +71,71 @@ my-failsafe-topic
 
 ```
 
-____
-## Gradle Build Script
+### Maven / Gradle
+Lab supports both maven and gradle as a build tool. Make sure to choose preferred build tool while opening project in IntelliJ:
+
+![](./images/maven.png)
+
+
+<h4><span style="color:red;">Note:</span></h4>
+
+- Both maven and gradle are supported in next labs as well.
+- Edit `pom.xml` or `build.gradle` in the next step accordingly.
+
+### Maven pom.xml
+
+***ACTION*** - EDIT `~/kafka-training/labs/lab2/pom.xml` and follow the instructions in file.
+
+
+#### ~/kafka-training/labs/lab2/pom.xml
+
+```java
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fenago-kafka</groupId>
+  <artifactId>lab2-solution</artifactId>
+  <version>1.0.0</version>
+  <inceptionYear>2017</inceptionYear>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka-clients</artifactId>
+      <version>1.1.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.2</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+### Gradle Build Script
 
 For this example, we use gradle to build the project.
 
 
-***ACTION*** - EDIT `~/kafka-training/labs/lab2/solution/build.gradle` and follow the instructions in file.
+***ACTION*** - EDIT `~/kafka-training/labs/lab2/build.gradle` and follow the instructions in file.
 
 
-#### ~/kafka-training/labs/lab2/solution/build.gradle
+#### ~/kafka-training/labs/lab2/build.gradle
 
 ```java
 group 'fenago-kafka'
