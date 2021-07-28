@@ -92,14 +92,14 @@ public class DatabaseUtilities {
 
 
         //Save partition, offset and topic in database.
-        preparedStatement.setLong( parameterindex:1, stockRecord.getOffset());
-        preparedStatement.setLong( parameterindex:2, stockRecord.getPartition());
-        preparedStatement.setString( parameterindex:3, stockRecord.getTopic());
+        preparedStatement.setLong(1, stockRecord.getOffset());
+        preparedStatement.setLong(2, stockRecord.getPartition());
+        preparedStatement.setString(3, stockRecord.getTopic());
 
         //Save stock price, name, dollars, and cents into database.
-        preparedStatement.setInt( parameterindex:4, stockRecord.getDollars());
-        preparedStatement.setInt( parameterindex:5, stockRecord.getCents());
-        preparedStatement.setString( parameterindex:6, stockRecord.getName());
+        preparedStatement.setInt(4, stockRecord.getDollars());
+        preparedStatement.setInt(5, stockRecord.getCents());
+        preparedStatement.setString(6, stockRecord.getName());
 
         //Save the record with offset, partition, and topic.
         preparedStatement.execute();
@@ -155,26 +155,26 @@ public class SimpleStockPriceConsumer
 
         if (consumerRecords.count() == 0) return;
 
-
         //Get rid of duplicates and keep only the latest record.
         consumerRecords.forEach(record -> currentStocks.put(record.key(),
-                new StockPriceRecord(record.value(), saved: false, record)));
+                new StockPriceRecord(record.value(), false, record)));
 
         final Connection connection = getConnection();
         try {
-            startJdbcTransaction(connection)            //Start DB Transaction
+            startJdbcTransaction(connection);               //Start DB Transaction
             for (StockPriceRecord stockRecordPair : currentStocks.values()) {
                 if (!stockRecordPair.isSaved()) {
-                            //Save the record
-                            //with partition/offset to DB.
+                    //Save the record
+                    // with partition/offset to DB.
                     saveStockPrice(stockRecordPair, connection);
                     //Mark the record as saved
                     currentStocks.put(stockRecordPair.getName(), new
-                            StockPriceRecord(stockRecordPair, saved: true));
+                            StockPriceRecord(stockRecordPair, true));
                 }
             }
-            connection.commit();            //Commit DB Transaction
-            consumer.commitSync();            //Commit the Kafka offset
+
+            connection.commit();                        //Commit DB Transaction
+            consumer.commitSync();                      //Commit the Kafka offset
         } catch (CommitFailedException ex) {
             logger.error("Failed to commit sync to log", ex);
             connection.rollback();                      //Rollback Transaction
@@ -184,6 +184,7 @@ public class SimpleStockPriceConsumer
         } finally {
             connection.close();
         }
+
 
         if (readCount % readCountStatusUpdate == 0) {
             displayRecordsStatsAndStocks(currentStocks, consumerRecords);
@@ -256,8 +257,10 @@ public class SeekToLatestRecordsConsumerRebalanceListener
                 entry -> partitions.forEach(topicPartition -> {
                     if (entry.getKey().equals(topicPartition)) {
                         long maxOffset = entry.getValue();
-                        //Call to consumer.seek to move to the partition.
-                        consumer.seek(topicPartition, offset: maxOffset + 1);
+
+                        // Call to consumer.seek to move to the partition.
+                        consumer.seek(topicPartition, maxOffset + 1);
+
                         displaySeekInfo(topicPartition, maxOffset);
                     }
                 }));
@@ -268,9 +271,10 @@ public class SeekToLatestRecordsConsumerRebalanceListener
     private Map<TopicPartition, Long> getMaxOffsetsFromDatabase() {
         final List<StockPriceRecord> records = DatabaseUtilities.readDB();
         final Map<TopicPartition, Long> maxOffsets = new HashMap<>();
+
         records.forEach(stockPriceRecord -> {
             final Long offset = maxOffsets.getOrDefault(stockPriceRecord.getTopicPartition(),
-                    defaultValue: -1L);
+                    -1L);
             if (stockPriceRecord.getOffset() > offset) {
                 maxOffsets.put(stockPriceRecord.getTopicPartition(),
                         stockPriceRecord.getOffset());
