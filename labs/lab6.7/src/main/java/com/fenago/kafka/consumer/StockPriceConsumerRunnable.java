@@ -32,7 +32,6 @@ public class StockPriceConsumerRunnable implements Runnable {
     private final ExecutorService threadPool;
 
 
-    //TODO finish this constructor
     public StockPriceConsumerRunnable(final Consumer<String, StockPrice> consumer,
                                       final int readCountStatusUpdate,
                                       final int threadIndex,
@@ -43,9 +42,7 @@ public class StockPriceConsumerRunnable implements Runnable {
         this.threadIndex = threadIndex;
         this.stopAll = stopAll;
         this.threadPool = Executors.newFixedThreadPool(numWorkers);
-
-        // TODO initialize the topicPartition field
-        // HINT: new TopicPartition(TOPIC, threadIndex);
+        this.topicPartition = new TopicPartition(TOPIC, threadIndex);
     }
 
 
