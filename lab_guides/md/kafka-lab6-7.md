@@ -48,27 +48,34 @@ import static java.util.concurrent.Executors.newFixedThreadPool;
 public class ConsumerMain {
     ...
     public static void main(String... args) throws Exception {
-        final AtomicBoolean stopAll = new AtomicBoolean();
-        final Consumer<String, StockPrice> consumer = createConsumer();
 
-        //Get the partitions
-        final List<PartitionInfo> partitionInfos = consumer.partitionsFor(TOPIC);
+        final List<PartitionInfo> partitionInfos = createConsumer().partitionsFor(TOPIC);
 
         final int threadCount = partitionInfos.size();
-        final int numWorkers = 5;
+        final int workerThreads = 3;
+
         final ExecutorService executorService = newFixedThreadPool(threadCount);
+        final AtomicBoolean stopAll = new AtomicBoolean();
+        final List<Consumer> consumerList = new ArrayList<>(threadCount);
 
         IntStream.range(0, threadCount).forEach(index -> {
+            final Consumer<String, StockPrice> consumer = createConsumer();
+
             final PartitionInfo partitionInfo = partitionInfos.get(index);
-            final boolean leader = partitionInfo.partition() == partitionInfos.size() -1;
-            final int workerCount = leader ? numWorkers * 3 : numWorkers;
+
+            final boolean importantPartition =
+                    partitionInfo.partition() == partitionInfos.size() -1;
+
+            final int workerCount = importantPartition ? workerThreads * 3 : workerThreads;
+
             final StockPriceConsumerRunnable stockPriceConsumer =
-                    new StockPriceConsumerRunnable(partitionInfo, createConsumer(),
-                            readCountStatusUpdate: 10, index, stopAll, workerCount);
+                    new StockPriceConsumerRunnable(consumer,
+                            100, index, stopAll, workerCount);
             consumerList.add(consumer);
             executorService.submit(stockPriceConsumer);
         });
 
+        //Register nice shutdown of thread pool, then close consumer.
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             logger.info("Stopping app");
             stopAll.set(true);
