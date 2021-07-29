@@ -124,16 +124,16 @@ import static com.fenago.kafka.StockAppConstants.TOPIC;
 public class StockPriceConsumerRunnable implements Runnable {
     ...
     private void runConsumer() throws Exception {
-        //Assign a partition
+
+
         consumer.assign(Collections.singleton(topicPartition));
-        final Map<String, StockPrice> lastRecordPerStock = new HashMap<>();
-        try {
-                int readCount = 0;
-                while (isRunning()) {
-                    pollRecordsAndProcess(lastRecordPerStock, readCount);
-                }
-        } finally {
-            consumer.close();
+
+        final Map<String, StockPrice> lastRecordPerStock = new ConcurrentHashMap<>();
+
+        int readCount = 0;
+        while (isRunning()) {
+            pollRecordsAndProcess(lastRecordPerStock, readCount);
+            readCount++;
         }
     }
     ...

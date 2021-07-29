@@ -22,8 +22,7 @@ public class StockPriceConsumerRunnable implements Runnable {
     private final int readCountStatusUpdate;
     private final int threadIndex;
     private final AtomicBoolean stopAll;
-    // TODO create a topicPartition field
-    // HINT: private final TopicPartition topicPartition;
+    private final TopicPartition topicPartition;
     private boolean running = true;
 
     //Store blocking queue by Topic Partition.
