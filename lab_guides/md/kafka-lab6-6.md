@@ -114,21 +114,14 @@ public class StockPriceConsumerRunnable implements Runnable {
             final Map<String, StockPrice> currentStocks,
             final int readCount) throws Exception {
 
-        final ConsumerRecords<String, StockPrice> consumerRecords =
-            consumer.poll(timeout: 100);
+        final ConsumerRecords<String, StockPrice> consumerRecords = consumer.poll(100);
 
         if (consumerRecords.count() == 0) {
             if (stopAll.get()) this.setRunning(false);
             return;
         }
 
-        consumer.Records.forEach(record ->
-                currentStocks.put(record.key(),
-                        new StockPriceRecord(record.value(), saved: true, record)
-                ));
-
-        threadPool.execute(() ->
-                processRecords(currentStocks, consumerRecords));
+        threadPool.submit(() -> processRecords(currentStocks, consumerRecords));
 
         processCommits();
 
@@ -224,7 +217,7 @@ import static com.fenago.kafka.StockAppConstants.TOPIC;
 public class StockPriceConsumerRunnable implements Runnable {
 ...
     private void processRecords(final Map<String, StockPrice> currentStocks,
-                        final ConsumerRecords<String, StockPrice> consumerRecords) {
+                                final ConsumerRecords<String, StockPrice> consumerRecords) {
 
         consumerRecords.forEach(record ->
                 currentStocks.put(record.key(), record.value()));
@@ -246,9 +239,11 @@ public class StockPriceConsumerRunnable implements Runnable {
     private void commitRecordOffsetToKafka(ConsumerRecord<String, StockPrice> record) {
         final TopicPartition topicPartition =
                 new TopicPartition(record.topic(), record.partition());
-        final BlockingQueue<ConsumerRecord> queue = commitQueueMap.computeIfAbsent (
+
+        final BlockingQueue<ConsumerRecord> queue = commitQueueMap.computeIfAbsent(
                 topicPartition,
                 k -> new LinkedTransferQueue<>());
+
         queue.add(record);
     }
 ...

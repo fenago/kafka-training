@@ -282,6 +282,18 @@ public class SeekToLatestRecordsConsumerRebalanceListener
         });
         return maxOffsets;
     }
+
+    ...
+    
+    private void displaySeekInfo(TopicPartition topicPartition, long maxOffset) {
+        logger.info(String.format("################################ " +
+                        "Moving to offset %d " +
+                        "for partition/topic-%s-part-%d\n",
+                maxOffset,
+                topicPartition.topic(),
+                topicPartition.partition()));
+    }
+
 ...
 
 ```
