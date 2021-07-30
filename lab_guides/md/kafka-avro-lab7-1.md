@@ -144,7 +144,7 @@ avro {
 ```
 
 
-***ACTION*** - EDIT build.gradle and follow the instructions in the file.
+***ACTION*** - Open build.gradle and verify file content.
 
 Notice that we did not generate setter methods, and we made the fields private.
 This makes the instances somewhat immutable.
