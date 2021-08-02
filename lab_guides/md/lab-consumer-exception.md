@@ -395,9 +395,7 @@ Run a producer and a consumer in two windows:
     
     $ ./clients.sh consumer
     [...]
-    
-Then pause the docker container with the broker to simulate that it stops
-responding:
+
 
 **Stop the run-kafka script and quickly run again**
     
@@ -936,15 +934,6 @@ handler kicks into action and stops the Spring message listener container. Then
 all activity stops and the topic-partition is unassigned from the consumer. As this app
 does not provide any way of re-starting the consumer, the app itself must be restarted to
 try again.
-
-### Further reading and experimentation
-
-You can investigate and modify code in `MeasurementsConfig` and in package
-`no.nav.kafka.sandbox.measurements.errorhandlers` to experiment further. Spring
-has a large number of options and customizability with regard to error handling
-in Kafka consumers.
-
-Also see https://docs.spring.io/spring-kafka/reference/html/#error-handlers
 
 
 ## Tuning logging to get more details                    
