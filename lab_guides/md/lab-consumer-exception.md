@@ -79,7 +79,7 @@ mvn --version
 
 
 
-## Getting started                                       <a name="getting-started"/>
+## Getting started                                       
 
 ### Building
 
@@ -105,7 +105,7 @@ instead.
 The jar-file can be executed simply by running `./clients.sh` from the project
 top directory, or alternatively using `java -jar clients/target/clients*.jar`.
 
-### Running a Kafka environment on localhost             <a name="local-kafka"/>
+### Running a Kafka environment on localhost             
 
 Make sure that Zookeeper and Kafka are already running. Start them by running following script incase they are not running:
 
@@ -166,12 +166,12 @@ of Kafka topics for testing purposes.
 
 
 
-## Communication patterns with Kafka                 <a name="kafka-patterns"/>
+## Communication patterns with Kafka                 
 
 *These examples assume that you have a local Kafka broker up and running on `localhost:9092`, 
 see [relevant section](#local-kafka).*
 
-### Example: one to one                              <a name="kafka-one-to-one"/>
+### Example: one to one                              
 
 This example is possibly the simplest case and can be easily demonstrated using
 the command line clients in kafka-sandbox.
@@ -249,7 +249,7 @@ received messages), you will notice that Kafka does a new rebalancing, and the
 previously idle consumer gets assigned back to the partition and starts
 receiving messages where the other one left off.
 
-### Example: one to many                         <a name="kafka-one-to-many"/>
+### Example: one to many                         
 
 One to many means that a single message produced on a topic is typically
 processed by any number of different consumer groups.
@@ -270,7 +270,7 @@ You will notice that all the consumer instances report the same messages and
 offsets after a short while. Because they are all in different consumer groups,
 they all see the messages that the single producer sends.
 
-### Example: one time message processing with parallel consumer group       <a name="kafka-one-time-parallel"/>
+### Example: one time message processing with parallel consumer group       
 
 In this scenario, it is only desirable to process a message once, but it can be
 processed by any consumer in a consumer group.
@@ -327,7 +327,7 @@ Try to start another fourth consumer (same topic/group) and see what happens.
 (Hint: you will not gain anything wrt. message processing capacity.)
 
 
-### Many to many                                         <a name="kafka-many-to-many"/>
+### Many to many                                         
 
 The previous example can also be considered a many to many example if more
 consumers are started in several active consumer groups. In that case, all the
@@ -335,7 +335,7 @@ messages produced will be handled in parallel by several different groups (but
 only once per group).
 
 
-### Consumer group rebalancing                         <a name="kafka-consumer-group-rebalancing"/>
+### Consumer group rebalancing                         
 
 You will notice log messages from the consumers whenever a consumer group
 rebalancing occurs. This typically happens when a consumer leaves or a new
@@ -343,7 +343,7 @@ consumer arrives. It will provide insight into how Kafka distributes messages
 amongst consumers in a group.
 
 
-### Many to one                                       <a name="kafka-many-to-one"/>
+### Many to one                                       
 
 This example demonstrates a many-to-one case, where there are lots of producers
 collecting "temperature sensor events" and sending it to a common topic, while a
@@ -380,7 +380,7 @@ unfortunate events. Depending on business requirements, you will likely need to
 take proper care of exception handling and retry policies, to ensure no loss of
 events at either the producing or consuming end.
 
-### Error handling: broker goes down                   <a name="kafka-error-broker-down"/>
+### Error handling: broker goes down                   
 
 What happens to a producer/consumer when the broker suddenly stops responding ?
 In particular, what happens to the messages that are being sent ? Are they lost
@@ -430,7 +430,7 @@ support. You can experiment and modify config by editing the code in
 
 
 
-### Error handling: detecting message loss with sequence-producer/consumer   <a name="kafka-message-loss"/>
+### Error handling: detecting message loss with sequence-producer/consumer   
 
 The 'sequence-producer' and corresponding 'sequence-consumer' commands can be
 used for simple detection of message loss or reordering. The producer will send
@@ -482,7 +482,7 @@ pipe the output of the start commands to `...|grep SEQ`, which will filter out
 the other log messages.
 
 
-### Error handling: consumer dies                       <a name="kafka-consumer-dies"/>
+### Error handling: consumer dies                       
 
 What happens within a consumer group when an active consumer suddenly becomes
 unavailable ?
@@ -507,14 +507,14 @@ This causes a sudden death of the consumer process and it will take a short
 while until Kafka notices that the consumer is gone. Watch the broker log and
 what eventually happens with the currently idle consumer.
 
-## The Spring Boot application                       <a name="spring-boot"/>
+## The Spring Boot application                       
 
 The Spring Boot application is in Maven module `clients-spring/`.
 
 *The application requires that you have a local Kafka broker up and running on `localhost:9092`, 
 see [relevant section](#local-kafka).*
 
-### Running                                          <a name="spring-running"/>
+### Running                                          
 
     mvn install              # in top project directory to ensure module 'messages' is installed
     cd clients-spring
@@ -531,7 +531,7 @@ from the topics `measurements` (the standard producer in previous examples) and
 `messages` (for messages created by `console-message-producer` client). The
 consumed messages are stored in-memory in a fixed size event store.
 
-### Web interfaces                             <a name="spring-web-interfaces"/>
+### Web interfaces                             
 
 #### http://localhost:8080/measurements.html
 
@@ -547,7 +547,7 @@ A web page showing "console message" events from Kafka. It uses an API endpoint
 available at http://localhost:8080/messages/api
 
 
-### Talk to Spring boot application (or yourself) using Kafka    <a name="spring-talk-to"/>
+### Talk to Spring boot application (or yourself) using Kafka    
 
 1. In one terminal, start the Spring boot application as described earlier.
 
@@ -582,7 +582,7 @@ available at http://localhost:8080/messages/api
    and displayed on the page. New events are highlighted for a brief period to
    make them visually easier to distinguish.
 
-### Experiment with Spring application            <a name="spring-experiment"/>
+### Experiment with Spring application            
 
 In the previous scenario, try to artificically slow down the Spring application
 consumer and see what happens to the size of the batches that it consumes. To
@@ -637,7 +637,7 @@ changing the number of partitions on the `measurements` topic:
    `no.nav.kafka.sandbox.measurements.MeasurementsConsumer#receive`.
    
 
-### Experiment: batch consumer error handling in Spring Kafka        <a name="spring-batch-error-1">
+### Experiment: batch consumer error handling in Spring Kafka        
 
 *In general, for the following experiments, you should ensure the Spring Boot app
 is _stopped_ before following the instructions.*
@@ -680,7 +680,7 @@ Now switch to a custom error handler which ignores errors, but still logs them:
 
 Does Spring Kafka commit offsets and progress through the topic in this case ?
 
-### Experiment: batch consumer error handling in Spring Kafka: infinite retries     <a name="spring-batch-error-2"/>
+### Experiment: batch consumer error handling in Spring Kafka: infinite retries     
 
 Try this:
 
@@ -699,7 +699,7 @@ allowed by Kafka, and do not fail on JSON deserialization).
 Does Spring ever give up retrying the failing batch ? Watch the log from the
 Spring Boot app.
 
-### Experiment: batch consumer error handling in Spring Kafka: limited retries ?     <a name="spring-batch-error-3"/>
+### Experiment: batch consumer error handling in Spring Kafka: limited retries ?     
 
 Note that if you have messages on a topic that cause failures and you want to
 start fresh for a new experiment, you can just delete the topics first:
@@ -725,7 +725,7 @@ Notice a subtlety here: even though the backoff is configured to retry at most 2
 times, *it still continues forever*. The reason for this is explained [in the
 docs](https://docs.spring.io/spring-kafka/docs/current/reference/html/#seek-to-current).
 
-### Experiment: batch consumer error handling in Spring Kafka: really limited retries    <a name="spring-batch-error-4"/>
+### Experiment: batch consumer error handling in Spring Kafka: really limited retries    
 
 To actually limit number of retries for failed messages when using batch
 consumer, there are a few other options. We will test
@@ -780,7 +780,7 @@ yourself some trouble in these situations, so that multiple writes of the same
 data is not a problem.)
 
 
-### Experiment: batch consumer error handling in Spring Kafka: limited retries and recovery     <a name="spring-batch-error-5"/>
+### Experiment: batch consumer error handling in Spring Kafka: limited retries and recovery     
 
 A more sophisticated error handler called
 [RecoveringBatchErrorHandler](https://docs.spring.io/spring-kafka/docs/current/reference/html/#recovering-batch-eh)
@@ -817,7 +817,7 @@ poison pill null message was simply skipped. Also, there is a performance
 benefit when comparing to the `RetryingErrorHandler`, since the valid messages
 are not written multiple times to the store during retries/recovery.
 
-### What about transient failures when storing events ?          <a name="spring-batch-error-6"/>
+### What about transient failures when storing events ?          
 
 If a valid message fails to be written into the event store, an `IOException` of
 some kind is typically thrown. This may be just a temporary condition, so it
@@ -854,7 +854,7 @@ You can try this of course:
    events have been successfully written to the event store. There should be
    *none missing*, even though the store failed half of the write attempts !
    
-### Handling failure to deserialize messages in batch consumer       <a name="spring-batch-error-7"/>
+### Handling failure to deserialize messages in batch consumer       
 
 Since the deserialization step happens before our consumer listener gets the
 message, it needs to be handled in a special way. Spring has designed the
@@ -907,7 +907,7 @@ between attempts to avoid flodding logs and using up a lot of resources.
 The best practice is to actually handle deserialization errors, like
 demonstrated earlier.
 
-### Stopping consumer on fatal errors            <a name="spring-batch-error-8"/>
+### Stopping consumer on fatal errors            
 
 Sometimes an error is definitively not recoverable and some form of manual intervention or
 application restart is required. An example may be that the consumer is not authorized to write data to
@@ -947,7 +947,7 @@ in Kafka consumers.
 Also see https://docs.spring.io/spring-kafka/reference/html/#error-handlers
 
 
-## Tuning logging to get more details                    <a name="log-tuning"/>
+## Tuning logging to get more details                    
 
 If you would like to see the many technical details that the Kafka clients emit,
 you can set the log level of the Apache Kafka clients in the file
