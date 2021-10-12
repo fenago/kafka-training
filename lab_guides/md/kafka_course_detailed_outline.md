@@ -119,29 +119,7 @@ Session 5: Writing Advanced Kafka Producers
 
     ### Lab 3: Use a custom message routing scheme
 
-Session 6: Writing Advanced Kafka Consumers
--------------------------------------------
-
--   Adjusting poll read size
--   Implementing at most once message semantics using Java API
--   Implementing at least once message semantics using Java API
--   Implementing as close as we can get to exactly once Java API
--   Re-consume messages that are already consumed
--   Using ConsumerRebalanceListener to start consuming from a certain
-    offset (consumer.seek\*)
--   Assigning a consumer a specific partition (use cases for this)
-
-    ### Lab 1 Write Java Advanced Consumer
-
-    ### Lab 2 Adjusting poll read size
-
-    ### Lab 3 Implementing at most once message semantics using Java API
-
-    ### Lab 4 Implementing at least once message semantics using Java API
-
-    ### Lab 5 Implementing as close as we can get to exactly once Java API
-
-Session 7: Schema Management in Kafka
+Session 6: Schema Management in Kafka
 -------------------------------------
 
 -   Avro overview
@@ -155,49 +133,5 @@ Session 7: Schema Management in Kafka
     ### Lab1 Topic Schema management
 
 -   Validation of schema
-
--   Prevent Consumer from accepting unexpected schema / defensive
-    programming
-
--   Prevent producers from sending messages that don’t align with schema
-    registry
-
-Session 8: Kafka Security
--------------------------
-
--   SSL for Encrypting transport and Authentication
--   Setting up keys
--   Using SSL for authentication instead of username/password
--   Setup keystore for transport encryption\
--   Setup truststore for authentication
--   Producer to server encryption
--   Consumer to server encryption
--   Kafka broker to Kafka broker encryption
--   SASL for Authentication
--   Overview of SASL
--   Integrating SASL with Active Directory
--   Securing ZooKeeper
-
-    ### Optional Lab setting up SSL for transport encryption from Consumer to Kafka broker
-
-Session 9: Kafka Disaster Recovery
-----------------------------------
-
--   Mirror Maker, cluster replication to another DC/region
--   Deploying partitions spread over racks or AZs
--   Using Mirror Maker to setup mirroring from DC/region to DC/region
-
-
-
-Optional Session: Kafka Streams
-----------------------------------
-
--   Overview of Kafka Streams
--   Kafka Streams Fundamentals
--   Kafka Streams Application
--   Working with low-level Streams
--   Working with Kafka Streams DSL
-
-    ### Optional Lab low-level streams
-
-    ### Optional Lab Streams DSL
+-   Prevent Consumer from accepting unexpected schema / defensive programming
+-   Prevent producers from sending messages that don’t align with schema registry
