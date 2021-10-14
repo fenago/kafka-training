@@ -1,8 +1,0 @@
-/Users/rick/github/streaming-data-platform/java/lab5.6/solution/src/main/java/com/fenago/kafka/model/StockPrice.java
-/Users/rick/github/streaming-data-platform/java/lab5.6/solution/src/main/java/com/fenago/kafka/producer/StockPriceKafkaProducer.java
-/Users/rick/github/streaming-data-platform/java/lab5.6/solution/src/main/java/com/fenago/kafka/producer/StockSender.java
-/Users/rick/github/streaming-data-platform/java/lab5.6/solution/src/main/java/com/fenago/kafka/producer/StockPriceSerializer.java
-/Users/rick/github/streaming-data-platform/java/lab5.6/solution/src/main/java/com/fenago/kafka/consumer/StockDeserializer.java
-/Users/rick/github/streaming-data-platform/java/lab5.6/solution/src/main/java/com/fenago/kafka/producer/MetricsProducerReporter.java
-/Users/rick/github/streaming-data-platform/java/lab5.6/solution/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
-/Users/rick/github/streaming-data-platform/java/lab5.6/solution/src/main/java/com/fenago/kafka/StockAppConstants.java

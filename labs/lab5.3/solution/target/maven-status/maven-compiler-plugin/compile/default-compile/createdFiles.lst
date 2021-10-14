@@ -1,7 +1,0 @@
-com/fenago/kafka/producer/StockPriceSerializer.class
-com/fenago/kafka/consumer/SimpleStockPriceConsumer.class
-com/fenago/kafka/consumer/StockDeserializer.class
-com/fenago/kafka/model/StockPrice.class
-com/fenago/kafka/producer/StockPriceKafkaProducer.class
-com/fenago/kafka/producer/StockSender.class
-com/fenago/kafka/StockAppConstants.class
