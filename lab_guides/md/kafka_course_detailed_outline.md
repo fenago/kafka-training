@@ -76,8 +76,7 @@ Session 4: Low-level Kafka Architecture
 ---------------------------------------
 
 -   Motivation Focus on high-throughput
--   Embrace file system / OS caches and how this impacts OS setup and
-    usage
+-   Embrace file system / OS caches and how this impacts OS setup and usage
 -   File structure on disk and how data is written
 -   Kafka Producer load balancing details
 -   Producer Record batching by size and time
@@ -98,28 +97,7 @@ Session 4: Low-level Kafka Architecture
 -   Log compaction by key
 -   Failure scenarios
 
-Session 5: Writing Advanced Kafka Producers
--------------------------------------------
-
--   Using batching (time/size)
--   Using compression
--   Async producers and sync producers
--   Commit and async commit
--   Default partitioning (round robin no key, partition on key if key)
--   Controlling which partition records are written to (custom
-    partitioning)
--   Message routing to a particular partition (use cases for this)
--   Advanced Producer configuration
-
-### Lab 1: Write Kafka Advanced Producer
-
--   Use message batching and compression
-
-    ### Lab 2: Use round-robin partition
-
-    ### Lab 3: Use a custom message routing scheme
-
-Session 6: Writing Advanced Kafka Consumers
+Session 5: Writing Advanced Kafka Consumers
 -------------------------------------------
 
 -   Adjusting poll read size
@@ -155,49 +133,5 @@ Session 7: Schema Management in Kafka
     ### Lab1 Topic Schema management
 
 -   Validation of schema
-
--   Prevent Consumer from accepting unexpected schema / defensive
-    programming
-
--   Prevent producers from sending messages that don’t align with schema
-    registry
-
-Session 8: Kafka Security
--------------------------
-
--   SSL for Encrypting transport and Authentication
--   Setting up keys
--   Using SSL for authentication instead of username/password
--   Setup keystore for transport encryption\
--   Setup truststore for authentication
--   Producer to server encryption
--   Consumer to server encryption
--   Kafka broker to Kafka broker encryption
--   SASL for Authentication
--   Overview of SASL
--   Integrating SASL with Active Directory
--   Securing ZooKeeper
-
-    ### Optional Lab setting up SSL for transport encryption from Consumer to Kafka broker
-
-Session 9: Kafka Disaster Recovery
-----------------------------------
-
--   Mirror Maker, cluster replication to another DC/region
--   Deploying partitions spread over racks or AZs
--   Using Mirror Maker to setup mirroring from DC/region to DC/region
-
-
-
-Optional Session: Kafka Streams
-----------------------------------
-
--   Overview of Kafka Streams
--   Kafka Streams Fundamentals
--   Kafka Streams Application
--   Working with low-level Streams
--   Working with Kafka Streams DSL
-
-    ### Optional Lab low-level streams
-
-    ### Optional Lab Streams DSL
+-   Prevent Consumer from accepting unexpected schema / defensive programming
+-   Prevent producers from sending messages that don’t align with schema registry
