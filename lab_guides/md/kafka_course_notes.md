@@ -31,6 +31,6 @@ The latest instructions for the labs can be found below.
 12. [Lab 7.1](https://github.com/fenago/kafka-training/tree/master/lab_guides) Avro
 13. [Lab 7.2](https://github.com/fenago/kafka-training/tree/master/lab_guides) Schema Registry 
 14. [Lab Protobuf](https://github.com/fenago/kafka-training/tree/master/lab_guides) Working with Protobuf
-15. [Lab Consumer Types & Error Handling](https://github.com/fenago/kafka-training/tree/master/lab_guides) Consumer Types & Error Handling
+15. [Lab Kafka + Spring](https://github.com/fenago/kafka-training/tree/master/lab_guides) Kafka Spring Lab
 
 
