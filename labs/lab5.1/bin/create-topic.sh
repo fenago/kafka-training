@@ -7,7 +7,8 @@ kafka/bin/kafka-topics.sh \
     --zookeeper localhost:2181 \
     --replication-factor 3 \
     --partitions 3 \
-    --topic stock-prices
+    --topic stock-prices \
+    --config min.insync.replicas=2
 
 
 
