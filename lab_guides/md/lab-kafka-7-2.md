@@ -377,6 +377,14 @@ avro {
     createSetters = false
     fieldVisibility = "PRIVATE"
 }
+sourceSets{
+    main {
+        java {
+            srcDir 'src'
+            srcDir 'build/generated-main-avro-java'
+        }
+    }
+}
 ```
 
 

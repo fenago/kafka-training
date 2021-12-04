@@ -1,83 +1,16 @@
 # Lab 7.1: Avro
 
-Welcome to the session 7 lab 1. The work for this lab is done in `~/kafka-training/lab7.1`.
-In this lab, you are going to use Avro.
+Welcome to the session 7 lab 1. The work for this lab is done in `~/kafka-training/labs/lab7.1`. In this lab, you are going to use Avro.
+
+<span style="color:red;">Select Gradle while opening project in IntelliJ IDE</span>
 
 
+**Note:** Solution is available in following directory:
+`~/kafka-training/labs/lab7.1/solution`
 
+![](../../lab_guides/md/images/lab7.1.png)
 
-
-## Avro Introduction for Big Data and Data Streaming Architectures
-
-Apache Avro™ is a data serialization system.
-Avro provides data structures, binary data format, container file format to
-store persistent data, and provides RPC capabilities. Avro does not require
-code generation to use and integrates well with JavaScript, Python, Ruby, C, C#, C++ and Java.
-Avro gets used in the *Hadoop ecosystem* as well as by *Kafka*.
-
-Avro is similar to Thrift, Protocol Buffers, JSON, etc. Avro does not require
-code generation. Avro needs less encoding as part of the data since it stores
-names and types in the schema reducing duplication. Avro supports the evolution
-of schemas.
-
-## Why Avro for Kafka and Hadoop?
-
-Avro supports direct mapping to JSON as well as a compact binary format.
-It is a very fast serialization format. Avro is widely used in the Hadoop ecosystem.
-Avro supports polyglot bindings to many programming languages and a code generation
-for static languages. For dynamically typed languages, code generation is not needed.
-Another key advantage of Avro is its support of evolutionary schemas which supports
-compatibility checks, and allows evolving your data over time.
-
-Avro supports platforms like Kafka that has multiple Producers and Consumers which evolve over
-time. Avro schemas help keep your data clean and robust.
-
-There was a trend towards schema-less as part of the NoSQL, but that pendulum has swung back a bit
-e.g., Cassandra has schemas REST/JSON was schema-less and IDL-less but not anymore with Swagger,
-API gateways, and RAML. Now the trend is more towards schemas that can evolve and Avro fits
-well in this space.
-
-### Avro Schema provides Future Proof Robustness
-Streaming architecture like Kafka supports decoupling by sending data in streams to an unknown number of consumers.
-Streaming architecture is challenging as Consumers and Producers evolve on different timelines.
-Producers send a stream of records that zero to many Consumers read.  Not only are
-there multiple consumers but data might end up in Hadoop or some other store
-and used for use cases you did not even imagine. Schemas help future proof your data and make
-it more robust. Supporting all use cases future (Big Data), past (older Consumers) and
-current use cases is not easy without a schema. Avro schema with its support for
-evolution is essential for making the data robust for streaming architectures like Kafka,
-and with the metadata that schema provides, you can reason on the data.  Having a schema
-provides robustness in providing meta-data about the data stored in Avro records which
-are self-documenting the data.
-
-### Avro provides future usability of data
-Data record format compatibility is a hard problem to solve with streaming architecture
-and Big Data. Avro schemas are not a cure-all, but essential for documenting and modeling
-your data. Avro Schema definitions capture a point in time of what your data looked like when
-it recorded since the schema is saved with the data. Data will evolve. New fields are added.
-Since streams often get recorded in data lakes like Hadoop and those records can represent
-historical data, not operational data, it makes sense that data streams and data lakes have a
-less rigid, more evolving schema than the schema of the operational relational database or
-Cassandra cluster.  It makes sense to have a rigid schema for operational data, but not
-data that ends up in a data lake.
-
-With a streaming platform, consumers and producers can change all of the time and evolve
-quite a bit. Producers can have Consumers that they never know. You can’t test a Consumer
-that you don’t know. For agility sakes, you don’t want to update every Consumer every time
-a Producers adds a field to a Record. These types of updates are not feasible without
-support for Schema.
-
-
-## Avro Schema
-Avro data format (wire format and file format) is defined by Avro schemas.
-When deserializing data, the schema is used. Data is serialized based on the schema,
-and schema is sent with data or in the case of files stored with the data.
-Avro data plus schema is fully self-describing data format.
-
-When Avro files store data it also stores schema. Avro RPC is also based on schema,
-and IDL. Part of the RPC protocol exchanges schemas as part of the handshake.
-Avro schemas and IDL are written in JSON.
-
+### Avro Schema
 Let's take a look at an example Avro schema.
 
 #### ./src/main/avro/com/fenago/phonebook/Employee.avsc
@@ -97,7 +30,8 @@ Let's take a look at an example Avro schema.
 
 The above defines an employee record with firstName, lastName, age and phoneNumber.
 
-## ***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
+
+***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
 
 
 ## Avro schema generation tools
@@ -109,7 +43,8 @@ on Avro schemas.
 This `gradle-avro-plugin` is a Gradle plugin that uses Avro tools to do Java code generation
 for Apache Avro.
 This plugin supports Avro schema files (`.avsc`), and Avro RPC IDL (`.avdl`).
-For Apache Kafka course, you only need `avsc` schema files.
+For Kafka Training Course, Instructor led, onsite training")
+you only need `avsc` schema files.
 
 #### build.gradle - example using gradle-avro-plugin
 
@@ -125,7 +60,8 @@ sourceCompatibility = 1.8
 
 dependencies {
     compile "org.apache.avro:avro:1.8.1"
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'junit:junit:4.12'
+    compile 'junit:junit:4.12'
 }
 
 repositories {
@@ -137,9 +73,23 @@ avro {
     createSetters = false
     fieldVisibility = "PRIVATE"
 }
+
+wrapper {
+    gradleVersion = "4.7"
+}
+
+sourceSets{
+    main {
+        java {
+            srcDir 'src'
+            srcDir 'build/generated-main-avro-java'
+        }
+    }
+}
 ```
 
-## ***ACTION*** - EDIT build.gradle and follow the instructions in the file.
+
+***ACTION*** - Open build.gradle and verify file content.
 
 Notice that we did not generate setter methods, and we made the fields private.
 This makes the instances somewhat immutable.
@@ -170,16 +120,22 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
 ```
 
-## ***ACTION*** - RUN `gradle build` from the project folder
+
+***ACTION*** - RUN `gradle build` from the project folder
 
 The gradle plugin calls the Avro utilities which generates the files and puts them under
 `build/generated-main-avro-java`
+
+**Note:** You can generate classes using IntelliJ as well. Click `Build` > `Rebuild Project`
+![](../../lab_guides/md/images/avro2.png)
 
 Let's use the generated class as follows to construct an Employee instance.
 
 
 
 #### Using the new Employee class
+
+Edit `EmployeeTest.java`
 
 ```java
 Employee bob = Employee.newBuilder().setAge(35)
@@ -259,12 +215,20 @@ dataFileReader.forEach(employeeList::add);
 ```
 
 
-## ***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTest.java` and follow the instructions in the file.
-## ***ACTION*** - RUN EmployeeTest from the IDE
+
+***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTest.java` and follow the instructions in the file.
+
+***ACTION*** - RUN EmployeeTest from the IDE
+
+![](../../lab_guides/md/images/t1.png)
+
+![](../../lab_guides/md/images/t2.png)
 
 ## Working with Generic Records
 
 You can use a `GenericRecord` instead of generating an Employee class as follows.
+
+Edit `EmployeeTestNoGen.java`
 
 #### Using GenericRecord to create an Employee record
 
@@ -277,6 +241,7 @@ GenericRecord bob = new GenericData.Record(schema);
 bob.put("firstName", "Bob");
 bob.put("lastName", "Smith");
 bob.put("age", 35);
+bob.put("phoneNumber", "555-555-1212");
 assertEquals("Bob", bob.get("firstName"));
 ```
 
@@ -361,6 +326,8 @@ Caused by: java.lang.ClassCastException: java.lang.String cannot be cast to java
     at org.apache.avro.file.DataFileWriter.append(DataFileWriter.java:302)
 ```
 
+![](../../lab_guides/md/images/t3.png)
+
 If you left out a required field like `firstName`, then you would get this.
 
 #### Stack trace from leaving out firstName
@@ -375,17 +342,25 @@ Caused by: java.lang.NullPointerException: null of string in field firstName of 
 
 In the Avro schema, you can define Records, Arrays, Enums, Unions, Maps and you can use primitive types like  String, Int, Boolean, Decimal, Timestamp, Date, and more.
 
-The [Avro schema and IDL specification document](https://avro.apache.org/docs/current/spec.html#Protocol+Declaration) describes all of the supported types.
 
- Let's add to the Employee schema and show some of the different types that Avro supports.
+Let's add to the Employee schema and show some of the different types that Avro supports.
 
-## ***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTestNoGen.java` and follow the instructions in the file.
-## ***ACTION*** - RUN EmployeeTestNoGen from the IDE
-## ***ACTION*** - CHANGE Change a test and leave out the firstName what happens?
-## ***ACTION*** - CHANGE Change a test and use a string for age what happens?
+
+***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTestNoGen.java` and follow the instructions in the file.
+
+***ACTION*** - RUN EmployeeTestNoGen from the IDE
+
+***ACTION*** - CHANGE Change a test and leave out the firstName what happens?
+
+***ACTION*** - CHANGE Change a test and use a string for age what happens?
 
 
 ## Working with more advanced schema
+
+**Note:** Solution is available in following directory:
+`~/kafka-training/labs/lab7.1/solution-advanced`
+
+![](../../lab_guides/md/images/lab7.1.2.png)
 
 #### More advanced schema - `src/main/avro/com/fenago/phonebook/Employee.avsc`
  ```
@@ -417,8 +392,14 @@ The [Avro schema and IDL specification document](https://avro.apache.org/docs/cu
 }
 ```
 
-## ***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
-## ***ACTION*** - RUN gradle build again to generate classes
+
+***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
+
+***ACTION*** - RUN `gradle build`  again to generate classes
+
+**Note:** You can generate classes using IntelliJ as well. Click `Build` > `Rebuild Project`
+
+![](../../lab_guides/md/images/avro.png)
 
 Avro record attributes are as follows:
 
@@ -477,7 +458,8 @@ public enum Status {
   ...
 ```
 
-## ***ACTION*** - MODIFY Using solution and slides as a guide modify unit tests to use Status and PhoneNumber. Then run tests.
+
+***ACTION*** - MODIFY Using solution and slides as a guide modify unit tests to use Status and PhoneNumber. Then run tests.
 
 
 #### Tips for using Avro with Kafka and Hadoop
@@ -497,9 +479,7 @@ Use reasonable field names and use them consistently with other records. Example
 have a field that refer to the `employee_id` from Employee.
 
 
-
 ## Conclusion
 
 Avro provides fast, compact data serialization. It supports data structures like Records, Maps, Array, and basic types.
 You can use it direct or use Code Generation.
-

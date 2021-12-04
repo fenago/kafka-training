@@ -30,5 +30,13 @@ wrapper {
     gradleVersion = "4.7"
 }
 
+sourceSets{
+    main {
+        java {
+            srcDir 'src'
+            srcDir 'build/generated-main-avro-java'
+        }
+    }
+}
 
 

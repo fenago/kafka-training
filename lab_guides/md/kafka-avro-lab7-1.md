@@ -5,6 +5,13 @@
 
 Welcome to the session 7 lab 1. The work for this lab is done in `~/kafka-training/labs/lab7.1`. In this lab, you are going to use Avro.
 
+<span style="color:red;">Select Gradle while opening project in IntelliJ IDE</span>
+
+
+**Note:** Solution is available in following directory:
+`~/kafka-training/labs/lab7.1/solution`
+
+![](./images/lab7.1.png)
 
 ### Avro Schema
 Let's take a look at an example Avro schema.
@@ -56,7 +63,8 @@ sourceCompatibility = 1.8
 
 dependencies {
     compile "org.apache.avro:avro:1.8.1"
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'junit:junit:4.12'
+    compile 'junit:junit:4.12'
 }
 
 repositories {
@@ -67,6 +75,19 @@ repositories {
 avro {
     createSetters = false
     fieldVisibility = "PRIVATE"
+}
+
+wrapper {
+    gradleVersion = "4.7"
+}
+
+sourceSets{
+    main {
+        java {
+            srcDir 'src'
+            srcDir 'build/generated-main-avro-java'
+        }
+    }
 }
 ```
 
@@ -108,11 +129,16 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 The gradle plugin calls the Avro utilities which generates the files and puts them under
 `build/generated-main-avro-java`
 
+**Note:** You can generate classes using IntelliJ as well. Click `Build` > `Rebuild Project`
+![](./images/avro2.png)
+
 Let's use the generated class as follows to construct an Employee instance.
 
 
 
 #### Using the new Employee class
+
+Edit `EmployeeTest.java`
 
 ```java
 Employee bob = Employee.newBuilder().setAge(35)
@@ -197,9 +223,15 @@ dataFileReader.forEach(employeeList::add);
 
 ***ACTION*** - RUN EmployeeTest from the IDE
 
+![](./images/t1.png)
+
+![](./images/t2.png)
+
 ## Working with Generic Records
 
 You can use a `GenericRecord` instead of generating an Employee class as follows.
+
+Edit `EmployeeTestNoGen.java`
 
 #### Using GenericRecord to create an Employee record
 
@@ -212,6 +244,7 @@ GenericRecord bob = new GenericData.Record(schema);
 bob.put("firstName", "Bob");
 bob.put("lastName", "Smith");
 bob.put("age", 35);
+bob.put("phoneNumber", "555-555-1212");
 assertEquals("Bob", bob.get("firstName"));
 ```
 
@@ -296,6 +329,8 @@ Caused by: java.lang.ClassCastException: java.lang.String cannot be cast to java
     at org.apache.avro.file.DataFileWriter.append(DataFileWriter.java:302)
 ```
 
+![](./images/t3.png)
+
 If you left out a required field like `firstName`, then you would get this.
 
 #### Stack trace from leaving out firstName
@@ -310,9 +345,8 @@ Caused by: java.lang.NullPointerException: null of string in field firstName of 
 
 In the Avro schema, you can define Records, Arrays, Enums, Unions, Maps and you can use primitive types like  String, Int, Boolean, Decimal, Timestamp, Date, and more.
 
-The [Avro schema and IDL specification document](https://avro.apache.org/docs/current/spec.html#Protocol+Declaration) describes all of the supported types.
 
- Let's add to the Employee schema and show some of the different types that Avro supports.
+Let's add to the Employee schema and show some of the different types that Avro supports.
 
 
 ***ACTION*** - EDIT `src/test/java/com/fenago/phonebook/EmployeeTestNoGen.java` and follow the instructions in the file.
@@ -325,6 +359,11 @@ The [Avro schema and IDL specification document](https://avro.apache.org/docs/cu
 
 
 ## Working with more advanced schema
+
+**Note:** Solution is available in following directory:
+`~/kafka-training/labs/lab7.1/solution-advanced`
+
+![](./images/lab7.1.2.png)
 
 #### More advanced schema - `src/main/avro/com/fenago/phonebook/Employee.avsc`
  ```
@@ -359,7 +398,11 @@ The [Avro schema and IDL specification document](https://avro.apache.org/docs/cu
 
 ***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
 
-***ACTION*** - RUN gradle build again to generate classes
+***ACTION*** - RUN `gradle build`  again to generate classes
+
+**Note:** You can generate classes using IntelliJ as well. Click `Build` > `Rebuild Project`
+
+![](./images/avro.png)
 
 Avro record attributes are as follows:
 
