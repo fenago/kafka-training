@@ -104,7 +104,7 @@ Let's use an example to talk about this. The following example is from our Avro 
 
 #### Employee example Avro Schema
 
-```javascript
+```
 {"namespace": "com.fenago.phonebook",
   "type": "record",
   "name": "Employee",

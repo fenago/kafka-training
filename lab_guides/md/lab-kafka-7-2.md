@@ -5,11 +5,6 @@
 Welcome to the session 7 lab 2. The work for this lab is done in `~/kafka-training/labs/lab7.2`.
 In this lab, you are going to use the Schema Registry with Avro.
 
-
-
-
-
-
 ## Kafka Lab: Kafka, Avro Serialization and the Schema Registry
 
 Confluent Schema Registry stores Avro Schemas
@@ -43,36 +38,6 @@ Consumers receive payloads and deserialize them with Kafka  Avro Deserializers w
 Confluent Schema Registry. Deserializer looks up the full schema from cache or Schema Registry
 based on id.
 
-### Why Schema Registry?
-Consumer has its schema which could be different than the producers. The consumer schema is
-the schema the consumer is expecting the record/message to conform to. With the Schema Registry
-a compatibility check is performed and if the two schemas don't match but are compatible, then
-the payload transformation happens via Avro Schema Evolution. Kafka records can have a `Key`
-and a `Value` and both can have a schema.
-
-### Schema Registry Operations
-The Schema Registry can store schemas for keys and values of Kafka records. It can also list
-schemas by subject. It can list all versions of a subject (schema). It can retrieve a schema
-by version or id. It can get the latest version of a schema. Importantly,  the Schema Registry can
-check to see if schema is compatible with a certain version.  There is a compatibility level
-(BACKWARDS, FORWARDS, FULL, NONE) setting for the  Schema Registry and an individual subject.
-You can manage schemas via a REST API with the Schema registry.
-
-### Schema Registry Schema Compatibility Settings
-***Backward compatibility*** means data written with older schema is readable with a newer schema.
-***Forward compatibility*** means data written with newer schema is readable with old schemas.
-***Full compatibility*** means a new version of a schema is backward and forward compatible.
-***None*** disables schema validation and it not recommended. If you set the level to none then Schema Registry just stores the schema and Schema will not be validated for compatibility at all.
-
-#### Schema Registry Config
-The Schema compatibility checks can is configured globally or per subject.
-
-The compatibility checks value is one of the following:
-
-* NONE - don’t check for schema compatibility
-* FORWARD - check to make sure last schema version is forward compatible with new schemas
-* BACKWARDS (default) - make sure new schema is backwards compatible with latest
-* FULL - make sure new schema is forwards and backwards compatible from latest to new and from new to latest
 
 ### Schema Evolution
 If an Avro schema is changed after data has been written to store using an older version of that schema,
@@ -107,7 +72,7 @@ Let's use an example to talk about this. The following example is from our
 
 #### Employee example Avro Schema
 
-```javascript
+```
 {"namespace": "com.fenago.phonebook",
   "type": "record",
   "name": "Employee",

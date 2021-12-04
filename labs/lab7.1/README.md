@@ -83,7 +83,7 @@ Let's take a look at an example Avro schema.
 #### ./src/main/avro/com/fenago/phonebook/Employee.avsc
 #### Example schema for an Employee record
 
-```javascript
+```
 {"namespace": "com.fenago.phonebook",
   "type": "record",  "name": "Employee",
     "fields": [
@@ -388,7 +388,7 @@ The [Avro schema and IDL specification document](https://avro.apache.org/docs/cu
 ## Working with more advanced schema
 
 #### More advanced schema - `src/main/avro/com/fenago/phonebook/Employee.avsc`
- ```javascript
+ ```
  {"namespace": "com.fenago.phonebook",
   "type": "record",
   "name": "Employee",
@@ -502,6 +502,4 @@ have a field that refer to the `employee_id` from Employee.
 
 Avro provides fast, compact data serialization. It supports data structures like Records, Maps, Array, and basic types.
 You can use it direct or use Code Generation.
-Avro allows schema support to Kafka which we will demonstrate in another article.
-
 

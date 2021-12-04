@@ -6,86 +6,13 @@
 Welcome to the session 7 lab 1. The work for this lab is done in `~/kafka-training/labs/lab7.1`. In this lab, you are going to use Avro.
 
 
-
-
-
-## Avro Introduction for Big Data and Data Streaming Architectures
-
-Apache Avro™ is a data serialization system.
-Avro provides data structures, binary data format, container file format to
-store persistent data, and provides RPC capabilities. Avro does not require
-code generation to use and integrates well with JavaScript, Python, Ruby, C, C#, C++ and Java.
-Avro gets used in the *Hadoop ecosystem* as well as by *Kafka*.
-
-Avro is similar to Thrift, Protocol Buffers, JSON, etc. Avro does not require
-code generation. Avro needs less encoding as part of the data since it stores
-names and types in the schema reducing duplication. Avro supports the evolution
-of schemas.
-
-## Why Avro for Kafka and Hadoop?
-
-Avro supports direct mapping to JSON as well as a compact binary format.
-It is a very fast serialization format. Avro is widely used in the Hadoop ecosystem.
-Avro supports polyglot bindings to many programming languages and a code generation
-for static languages. For dynamically typed languages, code generation is not needed.
-Another key advantage of Avro is its support of evolutionary schemas which supports
-compatibility checks, and allows evolving your data over time.
-
-Avro supports platforms like Kafka that has multiple Producers and Consumers which evolve over
-time. Avro schemas help keep your data clean and robust.
-
-There was a trend towards schema-less as part of the NoSQL, but that pendulum has swung back a bit
-e.g., Cassandra has schemas REST/JSON was schema-less and IDL-less but not anymore with Swagger,
-API gateways, and RAML. Now the trend is more towards schemas that can evolve and Avro fits
-well in this space.
-
-### Avro Schema provides Future Proof Robustness
-Streaming architecture like Kafka supports decoupling by sending data in streams to an unknown number of consumers.
-Streaming architecture is challenging as Consumers and Producers evolve on different timelines.
-Producers send a stream of records that zero to many Consumers read.  Not only are
-there multiple consumers but data might end up in Hadoop or some other store
-and used for use cases you did not even imagine. Schemas help future proof your data and make
-it more robust. Supporting all use cases future (Big Data), past (older Consumers) and
-current use cases is not easy without a schema. Avro schema with its support for
-evolution is essential for making the data robust for streaming architectures like Kafka,
-and with the metadata that schema provides, you can reason on the data.  Having a schema
-provides robustness in providing meta-data about the data stored in Avro records which
-are self-documenting the data.
-
-### Avro provides future usability of data
-Data record format compatibility is a hard problem to solve with streaming architecture
-and Big Data. Avro schemas are not a cure-all, but essential for documenting and modeling
-your data. Avro Schema definitions capture a point in time of what your data looked like when
-it recorded since the schema is saved with the data. Data will evolve. New fields are added.
-Since streams often get recorded in data lakes like Hadoop and those records can represent
-historical data, not operational data, it makes sense that data streams and data lakes have a
-less rigid, more evolving schema than the schema of the operational relational database or
-Cassandra cluster.  It makes sense to have a rigid schema for operational data, but not
-data that ends up in a data lake.
-
-With a streaming platform, consumers and producers can change all of the time and evolve
-quite a bit. Producers can have Consumers that they never know. You can’t test a Consumer
-that you don’t know. For agility sakes, you don’t want to update every Consumer every time
-a Producers adds a field to a Record. These types of updates are not feasible without
-support for Schema.
-
-
-## Avro Schema
-Avro data format (wire format and file format) is defined by Avro schemas.
-When deserializing data, the schema is used. Data is serialized based on the schema,
-and schema is sent with data or in the case of files stored with the data.
-Avro data plus schema is fully self-describing data format.
-
-When Avro files store data it also stores schema. Avro RPC is also based on schema,
-and IDL. Part of the RPC protocol exchanges schemas as part of the handshake.
-Avro schemas and IDL are written in JSON.
-
+### Avro Schema
 Let's take a look at an example Avro schema.
 
 #### ./src/main/avro/com/fenago/phonebook/Employee.avsc
 #### Example schema for an Employee record
 
-```javascript
+```
 {"namespace": "com.fenago.phonebook",
   "type": "record",  "name": "Employee",
     "fields": [
@@ -400,7 +327,7 @@ The [Avro schema and IDL specification document](https://avro.apache.org/docs/cu
 ## Working with more advanced schema
 
 #### More advanced schema - `src/main/avro/com/fenago/phonebook/Employee.avsc`
- ```javascript
+ ```
  {"namespace": "com.fenago.phonebook",
   "type": "record",
   "name": "Employee",
@@ -516,4 +443,3 @@ have a field that refer to the `employee_id` from Employee.
 
 Avro provides fast, compact data serialization. It supports data structures like Records, Maps, Array, and basic types.
 You can use it direct or use Code Generation.
-Avro allows schema support to Kafka which we will demonstrate in another article.
