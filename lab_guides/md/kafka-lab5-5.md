@@ -6,9 +6,7 @@
 Welcome to the session 5 lab 5. The work for this lab is done in `~/kafka-training/labs/lab5.5`.
 In this lab, you are going to try Kafka producer batching and compression.
 
-
-
-Find the lastest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
+<span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab5.5/solution` directory</span>
 
 ## Lab Batching and Compressing Kafka Records
 

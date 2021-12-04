@@ -367,6 +367,8 @@ public class SimpleStockPriceConsumer
 
 ***ACTION*** - RUN ZooKeeper and Brokers if needed.
 
+<span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab6.4/solution` directory</span>
+
 ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
 
 ***ACTION*** - RUN StockPriceKafkaProducer from IDE

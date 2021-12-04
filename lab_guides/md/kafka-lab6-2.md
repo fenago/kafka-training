@@ -304,6 +304,9 @@ Create ***SeekToConsumerRebalanceListener*** passing `SeekTo` and `location`
 
 ***ACTION*** - RUN ZooKeeper and Brokers if needed.
 
+<span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab6.2/solution` directory</span>
+
+
 ***ACTION*** - RUN SimpleStockPriceConsumer run with moving to start of log
 
 ***ACTION*** - RUN StockPriceKafkaProducer

@@ -365,6 +365,8 @@ zookeeper.connection.timeout.ms=6000
 
 ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
 
+<span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.4/solution` directory</span>
+
 ***ACTION*** - RUN ConsumerBlueMain from the IDE
 
 ***ACTION*** - RUN StockPriceProducer from the IDE
