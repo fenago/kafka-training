@@ -1,108 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fenago.phonebook.EmployeeTestNoGen" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-12-04T21:08:04" hostname="e86cd659086d" time="0.325">
+<testsuite name="com.fenago.phonebook.EmployeeTestNoGen" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-12-04T21:56:39" hostname="54f72a1ed9a2" time="0.28">
   <properties/>
-  <testcase name="testWrite" classname="com.fenago.phonebook.EmployeeTestNoGen" time="0.324"/>
-  <testcase name="test" classname="com.fenago.phonebook.EmployeeTestNoGen" time="0.0"/>
-  <system-out><![CDATA[{"firstName": "Bob0", "lastName": "Smith0", "age": 25, "phoneNumber": "555-555-12120"}
-{"firstName": "Bob1", "lastName": "Smith1", "age": 26, "phoneNumber": "555-555-12121"}
-{"firstName": "Bob2", "lastName": "Smith2", "age": 27, "phoneNumber": "555-555-12122"}
-{"firstName": "Bob3", "lastName": "Smith3", "age": 28, "phoneNumber": "555-555-12123"}
-{"firstName": "Bob4", "lastName": "Smith4", "age": 29, "phoneNumber": "555-555-12124"}
-{"firstName": "Bob5", "lastName": "Smith5", "age": 30, "phoneNumber": "555-555-12125"}
-{"firstName": "Bob6", "lastName": "Smith6", "age": 31, "phoneNumber": "555-555-12126"}
-{"firstName": "Bob7", "lastName": "Smith7", "age": 32, "phoneNumber": "555-555-12127"}
-{"firstName": "Bob8", "lastName": "Smith8", "age": 33, "phoneNumber": "555-555-12128"}
-{"firstName": "Bob9", "lastName": "Smith9", "age": 34, "phoneNumber": "555-555-12129"}
-{"firstName": "Bob10", "lastName": "Smith10", "age": 35, "phoneNumber": "555-555-121210"}
-{"firstName": "Bob11", "lastName": "Smith11", "age": 36, "phoneNumber": "555-555-121211"}
-{"firstName": "Bob12", "lastName": "Smith12", "age": 37, "phoneNumber": "555-555-121212"}
-{"firstName": "Bob13", "lastName": "Smith13", "age": 38, "phoneNumber": "555-555-121213"}
-{"firstName": "Bob14", "lastName": "Smith14", "age": 39, "phoneNumber": "555-555-121214"}
-{"firstName": "Bob15", "lastName": "Smith15", "age": 40, "phoneNumber": "555-555-121215"}
-{"firstName": "Bob16", "lastName": "Smith16", "age": 41, "phoneNumber": "555-555-121216"}
-{"firstName": "Bob17", "lastName": "Smith17", "age": 42, "phoneNumber": "555-555-121217"}
-{"firstName": "Bob18", "lastName": "Smith18", "age": 43, "phoneNumber": "555-555-121218"}
-{"firstName": "Bob19", "lastName": "Smith19", "age": 44, "phoneNumber": "555-555-121219"}
-{"firstName": "Bob20", "lastName": "Smith20", "age": 45, "phoneNumber": "555-555-121220"}
-{"firstName": "Bob21", "lastName": "Smith21", "age": 46, "phoneNumber": "555-555-121221"}
-{"firstName": "Bob22", "lastName": "Smith22", "age": 47, "phoneNumber": "555-555-121222"}
-{"firstName": "Bob23", "lastName": "Smith23", "age": 48, "phoneNumber": "555-555-121223"}
-{"firstName": "Bob24", "lastName": "Smith24", "age": 49, "phoneNumber": "555-555-121224"}
-{"firstName": "Bob25", "lastName": "Smith25", "age": 50, "phoneNumber": "555-555-121225"}
-{"firstName": "Bob26", "lastName": "Smith26", "age": 51, "phoneNumber": "555-555-121226"}
-{"firstName": "Bob27", "lastName": "Smith27", "age": 52, "phoneNumber": "555-555-121227"}
-{"firstName": "Bob28", "lastName": "Smith28", "age": 53, "phoneNumber": "555-555-121228"}
-{"firstName": "Bob29", "lastName": "Smith29", "age": 54, "phoneNumber": "555-555-121229"}
-{"firstName": "Bob30", "lastName": "Smith30", "age": 55, "phoneNumber": "555-555-121230"}
-{"firstName": "Bob31", "lastName": "Smith31", "age": 56, "phoneNumber": "555-555-121231"}
-{"firstName": "Bob32", "lastName": "Smith32", "age": 57, "phoneNumber": "555-555-121232"}
-{"firstName": "Bob33", "lastName": "Smith33", "age": 58, "phoneNumber": "555-555-121233"}
-{"firstName": "Bob34", "lastName": "Smith34", "age": 59, "phoneNumber": "555-555-121234"}
-{"firstName": "Bob35", "lastName": "Smith35", "age": 25, "phoneNumber": "555-555-121235"}
-{"firstName": "Bob36", "lastName": "Smith36", "age": 26, "phoneNumber": "555-555-121236"}
-{"firstName": "Bob37", "lastName": "Smith37", "age": 27, "phoneNumber": "555-555-121237"}
-{"firstName": "Bob38", "lastName": "Smith38", "age": 28, "phoneNumber": "555-555-121238"}
-{"firstName": "Bob39", "lastName": "Smith39", "age": 29, "phoneNumber": "555-555-121239"}
-{"firstName": "Bob40", "lastName": "Smith40", "age": 30, "phoneNumber": "555-555-121240"}
-{"firstName": "Bob41", "lastName": "Smith41", "age": 31, "phoneNumber": "555-555-121241"}
-{"firstName": "Bob42", "lastName": "Smith42", "age": 32, "phoneNumber": "555-555-121242"}
-{"firstName": "Bob43", "lastName": "Smith43", "age": 33, "phoneNumber": "555-555-121243"}
-{"firstName": "Bob44", "lastName": "Smith44", "age": 34, "phoneNumber": "555-555-121244"}
-{"firstName": "Bob45", "lastName": "Smith45", "age": 35, "phoneNumber": "555-555-121245"}
-{"firstName": "Bob46", "lastName": "Smith46", "age": 36, "phoneNumber": "555-555-121246"}
-{"firstName": "Bob47", "lastName": "Smith47", "age": 37, "phoneNumber": "555-555-121247"}
-{"firstName": "Bob48", "lastName": "Smith48", "age": 38, "phoneNumber": "555-555-121248"}
-{"firstName": "Bob49", "lastName": "Smith49", "age": 39, "phoneNumber": "555-555-121249"}
-{"firstName": "Bob50", "lastName": "Smith50", "age": 40, "phoneNumber": "555-555-121250"}
-{"firstName": "Bob51", "lastName": "Smith51", "age": 41, "phoneNumber": "555-555-121251"}
-{"firstName": "Bob52", "lastName": "Smith52", "age": 42, "phoneNumber": "555-555-121252"}
-{"firstName": "Bob53", "lastName": "Smith53", "age": 43, "phoneNumber": "555-555-121253"}
-{"firstName": "Bob54", "lastName": "Smith54", "age": 44, "phoneNumber": "555-555-121254"}
-{"firstName": "Bob55", "lastName": "Smith55", "age": 45, "phoneNumber": "555-555-121255"}
-{"firstName": "Bob56", "lastName": "Smith56", "age": 46, "phoneNumber": "555-555-121256"}
-{"firstName": "Bob57", "lastName": "Smith57", "age": 47, "phoneNumber": "555-555-121257"}
-{"firstName": "Bob58", "lastName": "Smith58", "age": 48, "phoneNumber": "555-555-121258"}
-{"firstName": "Bob59", "lastName": "Smith59", "age": 49, "phoneNumber": "555-555-121259"}
-{"firstName": "Bob60", "lastName": "Smith60", "age": 50, "phoneNumber": "555-555-121260"}
-{"firstName": "Bob61", "lastName": "Smith61", "age": 51, "phoneNumber": "555-555-121261"}
-{"firstName": "Bob62", "lastName": "Smith62", "age": 52, "phoneNumber": "555-555-121262"}
-{"firstName": "Bob63", "lastName": "Smith63", "age": 53, "phoneNumber": "555-555-121263"}
-{"firstName": "Bob64", "lastName": "Smith64", "age": 54, "phoneNumber": "555-555-121264"}
-{"firstName": "Bob65", "lastName": "Smith65", "age": 55, "phoneNumber": "555-555-121265"}
-{"firstName": "Bob66", "lastName": "Smith66", "age": 56, "phoneNumber": "555-555-121266"}
-{"firstName": "Bob67", "lastName": "Smith67", "age": 57, "phoneNumber": "555-555-121267"}
-{"firstName": "Bob68", "lastName": "Smith68", "age": 58, "phoneNumber": "555-555-121268"}
-{"firstName": "Bob69", "lastName": "Smith69", "age": 59, "phoneNumber": "555-555-121269"}
-{"firstName": "Bob70", "lastName": "Smith70", "age": 25, "phoneNumber": "555-555-121270"}
-{"firstName": "Bob71", "lastName": "Smith71", "age": 26, "phoneNumber": "555-555-121271"}
-{"firstName": "Bob72", "lastName": "Smith72", "age": 27, "phoneNumber": "555-555-121272"}
-{"firstName": "Bob73", "lastName": "Smith73", "age": 28, "phoneNumber": "555-555-121273"}
-{"firstName": "Bob74", "lastName": "Smith74", "age": 29, "phoneNumber": "555-555-121274"}
-{"firstName": "Bob75", "lastName": "Smith75", "age": 30, "phoneNumber": "555-555-121275"}
-{"firstName": "Bob76", "lastName": "Smith76", "age": 31, "phoneNumber": "555-555-121276"}
-{"firstName": "Bob77", "lastName": "Smith77", "age": 32, "phoneNumber": "555-555-121277"}
-{"firstName": "Bob78", "lastName": "Smith78", "age": 33, "phoneNumber": "555-555-121278"}
-{"firstName": "Bob79", "lastName": "Smith79", "age": 34, "phoneNumber": "555-555-121279"}
-{"firstName": "Bob80", "lastName": "Smith80", "age": 35, "phoneNumber": "555-555-121280"}
-{"firstName": "Bob81", "lastName": "Smith81", "age": 36, "phoneNumber": "555-555-121281"}
-{"firstName": "Bob82", "lastName": "Smith82", "age": 37, "phoneNumber": "555-555-121282"}
-{"firstName": "Bob83", "lastName": "Smith83", "age": 38, "phoneNumber": "555-555-121283"}
-{"firstName": "Bob84", "lastName": "Smith84", "age": 39, "phoneNumber": "555-555-121284"}
-{"firstName": "Bob85", "lastName": "Smith85", "age": 40, "phoneNumber": "555-555-121285"}
-{"firstName": "Bob86", "lastName": "Smith86", "age": 41, "phoneNumber": "555-555-121286"}
-{"firstName": "Bob87", "lastName": "Smith87", "age": 42, "phoneNumber": "555-555-121287"}
-{"firstName": "Bob88", "lastName": "Smith88", "age": 43, "phoneNumber": "555-555-121288"}
-{"firstName": "Bob89", "lastName": "Smith89", "age": 44, "phoneNumber": "555-555-121289"}
-{"firstName": "Bob90", "lastName": "Smith90", "age": 45, "phoneNumber": "555-555-121290"}
-{"firstName": "Bob91", "lastName": "Smith91", "age": 46, "phoneNumber": "555-555-121291"}
-{"firstName": "Bob92", "lastName": "Smith92", "age": 47, "phoneNumber": "555-555-121292"}
-{"firstName": "Bob93", "lastName": "Smith93", "age": 48, "phoneNumber": "555-555-121293"}
-{"firstName": "Bob94", "lastName": "Smith94", "age": 49, "phoneNumber": "555-555-121294"}
-{"firstName": "Bob95", "lastName": "Smith95", "age": 50, "phoneNumber": "555-555-121295"}
-{"firstName": "Bob96", "lastName": "Smith96", "age": 51, "phoneNumber": "555-555-121296"}
-{"firstName": "Bob97", "lastName": "Smith97", "age": 52, "phoneNumber": "555-555-121297"}
-{"firstName": "Bob98", "lastName": "Smith98", "age": 53, "phoneNumber": "555-555-121298"}
-{"firstName": "Bob99", "lastName": "Smith99", "age": 54, "phoneNumber": "555-555-121299"}
-]]></system-out>
+  <testcase name="testWrite" classname="com.fenago.phonebook.EmployeeTestNoGen" time="0.28">
+    <failure message="org.apache.avro.file.DataFileWriter$AppendWriteException: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number" type="org.apache.avro.file.DataFileWriter$AppendWriteException">org.apache.avro.file.DataFileWriter$AppendWriteException: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number
+	at org.apache.avro.file.DataFileWriter.append(DataFileWriter.java:308)
+	at com.fenago.phonebook.EmployeeTestNoGen.lambda$testWrite$0(EmployeeTestNoGen.java:73)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at com.fenago.phonebook.EmployeeTestNoGen.testWrite(EmployeeTestNoGen.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy1.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number
+	at org.apache.avro.generic.GenericDatumWriter.writeWithoutConversion(GenericDatumWriter.java:117)
+	at org.apache.avro.generic.GenericDatumWriter.write(GenericDatumWriter.java:73)
+	at org.apache.avro.generic.GenericDatumWriter.writeField(GenericDatumWriter.java:153)
+	at org.apache.avro.generic.GenericDatumWriter.writeRecord(GenericDatumWriter.java:143)
+	at org.apache.avro.generic.GenericDatumWriter.writeWithoutConversion(GenericDatumWriter.java:105)
+	at org.apache.avro.generic.GenericDatumWriter.write(GenericDatumWriter.java:73)
+	at org.apache.avro.generic.GenericDatumWriter.write(GenericDatumWriter.java:60)
+	at org.apache.avro.file.DataFileWriter.append(DataFileWriter.java:302)
+	... 50 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

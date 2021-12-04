@@ -29,9 +29,10 @@ public class EmployeeTestNoGen {
         GenericRecord bob = new GenericData.Record(schema);
         bob.put("firstName", "Bob");
         bob.put("lastName", "Smith");
-        bob.put("age", 35);
+        //bob.put("age", 35);
+        //bob.put("age", "OLD");
         bob.put("phoneNumber", "555-555-1212");
-        assertEquals("Bob", bob.get("firstName"));
+        assertEquals("Bosb", bob.get("firstName"));
 
     }
 
@@ -52,7 +53,8 @@ public class EmployeeTestNoGen {
             GenericRecord bob = new GenericData.Record(schema);
             employee.put("firstName", "Bob" + index);
             employee.put("lastName", "Smith"+ index);
-            employee.put("age", index % 35 + 25);
+            //    employee.put("age", index % 35 + 25);
+            employee.put("age", "OLD");
             employee.put("phoneNumber", "555-555-1212" + index);
             employeeList.add(employee);
 
