@@ -30,7 +30,7 @@ public class EmployeeTestNoGen {
         bob.put("firstName", "Bob");
         bob.put("lastName", "Smith");
         bob.put("age", 35);
-        bob.put("status", new GenericData.EnumSymbol(schema, "SALARY"));
+        bob.put("phoneNumber", "555-555-1212");
         assertEquals("Bob", bob.get("firstName"));
 
     }
@@ -48,11 +48,12 @@ public class EmployeeTestNoGen {
         for (int index = 0; index < 100; index++) {
 
             GenericRecord employee = new GenericData.Record(schema);
+
+            GenericRecord bob = new GenericData.Record(schema);
             employee.put("firstName", "Bob" + index);
             employee.put("lastName", "Smith"+ index);
             employee.put("age", index % 35 + 25);
-            employee.put("status", new GenericData.EnumSymbol(schema, "SALARY"));
-            employee.put("emails", Collections.emptyList());
+            employee.put("phoneNumber", "555-555-1212" + index);
             employeeList.add(employee);
 
         }
