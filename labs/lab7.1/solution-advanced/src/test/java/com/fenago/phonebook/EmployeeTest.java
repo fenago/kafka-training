@@ -24,7 +24,13 @@ public class EmployeeTest {
         Employee bob = Employee.newBuilder().setAge(35)
                 .setFirstName("Bob")
                 .setLastName("Jones")
-                .setPhoneNumber("555-555-1212")
+                .setPhoneNumber(
+                        PhoneNumber.newBuilder()
+                                .setAreaCode("301")
+                                .setCountryCode("1")
+                                .setPrefix("555")
+                                .setNumber("1234")
+                                .build())
                 .build();
 
         assertEquals("Bob", bob.getFirstName());
@@ -39,7 +45,12 @@ public class EmployeeTest {
             employeeList.add(Employee.newBuilder().setAge(index % 35 + 25)
                     .setFirstName("Bob" + index)
                     .setLastName("Jones" + index)
-                    .setPhoneNumber("555-555-1212" + index)
+                    .setPhoneNumber(PhoneNumber.newBuilder()
+                            .setAreaCode("301")
+                            .setCountryCode("1")
+                            .setPrefix("555")
+                            .setNumber("1234")
+                            .build())
                     .build());
         }
 

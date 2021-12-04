@@ -1,0 +1,36 @@
+plugins {
+    id "com.commercehub.gradle.plugin.avro" version "0.9.0"
+}
+
+group 'fenago'
+version '1.0-SNAPSHOT'
+apply plugin: 'java'
+sourceCompatibility = 1.8
+
+dependencies {
+    compile "org.apache.avro:avro:1.8.1"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+avro {
+    createSetters = false
+    fieldVisibility = "PRIVATE"
+}
+
+wrapper {
+    gradleVersion = "4.7"
+}
+
+sourceSets{
+    main {
+        java {
+            srcDir 'src'
+            srcDir 'build/generated-main-avro-java'
+        }
+    }
+}
