@@ -5,6 +5,12 @@
 Welcome to the session 7 lab 2. The work for this lab is done in `~/kafka-training/labs/lab7.2`.
 In this lab, you are going to use the Schema Registry with Avro.
 
+<span style="color:red;">Select Gradle while opening project in IntelliJ IDE</span>
+
+
+**Note:** Solution is available in following directory:
+`~/kafka-training/labs/lab7.2/solution`
+
 ## Kafka Lab: Kafka, Avro Serialization and the Schema Registry
 
 Confluent Schema Registry stores Avro Schemas
@@ -610,6 +616,9 @@ Make sure schema registry is running as well.
 ![](./images/registry4.png)
 
 ![](./images/registry5.png)
+
+**ProTip** Topic `new-employees` should be auto created after running producer.
+
 
 ***ACTION*** - RUN AvroConsumer from the IDE
 ![](./images/registry6.png)

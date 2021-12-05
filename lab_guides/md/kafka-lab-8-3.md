@@ -6,17 +6,10 @@
 Welcome to the session 8 lab 3. The work for this lab is done in `~/kafka-training/labs/lab8.3`.
 In this lab, you are going to Kafka SASL PLAIN.
 
-
-
-
-
 ## Kafka and SASL PLAIN
 
 You should use ***SASL/PLAIN*** with ***SSL*** only as ***transport layer*** to ensure no clear text passwords are not transmitted. <br>
 The Kafka default implementation of ***SASL/PLAIN*** specifies *usernames* and *passwords* in ***JAAS*** config files. <br>
-To avoid storing passwords on disk, you could define and use your own implementation of `javax.security.auth.spi.LoginModule`, or use disk encryption and Unix permissions to protect the username and passwords.
-
-In production systems, external authentication servers may implement password authentication. Kafka brokers can be integrated to work with these servers by adding your own implementation of `javax.security.sasl.SaslServer`. The default implementation included in Kafka in the package `org.apache.kafka.common.security.plain` can be used as an example.
 
 ## Create JAAS config for ZooKeeper add admin user
 
@@ -472,11 +465,43 @@ public class StockPriceProducerUtils {
 
 ## Run the lab
 
-
 ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
+
+<h4><span style="color:red;">Important!</span></h4>
+
+Run following script first to stop any running kafka/zookeeper process and clear logs.
+
+`~/kafka-training/kill-clean.sh`
 
 <span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.3/solution` directory</span>
 
+**Terminal 1**
+
+```
+cd ~/kafka-training/labs/lab8.3/solution
+bin/run-zookeeper.sh
+```
+
+**Terminal 2**
+
+```
+cd ~/kafka-training/labs/lab8.3/solution
+bin/start-1st-server.sh
+```
+
+**Terminal 3**
+
+```
+cd ~/kafka-training/labs/lab8.3/solution
+bin/start-2nd-server.sh
+```
+
+**Terminal 4**
+
+```
+cd ~/kafka-training/labs/lab8.3/solution
+bin/start-3rd-server.sh
+```
 ***ACTION*** - RUN ConsumerBlueMain from the IDE
 
 ***ACTION*** - RUN StockPriceProducer from the IDE

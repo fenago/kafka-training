@@ -365,7 +365,43 @@ zookeeper.connection.timeout.ms=6000
 
 ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
 
+<h4><span style="color:red;">Important!</span></h4>
+
+Run following script first to stop any running kafka/zookeeper process and clear logs.
+
+`~/kafka-training/kill-clean.sh`
+
+
 <span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.4/solution` directory</span>
+
+
+**Terminal 1**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/run-zookeeper.sh
+```
+
+**Terminal 2**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/start-1st-server.sh
+```
+
+**Terminal 3**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/start-2nd-server.sh
+```
+
+**Terminal 4**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/start-3rd-server.sh
+```
 
 ***ACTION*** - RUN ConsumerBlueMain from the IDE
 

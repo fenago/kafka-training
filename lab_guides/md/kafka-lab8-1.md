@@ -7,6 +7,8 @@ In this lab, you are going to setup Kafka SSL support.
 
 <span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.1/solution` directory</span>
 
+**Note:** Lab solution is available in following directory:
+`~/kafka-training/labs/lab8.1/solution`
 
 ### Steps to use SSL for Consumers and Producers
 
@@ -182,15 +184,11 @@ Certificate reply was installed in keystore
 
 ***ACTION*** - RUN `bin/create-ssl-key-keystore.sh`
 
-#### Copying cert files to /opt/kafka/
+***ACTION*** - COPY output of `bin/create-ssl-key-keystore.sh` to `/opt/kafka/`
 
 ```sh
 $ sudo cp -R resources/opt/kafka/ /opt/
 ```
-
-
-***ACTION*** - COPY output of `bin/create-ssl-key-keystore.sh` to `/opt/kafka/`
-
 
 ***ACTION*** - See files generated `ls /opt/kafka/conf/certs/` (5 files)
 
@@ -200,6 +198,7 @@ $ sudo cp -R resources/opt/kafka/ /opt/
 ***kafka.keystore*** - needed on all clients and servers <br>
 ***kafka.truststore*** - needed on all clients and servers <br>
 
+![](./images/ssl.png)
 
 ## Configuring Kafka Servers
 You will need to configure the listener's protocols for each server. In this example, we
@@ -450,11 +449,56 @@ public class StockPriceProducerUtils {
 
 ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
 
+<h4><span style="color:red;">Important!</span></h4>
+
+Run following script first to stop any running kafka/zookeeper process and clear logs.
+
+`~/kafka-training/kill-clean.sh`
+
+
 <span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.1/solution` directory</span>
+
+**Terminal 1**
+
+```
+cd ~/kafka-training/labs/lab8.1/solution
+bin/run-zookeeper.sh
+```
+
+**Terminal 2**
+
+```
+cd ~/kafka-training/labs/lab8.1/solution
+bin/start-1st-server.sh
+```
+
+**Terminal 3**
+
+```
+cd ~/kafka-training/labs/lab8.1/solution
+bin/start-2nd-server.sh
+```
+
+**Terminal 4**
+
+```
+cd ~/kafka-training/labs/lab8.1/solution
+bin/start-3rd-server.sh
+```
 
 ***ACTION*** - RUN ConsumerBlueMain from the IDE
 
+![](./images/ssl2.png)
+
 ***ACTION*** - RUN StockPriceProducer from the IDE
+
+![](./images/ssl3.png)
+
+*Wait for some time and verify that messages are logged in consumer.*
+
+![](./images/ssl4.png)
+
+**ProTip** Scroll up to view complete consumer output.
 
 ## Expected results
 You should be able to send records from the producer to the broker and read records from the consumer to the broker using SSL.
