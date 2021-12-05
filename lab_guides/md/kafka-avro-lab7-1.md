@@ -19,7 +19,7 @@ Let's take a look at an example Avro schema.
 #### ./src/main/avro/com/fenago/phonebook/Employee.avsc
 #### Example schema for an Employee record
 
-```
+```javascript
 {"namespace": "com.fenago.phonebook",
   "type": "record",  "name": "Employee",
     "fields": [
@@ -366,7 +366,8 @@ Let's add to the Employee schema and show some of the different types that Avro 
 ![](./images/lab7.1.2.png)
 
 #### More advanced schema - `src/main/avro/com/fenago/phonebook/Employee.avsc`
- ```
+
+```javascript
  {"namespace": "com.fenago.phonebook",
   "type": "record",
   "name": "Employee",

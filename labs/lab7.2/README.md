@@ -1,12 +1,9 @@
+<img align="right" src="./logo.png">
+
 # Lab 7.2: Kafka Schema Registry with Avro.
 
-Welcome to the session 7 lab 2. The work for this lab is done in `~/kafka-training/lab7.2`.
+Welcome to the session 7 lab 2. The work for this lab is done in `~/kafka-training/labs/lab7.2`.
 In this lab, you are going to use the Schema Registry with Avro.
-
-
-
-
-
 
 ## Kafka Lab: Kafka, Avro Serialization and the Schema Registry
 
@@ -41,36 +38,6 @@ Consumers receive payloads and deserialize them with Kafka  Avro Deserializers w
 Confluent Schema Registry. Deserializer looks up the full schema from cache or Schema Registry
 based on id.
 
-### Why Schema Registry?
-Consumer has its schema which could be different than the producers. The consumer schema is
-the schema the consumer is expecting the record/message to conform to. With the Schema Registry
-a compatibility check is performed and if the two schemas don't match but are compatible, then
-the payload transformation happens via Avro Schema Evolution. Kafka records can have a `Key`
-and a `Value` and both can have a schema.
-
-### Schema Registry Operations
-The Schema Registry can store schemas for keys and values of Kafka records. It can also list
-schemas by subject. It can list all versions of a subject (schema). It can retrieve a schema
-by version or id. It can get the latest version of a schema. Importantly,  the Schema Registry can
-check to see if schema is compatible with a certain version.  There is a compatibility level
-(BACKWARDS, FORWARDS, FULL, NONE) setting for the  Schema Registry and an individual subject.
-You can manage schemas via a REST API with the Schema registry.
-
-### Schema Registry Schema Compatibility Settings
-***Backward compatibility*** means data written with older schema is readable with a newer schema.
-***Forward compatibility*** means data written with newer schema is readable with old schemas.
-***Full compatibility*** means a new version of a schema is backward and forward compatible.
-***None*** disables schema validation and it not recommended. If you set the level to none then Schema Registry just stores the schema and Schema will not be validated for compatibility at all.
-
-#### Schema Registry Config
-The Schema compatibility checks can is configured globally or per subject.
-
-The compatibility checks value is one of the following:
-
-* NONE - don’t check for schema compatibility
-* FORWARD - check to make sure last schema version is forward compatible with new schemas
-* BACKWARDS (default) - make sure new schema is backwards compatible with latest
-* FULL - make sure new schema is forwards and backwards compatible from latest to new and from new to latest
 
 ### Schema Evolution
 If an Avro schema is changed after data has been written to store using an older version of that schema,
@@ -100,11 +67,12 @@ fields in your schema as this allows you to delete the field later. Never change
 When adding a new field to your schema, you have to provide a default value for the field.
 Don’t rename an existing field (use aliases instead). You can add an alias.
 
-Let's use an example to talk about this. The following example is from our Avro tutorial.
+Let's use an example to talk about this. The following example is from our
+`Avro tutorial`.
 
 #### Employee example Avro Schema
 
-```
+```javascript
 {"namespace": "com.fenago.phonebook",
   "type": "record",
   "name": "Employee",
@@ -171,17 +139,6 @@ Recall that the Schema Registry allows you to manage schemas using the following
 
 Recall that all of this is available via a REST API with the Schema Registry.
 
-To post a new schema you could do the following:
-
-#### Posting a new schema
-
-```sh
-curl -X POST -H "Content-Type:
-application/vnd.schemaregistry.v1+json" \
-    --data '{"schema": "{\"type\": …}’ \
-    http://localhost:8081/subjects/Employee/versions
-```
-
 #### To list all of the schemas
 
 ```sh
@@ -189,7 +146,7 @@ curl -X GET http://localhost:8081/subjects
 ```
 
 If you have a good HTTP client, you can basically perform all of the above operations via the REST
-interface for the Schema Registry. I wrote a little example to do this so I could understand the
+interface for the Schema Registry. Let's use following example to understand the
 Schema registry a little better using the OkHttp client from Square (`com.squareup.okhttp3:okhttp:3.7.0+`) as follows:
 
 #### Using REST endpoints to try out all of the Schema Registry options
@@ -338,6 +295,7 @@ I suggest running the example and trying to force incompatible schemas to the Sc
 note the behavior for the various compatibility settings.
 
 #### Running Schema Registry
+
 ```
 $ cat ~/kafka-training/confluent/etc/schema-registry/schema-registry.properties
 
@@ -345,18 +303,29 @@ listeners=http://0.0.0.0:8081
 kafkastore.connection.url=localhost:2181
 kafkastore.topic=_schemas
 debug=false
+```
 
+<span style="color:red;">Note:</span> 
+Run following command in the terminal to start schema registry:
+
+```
 ~/kafka-training/confluent/bin/schema-registry-start  ~/kafka-training/confluent/etc/schema-registry/schema-registry.properties
 ```
 
-## ***ACTION*** - RUN the schema registry on port 8081
-## ***ACTION*** - EDIT SchemaMain and follow the instructions in the file.
-## ***ACTION*** - RUN SchemaMain from the IDE.
-## ***ACTION*** - TRY Add extra fields and then check compatibility
+
+***ACTION*** - RUN the schema registry on port 8081
+![](../../lab_guides/md/images/registry.png)
+
+***ACTION*** - EDIT SchemaMain and follow the instructions in the file.
+
+***ACTION*** - RUN SchemaMain from the IDE.
+![](../../lab_guides/md/images/registry2.png)
+
+![](../../lab_guides/md/images/registry3.png)
+
+***ACTION*** - TRY Add extra fields and then check compatibility
 
 ## Writing Consumers and Producers that use Kafka Avro Serializers and the Schema Registry
-
-
 
 Now let's cover writing consumers and producers that use Kafka Avro Serializers which in turn use
 the Schema Registry and Avro.
@@ -370,7 +339,8 @@ and to use the KafkaAvroDeserializer.
 
 Here is our build file which shows the Avro jar files and such that we need.
 
-#### Gradle build file for Kafka Avro Serializer examples
+#### Gradle build file for Kafka Avro Serializer
+
 ```
 plugins {
     id "com.commercehub.gradle.plugin.avro" version "0.9.0"
@@ -382,11 +352,11 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 dependencies {
-    compile "org.apache.avro:avro:1.8.1"
+    compile "org.apache.avro:avro:1.8.2"
     compile 'com.squareup.okhttp3:okhttp:3.7.0'
     testCompile 'junit:junit:4.11'
     compile 'org.apache.kafka:kafka-clients:1.1.0'
-    compile 'io.confluent:kafka-avro-serializer:3.2.1'
+    compile 'io.confluent:kafka-avro-serializer:3.3.0'
 }
 repositories {
     jcenter()
@@ -399,13 +369,26 @@ avro {
     createSetters = false
     fieldVisibility = "PRIVATE"
 }
+
+wrapper {
+    gradleVersion = "4.7"
+}
+
+sourceSets{
+    main {
+        java {
+            srcDir 'src'
+            srcDir 'build/generated-main-avro-java'
+        }
+    }
+}
 ```
 
-## ***ACTION*** - MODIFY build.gradle then RUN it.
 
-Notice that we include the Kafka Avro Serializer lib (`io.confluent:kafka-avro-serializer:3.2.1`)
-and the Avro lib (`org.apache.avro:avro:1.8.1`).
+***ACTION*** - MODIFY build.gradle and save it.
 
+Notice that we include the Kafka Avro Serializer lib (`io.confluent:kafka-avro-serializer:3.3.0`)
+and the Avro lib (`org.apache.avro:avro:1.8.2`).
 
 ### Writing a Producer
 
@@ -413,6 +396,7 @@ Next, let's write the Producer as follows.
 
 #### Producer that uses Kafka Avro Serialization and Kafka Registry
 #### src/main/java/com/fenago/kafka/schema/AvroProducer.java
+
 ```java
 package com.fenago.kafka.schema;
 
@@ -494,7 +478,8 @@ props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
 
 Then we use the Producer as expected.
 
-## ***ACTION*** - Edit AvroProducer and follow instructions in the file.
+
+***ACTION*** - Edit AvroProducer and follow instructions in the file.
 
 ### AvroConsumer
 
@@ -598,33 +583,43 @@ props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "true");
                 "http://localhost:8081"); //<----- Run Schema Registry on 8081
 ```
 
-## ***ACTION*** - Edit AvroConsumer and follow instructions in the file.
+
+***ACTION*** - Edit AvroConsumer and follow instructions in the file.
 
 An additional step is we have to tell it to use the generated version of the `Employee` object.
-If we did not, then it would use Avro `GenericRecord` instead of our generated `Employee` object, which is a `SpecificRecord`.
+If we did not, then it would use Avro `GenericRecord` instead of our generated `Employee` object,
+which is a `SpecificRecord`.  To learn more about using GenericRecord and generating code from Avro, read the Avro Kafka tutorial
 
-To run the above example, you need to startup Kafka and Zookeeper. To learn how to do this if
-you have not done it before (You HAVE!) see Kafka Tutorial.
-
-Essentially, there is a startup script for Kafka and ZooKeeper like there was with the Schema Registry
-and there is default configuration, you pass the default configuration to the startup scripts,
-and Kafka is running locally on your machine.
-
-
+To run the above example, you need to startup Kafka and Zookeeper.
 
 #### Running Zookeeper and Kafka
-```
-~/kafka-tutorial/kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties &
 
-~/kafka-tutorial/kafka/bin/kafka-server-start.sh kafka/config/server.properties
-```
+**Terminal 1:**
 
-## ***ACTION*** - RUN ZooKeeper and a Kafka Broker
-## ***ACTION*** - RUN AvroProducer from the IDE
-## ***ACTION*** - RUN AvroConsumer from the IDE
+`~/kafka-training/run-zookeeper.sh`
+
+**Terminal 2:**
+
+`~/kafka-training/run-kafka.sh`
+
+***ACTION*** - RUN ZooKeeper and a Kafka Broker
+
+Make sure schema registry is running as well.
+
+***ACTION*** - RUN AvroProducer from the IDE
+![](../../lab_guides/md/images/registry4.png)
+
+![](../../lab_guides/md/images/registry5.png)
+
+***ACTION*** - RUN AvroConsumer from the IDE
+![](../../lab_guides/md/images/registry6.png)
+
+**ProTip** Scroll up to view complete consumer output.
 
 ## Expected results.
 The consumer gets messages from the Kafka broker that was sent by the producer.
+
+You can stop kafka, zookeeper and schema registry now.
 
 ## Conclusion
 
