@@ -46,9 +46,9 @@ Each broker will run in its own cluster.
 
 Each ZooKeeper instance runs on its own port and is independent of the others.
 
+## ***ACTION*** - EDIT bin/zookeeper-0.properties and follow instructions in file
 ## ***ACTION*** - EDIT bin/zookeeper-1.properties and follow instructions in file
-## ***ACTION*** - EDIT bin/zookeeper-1.properties and follow instructions in file
-## ***ACTION*** - EDIT bin/zookeeper-1.properties and follow instructions in file
+## ***ACTION*** - EDIT bin/zookeeper-2.properties and follow instructions in file
 
 
 ## Modify Broker config to point to different ZooKeepers
