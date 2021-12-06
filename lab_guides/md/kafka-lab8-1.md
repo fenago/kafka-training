@@ -10,6 +10,12 @@ In this lab, you are going to setup Kafka SSL support.
 **Note:** Lab solution is available in following directory:
 `~/kafka-training/labs/lab8.1/solution`
 
+<h4><span style="color:red;">Important!</span></h4>
+
+Run following script first to stop any running kafka/zookeeper process and clear logs.
+
+`~/kafka-training/kill-clean.sh`
+
 ### Steps to use SSL for Consumers and Producers
 
 ***Generate SSL key and certificate for each Kafka broker***
@@ -168,19 +174,12 @@ to `/opt/kafka/conf/certs/`.
 
 #### Running create-ssl-key-keystore.sh
 ```sh
-~/kafka-training/labs/lab8.1/solution
+$ cd ~/kafka-training/labs/lab8.1/solution
 
 $ bin/create-ssl-key-keystore.sh
-Create the cluster key for cluster communication.
-Create the Certificate Authority (CA) file to sign keys.
-Generating a 1024 bit RSA private key
-writing new private key to 'ca-key'
-...
-Certificate was added to keystore
-Import the Signed Cluster Certificate into the key store.
-Certificate reply was installed in keystore
 ```
 
+![](./images/ssl5.png)
 
 ***ACTION*** - RUN `bin/create-ssl-key-keystore.sh`
 
@@ -448,13 +447,6 @@ public class StockPriceProducerUtils {
 
 
 ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
-
-<h4><span style="color:red;">Important!</span></h4>
-
-Run following script first to stop any running kafka/zookeeper process and clear logs.
-
-`~/kafka-training/kill-clean.sh`
-
 
 <span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.1/solution` directory</span>
 

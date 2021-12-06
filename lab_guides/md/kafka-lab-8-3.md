@@ -6,6 +6,12 @@
 Welcome to the session 8 lab 3. The work for this lab is done in `~/kafka-training/labs/lab8.3`.
 In this lab, you are going to Kafka SASL PLAIN.
 
+<h4><span style="color:red;">Important!</span></h4>
+
+Run following script first to stop any running kafka/zookeeper process and clear logs.
+
+`~/kafka-training/kill-clean.sh`
+
 ## Kafka and SASL PLAIN
 
 You should use ***SASL/PLAIN*** with ***SSL*** only as ***transport layer*** to ensure no clear text passwords are not transmitted. <br>
@@ -59,7 +65,15 @@ Note we are using SASLAuthenticationProvider from Kafka.
 
 ## Modify ZooKeeper startup script add JAAS config location
 
-We need to copy JAAS config files to `/opt/kafka/config/security ( cp -R resources/opt/kafka/conf/security /opt/kafka/conf/ )`.
+We need to copy JAAS config files to `/opt/kafka/config/security`:
+
+```
+cd ~/kafka-training/labs/lab8.3
+cp -R resources/opt/kafka/conf/security /opt/kafka/conf/
+```
+
+**Note:** You can copy files from solution folder as well.
+
 ***KAFKA_OPTS*** used by kafka startup scripts to pass extra args to JVM.
 
 #### Make ZooKeeper use JAAS config file
@@ -466,12 +480,6 @@ public class StockPriceProducerUtils {
 ## Run the lab
 
 ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
-
-<h4><span style="color:red;">Important!</span></h4>
-
-Run following script first to stop any running kafka/zookeeper process and clear logs.
-
-`~/kafka-training/kill-clean.sh`
 
 <span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.3/solution` directory</span>
 

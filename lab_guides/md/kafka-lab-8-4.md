@@ -5,6 +5,11 @@
 Welcome to the session 8 lab 4. The work for this lab is done in `~/kafka-training/labs/lab8.4`.
 In this lab, you are going to Kafka SASL SCRAM.
 
+<h4><span style="color:red;">Important!</span></h4>
+
+Run following script first to stop any running kafka/zookeeper process and clear logs.
+
+`~/kafka-training/kill-clean.sh`
 
 ## Kafka and SASL SCRAM
 
@@ -364,13 +369,6 @@ zookeeper.connection.timeout.ms=6000
 
 
 ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
-
-<h4><span style="color:red;">Important!</span></h4>
-
-Run following script first to stop any running kafka/zookeeper process and clear logs.
-
-`~/kafka-training/kill-clean.sh`
-
 
 <span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.4/solution` directory</span>
 

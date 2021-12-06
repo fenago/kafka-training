@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.fenago.kafka.producer.StockPriceTest" time="0.136" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.fenago.kafka.producer.StockPriceTest" time="0.135" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.144-b01"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/rick/github/streaming-data-platform/java/lab8.3/solution"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/rick/github/streaming-data-platform/java/lab8.3"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/rick/github/streaming-data-platform/java/lab8.3/solution"/>
+    <property name="user.dir" value="/Users/rick/github/streaming-data-platform/java/lab8.3"/>
     <property name="java.runtime.version" value="1.8.0_144-b01"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/endorsed"/>
@@ -62,5 +62,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.fenago.kafka.producer.StockPriceTest" name="testStockPrice" time="0.136"/>
+  <testcase classname="com.fenago.kafka.producer.StockPriceTest" name="testStockPrice" time="0.135"/>
 </testsuite>
