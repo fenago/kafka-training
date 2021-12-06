@@ -5,16 +5,16 @@ SCRAM_CONFIG="$SCRAM_CONFIG,SCRAM-SHA-512=[password=kafka123]"
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name stocks_consumer
+    --entity-type users --entity-name stocks_consumer \
     --zookeeper localhost:2181 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name stocks_producer
+    --entity-type users --entity-name stocks_producer \
     --zookeeper localhost:2181 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name admin
+    --entity-type users --entity-name admin \
     --zookeeper localhost:2181 \
 

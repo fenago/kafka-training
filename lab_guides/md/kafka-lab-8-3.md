@@ -12,6 +12,9 @@ Run following script first to stop any running kafka/zookeeper process and clear
 
 `~/kafka-training/kill-clean.sh`
 
+**Note:** Lab solution is available in following directory:
+`~/kafka-training/labs/lab8.3/solution`
+
 ## Kafka and SASL PLAIN
 
 You should use ***SASL/PLAIN*** with ***SSL*** only as ***transport layer*** to ensure no clear text passwords are not transmitted. <br>
@@ -479,6 +482,8 @@ public class StockPriceProducerUtils {
 
 ## Run the lab
 
+<span style="color:red;">Note: Make sure that you have completed lab `8.1` first.</span> 
+
 ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
 
 <span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.3/solution` directory</span>
@@ -513,7 +518,7 @@ bin/start-3rd-server.sh
 
 ![](./images/ssl34.png)
 
-**Protip:** You should get following log in zookeeper console after starting kafka servers.
+**Protip:** You should get above logs in zookeeper console after starting kafka servers.
 
 
 ***ACTION*** - RUN ConsumerBlueMain from the IDE

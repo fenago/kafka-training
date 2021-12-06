@@ -11,12 +11,12 @@ Run following script first to stop any running kafka/zookeeper process and clear
 
 `~/kafka-training/kill-clean.sh`
 
-## Kafka and SASL SCRAM
 
-***SCRAM*** is *Salted Challenge Response Authentication Mechanism* (RFC 5802). SCRAM is a ***SASL*** mechanism that addresses security concerns with traditional mechanisms and is better than PLAIN and DIGEST-MD5. <br>
-Kafka supports *SCRAM-SHA-256* and *SCRAM-SHA-512* and can be used with SSL/TLS to perform secure authentication. <br>
-Username is used as authenticated Principal for configuration of ACLs. <br>
-Default SCRAM implementation stores SCRAM credentials in Zookeeper.
+**Note:** Lab solution is available in following directory:
+`~/kafka-training/labs/lab8.4/solution`
+
+
+## Kafka and SASL SCRAM
 
 Kafka stores SCRAM credentials in Zookeeper. Zookeeper should be on a private network. <br>
 Kafka supports only SHA-256 and SHA-512 with a minimum iteration count of 4096. <br>
@@ -37,17 +37,17 @@ SCRAM_CONFIG="$SCRAM_CONFIG,SCRAM-SHA-512=[password=kafka123]"
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name stocks_consumer
+    --entity-type users --entity-name stocks_consumer \
     --zookeeper localhost:2181 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name stocks_producer
+    --entity-type users --entity-name stocks_producer \
     --zookeeper localhost:2181 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name admin
+    --entity-type users --entity-name admin \
     --zookeeper localhost:2181 \
 ```
 
@@ -367,6 +367,14 @@ zookeeper.connection.timeout.ms=6000
 
 ## Run the lab
 
+<span style="color:red;">Note: Make sure that you have completed lab `8.1` first.</span> 
+
+***ACTION*** - We need to copy JAAS config files to `/opt/kafka/config/security`:
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+cp -R resources/opt/kafka/conf/security /opt/kafka/conf/
+```
 
 ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
 
