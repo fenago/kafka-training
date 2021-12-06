@@ -1,15 +1,20 @@
 # Lab 8.4: Kafka and SASL SCRAM
 
-Welcome to the session 8 lab 4. The work for this lab is done in `~/kafka-training/lab8.4`.
+Welcome to the session 8 lab 4. The work for this lab is done in `~/kafka-training/labs/lab8.4`.
 In this lab, you are going to Kafka SASL SCRAM.
+
+<h4><span style="color:red;">Important!</span></h4>
+
+Run following script first to stop any running kafka/zookeeper process and clear logs.
+
+`~/kafka-training/kill-clean.sh`
+
+
+**Note:** Lab solution is available in following directory:
+`~/kafka-training/labs/lab8.4/solution`
 
 
 ## Kafka and SASL SCRAM
-
-***SCRAM*** is *Salted Challenge Response Authentication Mechanism* (RFC 5802). SCRAM is a ***SASL*** mechanism that addresses security concerns with traditional mechanisms and is better than PLAIN and DIGEST-MD5. <br>
-Kafka supports *SCRAM-SHA-256* and *SCRAM-SHA-512* and can be used with SSL/TLS to perform secure authentication. <br>
-Username is used as authenticated Principal for configuration of ACLs. <br>
-Default SCRAM implementation stores SCRAM credentials in Zookeeper.
 
 Kafka stores SCRAM credentials in Zookeeper. Zookeeper should be on a private network. <br>
 Kafka supports only SHA-256 and SHA-512 with a minimum iteration count of 4096. <br>
@@ -30,27 +35,28 @@ SCRAM_CONFIG="$SCRAM_CONFIG,SCRAM-SHA-512=[password=kafka123]"
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name stocks_consumer
-    --zookeeper localhost:2181 \
+    --entity-type users --entity-name stocks_consumer \
+    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name stocks_producer
-    --zookeeper localhost:2181 \
+    --entity-type users --entity-name stocks_producer \
+    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name admin
-    --zookeeper localhost:2181 \
+    --entity-type users --entity-name admin \
+    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 ```
 
-## ***ACTION*** EDIT bin/create-scram-users.sh and follow instructions in file
+
+***ACTION*** EDIT bin/create-scram-users.sh and follow instructions in file
 
 ## Kafka Broker JAAS Scram Config
 
 Uses Scram for KafkaServer and Plain for ZooKeeper
 
-#### ~/kafka-training/labs/lab8.4/solution/resources/opt/kafka/conf/security/kafka_broker_jaas.conf
+#### ~/kafka-training/labs/lab8.4/resources/opt/kafka/conf/security/kafka_broker_jaas.conf
 ```sh
 KafkaServer {
   org.apache.kafka.common.security.scram.ScramLoginModule required
@@ -66,13 +72,14 @@ Client {
 };
 ```
 
-## ***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
+
+***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
 
 ## Kafka Consumer/Producer JAAS Scram Config
 
 Use Scram as login credentials.
 
-#### ~/kafka-training/labs/lab8.4/solution/resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf
+#### ~/kafka-training/labs/lab8.4/resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf
 ```sh
 KafkaClient {
   org.apache.kafka.common.security.scram.ScramLoginModule required
@@ -81,9 +88,10 @@ KafkaClient {
 };
 ```
 
-## ***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow instructions in file
 
-#### ~/kafka-training/labs/lab8.4/solution/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf
+***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow instructions in file
+
+#### ~/kafka-training/labs/lab8.4/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf
 ```sh
 KafkaClient {
   org.apache.kafka.common.security.scram.ScramLoginModule required
@@ -92,7 +100,8 @@ KafkaClient {
 };
 ```
 
-## ***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow instructions in file
+
+***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow instructions in file
 
 ## Configure SCRAM in Producer
 
@@ -151,7 +160,8 @@ public class StockPriceProducerUtils {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
 
 
 ## Configure SCRAM in Consumer
@@ -215,7 +225,8 @@ public class ConsumerUtil {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
 
 
 ## Modify Kafka Brokers Config properties file add SCRAM config
@@ -265,7 +276,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-0.properties and follow directions
+
+***ACTION*** - EDIT config/server-0.properties and follow directions
 
 #### ~/kafka-training/labs/lab8.4/config/server-1.properties
 ```sh
@@ -305,7 +317,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-1.properties and follow directions
+
+***ACTION*** - EDIT config/server-1.properties and follow directions
 
 #### ~/kafka-training/labs/lab8.4/config/server-2.properties
 ```sh
@@ -347,13 +360,82 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-2.properties and follow directions
+
+***ACTION*** - EDIT config/server-2.properties and follow directions
 
 ## Run the lab
 
-## ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
-## ***ACTION*** - RUN ConsumerBlueMain from the IDE
-## ***ACTION*** - RUN StockPriceProducer from the IDE
+<span style="color:red;">Note: Make sure that you have completed lab `8.1` first.</span> 
+
+***ACTION*** - We need to copy JAAS config files to `/opt/kafka/config/security`:
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+cp -R resources/opt/kafka/conf/security /opt/kafka/conf/
+```
+
+***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
+
+<span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.4/solution` directory</span>
+
+
+**Terminal 1**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/run-zookeeper.sh
+```
+
+**Terminal 2**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/start-1st-server.sh
+```
+
+**Terminal 3**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/start-2nd-server.sh
+```
+
+**Terminal 4**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/start-3rd-server.sh
+```
+
+
+***ACTION*** Run `bin/create-scram-users.sh` script to create scram users.
+
+**Terminal 5**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/create-scram-users.sh
+```
+
+![](../../lab_guides/md/images/ssl45.png)
+
+***ACTION*** - RUN ConsumerBlueMain from the IDE
+
+![](../../lab_guides/md/images/ssl41.png)
+
+
+***ACTION*** - RUN StockPriceProducer from the IDE
+
+![](../../lab_guides/md/images/ssl42.png)
+
+![](../../lab_guides/md/images/ssl43.png)
+
+*Wait for some time and verify that messages are logged in consumer.*
+
+![](../../lab_guides/md/images/ssl44.png)
+
+**ProTip** Scroll up to view complete consumer output.
+
 
 ## Expected results
 You should be able to send records from the producer to the broker

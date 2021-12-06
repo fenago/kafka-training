@@ -1,19 +1,21 @@
 # Lab 8.3: Kafka Security SASL PLAIN
 
-Welcome to the session 8 lab 3. The work for this lab is done in `~/kafka-training/lab8.3`.
+Welcome to the session 8 lab 3. The work for this lab is done in `~/kafka-training/labs/lab8.3`.
 In this lab, you are going to Kafka SASL PLAIN.
 
+<h4><span style="color:red;">Important!</span></h4>
 
+Run following script first to stop any running kafka/zookeeper process and clear logs.
 
+`~/kafka-training/kill-clean.sh`
 
+**Note:** Lab solution is available in following directory:
+`~/kafka-training/labs/lab8.3/solution`
 
 ## Kafka and SASL PLAIN
 
 You should use ***SASL/PLAIN*** with ***SSL*** only as ***transport layer*** to ensure no clear text passwords are not transmitted. <br>
 The Kafka default implementation of ***SASL/PLAIN*** specifies *usernames* and *passwords* in ***JAAS*** config files. <br>
-To avoid storing passwords on disk, you could define and use your own implementation of `javax.security.auth.spi.LoginModule`, or use disk encryption and Unix permissions to protect the username and passwords.
-
-In production systems, external authentication servers may implement password authentication. Kafka brokers can be integrated to work with these servers by adding your own implementation of `javax.security.sasl.SaslServer`. The default implementation included in Kafka in the package `org.apache.kafka.common.security.plain` can be used as an example.
 
 ## Create JAAS config for ZooKeeper add admin user
 
@@ -22,7 +24,7 @@ You would configure this via JAAS file called `zookeeper_jass.conf`. <br>
 which will live under `/opt/kafka/config/security/zookeeper_jass.conf`.
 
 #### ZooKeeper JAAS file
-#### ~/kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_broker_jaas.conf
+#### ~/kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/zookeeper_jaas.conf
 ```sh
 // Zookeeper server authentication
 Server {
@@ -34,7 +36,8 @@ Server {
 ```
 Note we are using PlainLoginModule from Kafka.
 
-## ***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
+
+***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
 
 ## Modify ZooKeeper properties file add SASL config
 
@@ -56,12 +59,21 @@ jaasLoginRenew=3600000
 
 Note we are using SASLAuthenticationProvider from Kafka.
 
-## ***ACTION*** EDIT config/zookeeper.properties and follow instructions in file
+
+***ACTION*** EDIT config/zookeeper.properties and follow instructions in file
 
 
 ## Modify ZooKeeper startup script add JAAS config location
 
-We need to copy JAAS config files to `/opt/kafka/config/security ( cp -R resources/opt/kafka/conf/security /opt/kafka/conf/ )`.
+We need to copy JAAS config files to `/opt/kafka/config/security`:
+
+```
+cd ~/kafka-training/labs/lab8.3/solution
+cp -R resources/opt/kafka/conf/security /opt/kafka/conf/
+```
+
+**Note:** You can copy files from `~/kafka-training/labs/lab8.3` folder as well if you have updated the files.
+
 ***KAFKA_OPTS*** used by kafka startup scripts to pass extra args to JVM.
 
 #### Make ZooKeeper use JAAS config file
@@ -80,7 +92,8 @@ kafka/bin/zookeeper-server-start.sh \
 
 ```
 
-## ***ACTION*** EDIT bin/run-zookeeper.sh and follow instructions in file
+
+***ACTION*** EDIT bin/run-zookeeper.sh and follow instructions in file
 
 ## Create JAAS config for Kafka Brokers add users (admin, consumer, producer)
 
@@ -110,7 +123,8 @@ Client {
 
 ```
 
-## ***ACTION*** - EDIT `resources/opt/kafka/conf/security/kafka_broker_jaas.conf` and follow instructions in file
+
+***ACTION*** - EDIT `resources/opt/kafka/conf/security/kafka_broker_jaas.conf` and follow instructions in file
 
 
 ## Modify Kafka Brokers Config properties file add SASL config
@@ -160,7 +174,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-0.properties and follow directions
+
+***ACTION*** - EDIT config/server-0.properties and follow directions
 
 #### ~/kafka-training/labs/lab8.3/config/server-1.properties
 ```sh
@@ -200,7 +215,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-1.properties and follow directions
+
+***ACTION*** - EDIT config/server-1.properties and follow directions
 
 #### ~/kafka-training/labs/lab8.3/config/server-2.properties
 ```sh
@@ -242,7 +258,8 @@ log.retention.check.interval.ms=300000
 zookeeper.connection.timeout.ms=6000
 ```
 
-## ***ACTION*** - EDIT config/server-2.properties and follow directions
+
+***ACTION*** - EDIT config/server-2.properties and follow directions
 
 
 ## Modify Kafka Broker startup script add JAAS config location
@@ -262,7 +279,8 @@ kafka/bin/kafka-server-start.sh \
 
 ```
 
-## ***ACTION*** - EDIT bin/start-1st-server.sh and follow directions
+
+***ACTION*** - EDIT bin/start-1st-server.sh and follow directions
 
 #### ~/kafka-training/labs/lab8.3/bin/start-1st-server.sh
 ```sh
@@ -279,7 +297,8 @@ kafka/bin/kafka-server-start.sh \
 
 ```
 
-## ***ACTION*** - EDIT bin/start-2nd-server.sh and follow directions
+
+***ACTION*** - EDIT bin/start-2nd-server.sh and follow directions
 
 #### ~/kafka-training/labs/lab8.3/bin/start-1st-server.sh
 ```sh
@@ -296,7 +315,8 @@ kafka/bin/kafka-server-start.sh \
 
 ```
 
-## ***ACTION*** - EDIT bin/start-3rd-server.sh and follow directions
+
+***ACTION*** - EDIT bin/start-3rd-server.sh and follow directions
 
 
 ## Create JAAS config for Consumer add user
@@ -312,7 +332,8 @@ KafkaClient {
 };
 ```
 
-## ***ACTION*** - EDIT resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow directions
+
+***ACTION*** - EDIT resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow directions
 
 
 ## Modify Consumer createConsumer() add SASL config and JAAS config location
@@ -374,7 +395,8 @@ public class ConsumerUtil {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/consumer/ConsumerUtil.java and follow directions
 
 
 ## Create JAAS config for Producer add user
@@ -390,7 +412,8 @@ KafkaClient {
 };
 ```
 
-## ***ACTION*** - EDIT resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow directions
+
+***ACTION*** - EDIT resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow directions
 
 ## Modify Producer createProducer()  add SASL config and JAAS config location
 
@@ -449,15 +472,65 @@ public class StockPriceProducerUtils {
 }
 ```
 
-## ***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
-## ***ACTION*** - COPY JAAS files `cp -R resources/opt/kafka/conf/security /opt/kafka/conf/`
+
+***ACTION*** - EDIT src/main/java/com/fenago/kafka/producer/support/StockPriceProducerUtils.java and follow directions
+
+***ACTION*** - COPY JAAS files `cp -R resources/opt/kafka/conf/security /opt/kafka/conf/`
 
 ## Run the lab
 
-## ***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
-## ***ACTION*** - RUN ConsumerBlueMain from the IDE
-## ***ACTION*** - RUN StockPriceProducer from the IDE
+<span style="color:red;">Note: Make sure that you have completed lab `8.1` first.</span> 
+
+***ACTION*** - RUN ZooKeeper and three Kafka Brokers (scripts are under bin for ZooKeeper and Kafka Brokers).
+
+<span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab8.3/solution` directory</span>
+
+**Terminal 1**
+
+```
+cd ~/kafka-training/labs/lab8.3/solution
+bin/run-zookeeper.sh
+```
+
+**Terminal 2**
+
+```
+cd ~/kafka-training/labs/lab8.3/solution
+bin/start-1st-server.sh
+```
+
+**Terminal 3**
+
+```
+cd ~/kafka-training/labs/lab8.3/solution
+bin/start-2nd-server.sh
+```
+
+**Terminal 4**
+
+```
+cd ~/kafka-training/labs/lab8.3/solution
+bin/start-3rd-server.sh
+```
+
+![](../../lab_guides/md/images/ssl34.png)
+
+**Protip:** You should get above logs in zookeeper console after starting kafka servers.
+
+
+***ACTION*** - RUN ConsumerBlueMain from the IDE
+
+![](../../lab_guides/md/images/ssl31.png)
+
+***ACTION*** - RUN StockPriceProducer from the IDE
+
+![](../../lab_guides/md/images/ssl32.png)
+
+*Wait for some time and verify that messages are logged in consumer console*
+
+![](../../lab_guides/md/images/ssl33.png)
 
 ## Expected results
 You should be able to send records from the producer to the broker
 and read records from the consumer to the broker using SASL PLAIN auth.
+

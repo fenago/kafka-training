@@ -33,20 +33,18 @@ SCRAM_CONFIG="$SCRAM_CONFIG,SCRAM-SHA-512=[password=kafka123]"
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name stocks_consumer
-    --zookeeper localhost:2181 \
+    --entity-type users --entity-name stocks_consumer \
+    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name stocks_producer
-    --zookeeper localhost:2181 \
+    --entity-type users --entity-name stocks_producer \
+    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
-    --entity-type users --entity-name admin
-    --zookeeper localhost:2181 \
-
-
+    --entity-type users --entity-name admin \
+    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 ```
 
 Note we are using PlainLoginModule from Kafka.
