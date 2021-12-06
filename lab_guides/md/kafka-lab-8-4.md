@@ -75,7 +75,7 @@ Client {
 ```
 
 
-***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
+***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_broker_jaas.conf and follow instructions in file
 
 ## Kafka Consumer/Producer JAAS Scram Config
 
@@ -91,7 +91,7 @@ KafkaClient {
 ```
 
 
-***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow instructions in file
+***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_consumer_stocks_jaas.conf and follow instructions in file
 
 #### ~/kafka-training/labs/lab8.4/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf
 ```sh
@@ -103,7 +103,7 @@ KafkaClient {
 ```
 
 
-***ACTION*** EDIT solution/resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow instructions in file
+***ACTION*** EDIT resources/opt/kafka/conf/security/kafka_producer_stocks_jaas.conf and follow instructions in file
 
 ## Configure SCRAM in Producer
 
@@ -244,7 +244,7 @@ broker.id=0
 listeners=PLAINTEXT://localhost:9092,SASL_SSL://localhost:10092
 sasl.mechanism.inter.broker.protocol=SCRAM-SHA-256
 sasl.enabled.mechanisms=SCRAM-SHA-256
-security.inter.broker.protocol=SASL_SSL
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -287,7 +287,7 @@ broker.id=1
 listeners=PLAINTEXT://localhost:9093,SASL_SSL://localhost:10093
 sasl.mechanism.inter.broker.protocol=SCRAM-SHA-256
 sasl.enabled.mechanisms=SCRAM-SHA-256
-security.inter.broker.protocol=SASL_SSL
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -329,7 +329,7 @@ broker.id=2
 listeners=PLAINTEXT://localhost:9094,SASL_SSL://localhost:10094
 sasl.mechanism.inter.broker.protocol=SCRAM-SHA-256
 sasl.enabled.mechanisms=SCRAM-SHA-256
-security.inter.broker.protocol=SASL_SSL
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123

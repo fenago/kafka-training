@@ -24,7 +24,7 @@ You would configure this via JAAS file called `zookeeper_jass.conf`. <br>
 which will live under `/opt/kafka/config/security/zookeeper_jass.conf`.
 
 #### ZooKeeper JAAS file
-#### ~/kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/kafka_broker_jaas.conf
+#### ~/kafka-training/labs/lab8.3/resources/opt/kafka/conf/security/zookeeper_jaas.conf
 ```sh
 // Zookeeper server authentication
 Server {
@@ -140,7 +140,7 @@ broker.id=0
 listeners=PLAINTEXT://localhost:9092,SASL_SSL://localhost:10092
 sasl.mechanism.inter.broker.protocol=PLAIN
 sasl.enabled.mechanisms=PLAIN
-security.inter.broker.protocol=SASL_SSL
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -183,7 +183,7 @@ broker.id=1
 listeners=PLAINTEXT://localhost:9093,SASL_SSL://localhost:10093
 sasl.mechanism.inter.broker.protocol=PLAIN
 sasl.enabled.mechanisms=PLAIN
-security.inter.broker.protocol=SASL_SSL
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -225,7 +225,7 @@ broker.id=2
 listeners=PLAINTEXT://localhost:9094,SASL_SSL://localhost:10094
 sasl.mechanism.inter.broker.protocol=PLAIN
 sasl.enabled.mechanisms=PLAIN
-security.inter.broker.protocol=SASL_SSL
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -510,9 +510,23 @@ bin/start-2nd-server.sh
 cd ~/kafka-training/labs/lab8.3/solution
 bin/start-3rd-server.sh
 ```
+
+![](./images/ssl34.png)
+
+**Protip:** You should get following log in zookeeper console after starting kafka servers.
+
+
 ***ACTION*** - RUN ConsumerBlueMain from the IDE
 
+![](./images/ssl31.png)
+
 ***ACTION*** - RUN StockPriceProducer from the IDE
+
+![](./images/ssl32.png)
+
+*Wait for some time and verify that messages are logged in consumer console*
+
+![](./images/ssl33.png)
 
 ## Expected results
 You should be able to send records from the producer to the broker

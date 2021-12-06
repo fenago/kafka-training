@@ -126,7 +126,7 @@ broker.id=0
 listeners=PLAINTEXT://localhost:9092,SASL_SSL://localhost:10092
 sasl.mechanism.inter.broker.protocol=PLAIN
 sasl.enabled.mechanisms=PLAIN
-security.inter.broker.protocol=SASL_SSL
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -168,7 +168,7 @@ broker.id=1
 listeners=PLAINTEXT://localhost:9093,SASL_SSL://localhost:10093
 sasl.mechanism.inter.broker.protocol=PLAIN
 sasl.enabled.mechanisms=PLAIN
-security.inter.broker.protocol=SASL_SSL
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -209,7 +209,7 @@ broker.id=2
 listeners=PLAINTEXT://localhost:9094,SASL_SSL://localhost:10094
 sasl.mechanism.inter.broker.protocol=PLAIN
 sasl.enabled.mechanisms=PLAIN
-security.inter.broker.protocol=SASL_SSL
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123

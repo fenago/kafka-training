@@ -3,9 +3,7 @@
 Welcome to the session 8 lab 2. The work for this lab is done in `~/kafka-training/lab8.2`.
 In this lab, you are going to setup Kafka SSL support.
 
-
-
-Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides)***
+Find the latest version of this lab [here](https://github.com/fenago/kafka-training/tree/master/lab_guides)
 
 ## Authentication
 
@@ -48,7 +46,7 @@ KafkaClient {
 Kafka Broker Config : SASL configured with transport PLAINTEXT or SSL <br>
 `listeners=SASL_PLAINTEXT://hostname:port`
 `listener= SASL_SSL://hostname:port`
-`security.inter.broker.protocol=SASL_PLAINTEXT or SASL_SSL`
+`
 
 If SASL_SSL is used, then SSL has to be configured
 
@@ -117,7 +115,7 @@ listeners=SASL_PLAINTEXT://localhost:9092,SASL_SSL://localhost:10092
 sasl.mechanism.inter.broker.protocol=GSSAPI
 sasl.enabled.mechanisms=GSSAPI
 sasl.kerberos.service.name=kafka
-security.inter.broker.protocol=SASL_PLAINTEXT
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -163,7 +161,7 @@ listeners=SASL_PLAINTEXT://localhost:9093,SASL_SSL://localhost:10093
 sasl.mechanism.inter.broker.protocol=GSSAPI
 sasl.enabled.mechanisms=GSSAPI
 sasl.kerberos.service.name=kafka
-security.inter.broker.protocol=SASL_PLAINTEXT
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -209,7 +207,7 @@ listeners=SASL_PLAINTEXT://localhost:9094,SASL_SSL://localhost:10094
 sasl.mechanism.inter.broker.protocol=GSSAPI
 sasl.enabled.mechanisms=GSSAPI
 sasl.kerberos.service.name=kafka
-security.inter.broker.protocol=SASL_PLAINTEXT
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
@@ -356,7 +354,7 @@ listeners=SASL_PLAINTEXT://localhost:9092,SASL_SSL://localhost:10092
 sasl.mechanism.inter.broker.protocol=GSSAPI
 sasl.enabled.mechanisms=GSSAPI
 sasl.kerberos.service.name=kafka
-security.inter.broker.protocol=SASL_PLAINTEXT
+
 
 ssl.keystore.location=/opt/kafka/conf/certs/kafka.keystore
 ssl.keystore.password=kafka123
