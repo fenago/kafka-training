@@ -71,11 +71,11 @@ Note we are using SASLAuthenticationProvider from Kafka.
 We need to copy JAAS config files to `/opt/kafka/config/security`:
 
 ```
-cd ~/kafka-training/labs/lab8.3
+cd ~/kafka-training/labs/lab8.3/solution
 cp -R resources/opt/kafka/conf/security /opt/kafka/conf/
 ```
 
-**Note:** You can copy files from solution folder as well.
+**Note:** You can copy files from `~/kafka-training/labs/lab8.3` folder as well if you have updated the files.
 
 ***KAFKA_OPTS*** used by kafka startup scripts to pass extra args to JVM.
 

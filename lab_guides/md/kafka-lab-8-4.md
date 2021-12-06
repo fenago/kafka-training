@@ -38,17 +38,17 @@ SCRAM_CONFIG="$SCRAM_CONFIG,SCRAM-SHA-512=[password=kafka123]"
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
     --entity-type users --entity-name stocks_consumer \
-    --zookeeper localhost:2181 \
+    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
     --entity-type users --entity-name stocks_producer \
-    --zookeeper localhost:2181 \
+    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 
 kafka/bin/kafka-configs.sh \
     --alter --add-config "$SCRAM_CONFIG" \
     --entity-type users --entity-name admin \
-    --zookeeper localhost:2181 \
+    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 ```
 
 
@@ -409,9 +409,35 @@ cd ~/kafka-training/labs/lab8.4/solution
 bin/start-3rd-server.sh
 ```
 
+
+***ACTION*** Run `bin/create-scram-users.sh` script to create scram users.
+
+**Terminal 5**
+
+```
+cd ~/kafka-training/labs/lab8.4/solution
+bin/create-scram-users.sh
+```
+
+![](./images/ssl45.png)
+
 ***ACTION*** - RUN ConsumerBlueMain from the IDE
 
+![](./images/ssl41.png)
+
+
 ***ACTION*** - RUN StockPriceProducer from the IDE
+
+![](./images/ssl42.png)
+
+![](./images/ssl43.png)
+
+*Wait for some time and verify that messages are logged in consumer.*
+
+![](./images/ssl44.png)
+
+**ProTip** Scroll up to view complete consumer output.
+
 
 ## Expected results
 You should be able to send records from the producer to the broker

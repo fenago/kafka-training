@@ -10,5 +10,5 @@ SCRAM_CONFIG="$SCRAM_CONFIG,SCRAM-SHA-512=[password=kafka123]"
 # HINT kafka/bin/kafka-configs.sh \
 #    --alter --add-config "$SCRAM_CONFIG" \
 #    --entity-type users --entity-name ??? \
-#    --zookeeper localhost:2181 \
+#    --bootstrap-server localhost:9092,localhost:9093,localhost:9094 \
 

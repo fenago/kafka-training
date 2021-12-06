@@ -6,7 +6,14 @@ Welcome to the session 9 lab. The work for this lab is done in `~/kafka-training
 In this lab, you are going to set up Kafka MirrorMaker.
 
 
+<h4><span style="color:red;">Important!</span></h4>
 
+Run following script first to stop any running kafka/zookeeper process and clear logs.
+
+`~/kafka-training/kill-clean.sh`
+
+**Note:** Lab solution is available in following directory:
+`~/kafka-training/labs/lab9/solution`
 
 
 ## Kafka MirrorMaker
@@ -93,6 +100,9 @@ Also setup different partition sizes and disable auto create for cluster 0.
 
 
 ## Run it
+
+All scripts should be run from following directory:
+`cd ~/kafka-training/labs/lab9/solution`
 
 ***ACTION*** - START - Start up first cluster: bin/start-1st-cluster.sh
 
