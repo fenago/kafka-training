@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="64f4b3c7-b1ac-4432-859e-f77fbe1c2727" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../lab8.1/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab8.1/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab8.1/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab8.1/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab8.1/solution/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab8.1/solution/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab8.1/solution/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab8.1/solution/gradlew.bat" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="21um2jYokIyMDds0po77Tg2upBJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64f4b3c7-b1ac-4432-859e-f77fbe1c2727" name="Default Changelist" comment="" />
+      <created>1638799141604</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638799141604</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="423" y="285" width="430" height="486" key="FileChooserDialogImpl" timestamp="1638799212582">
+      <screen x="0" y="31" width="1280" height="993" />
+    </state>
+    <state x="423" y="285" width="430" height="486" key="FileChooserDialogImpl/0.31.1280.993@0.31.1280.993" timestamp="1638799212582" />
+  </component>
+</project>
