@@ -16,7 +16,7 @@ Let's take a look at an example Avro schema.
 #### ./src/main/avro/com/fenago/phonebook/Employee.avsc
 #### Example schema for an Employee record
 
-```
+```javascript
 {"namespace": "com.fenago.phonebook",
   "type": "record",  "name": "Employee",
     "fields": [
@@ -94,7 +94,7 @@ sourceSets{
 Notice that we did not generate setter methods, and we made the fields private.
 This makes the instances somewhat immutable.
 
-Running `gradle build` will generate the Employee.java.
+Click `Build` > `Rebuild Project` from IntelliJ IDE to generate the Employee.java.
 
 #### ./build/generated-main-avro-java/com/fenago/phonebook/Employee.java
 #### Generated Avro code
@@ -121,12 +121,11 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 ```
 
 
-***ACTION*** - RUN `gradle build` from the project folder
+***ACTION*** - Click `Build` > `Rebuild Project` in IntelliJ IDE,
 
 The gradle plugin calls the Avro utilities which generates the files and puts them under
 `build/generated-main-avro-java`
 
-**Note:** You can generate classes using IntelliJ as well. Click `Build` > `Rebuild Project`
 ![](../../lab_guides/md/images/avro2.png)
 
 Let's use the generated class as follows to construct an Employee instance.
@@ -363,7 +362,8 @@ Let's add to the Employee schema and show some of the different types that Avro 
 ![](../../lab_guides/md/images/lab7.1.2.png)
 
 #### More advanced schema - `src/main/avro/com/fenago/phonebook/Employee.avsc`
- ```
+
+```javascript
  {"namespace": "com.fenago.phonebook",
   "type": "record",
   "name": "Employee",
@@ -395,9 +395,7 @@ Let's add to the Employee schema and show some of the different types that Avro 
 
 ***ACTION*** - EDIT Employee.avsc and modify it to match the above code listing.
 
-***ACTION*** - RUN `gradle build`  again to generate classes
-
-**Note:** You can generate classes using IntelliJ as well. Click `Build` > `Rebuild Project`
+***ACTION*** - Generate classes using IntelliJ IDE. Click `Build` > `Rebuild Project`
 
 ![](../../lab_guides/md/images/avro.png)
 
