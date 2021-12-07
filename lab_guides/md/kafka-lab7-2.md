@@ -300,6 +300,18 @@ public class SchemaMain {
 I suggest running the example and trying to force incompatible schemas to the Schema Registry and
 note the behavior for the various compatibility settings.
 
+#### Running Zookeeper and Kafka
+
+**Terminal 1:**
+
+`~/kafka-training/run-zookeeper.sh`
+
+**Terminal 2:**
+
+`~/kafka-training/run-kafka.sh`
+
+***ACTION*** - RUN ZooKeeper and a Kafka Broker
+
 #### Running Schema Registry
 
 ```
@@ -596,21 +608,9 @@ An additional step is we have to tell it to use the generated version of the `Em
 If we did not, then it would use Avro `GenericRecord` instead of our generated `Employee` object,
 which is a `SpecificRecord`.  To learn more about using GenericRecord and generating code from Avro, read the Avro Kafka tutorial
 
-To run the above example, you need to startup Kafka and Zookeeper.
+**Important!**
 
-#### Running Zookeeper and Kafka
-
-**Terminal 1:**
-
-`~/kafka-training/run-zookeeper.sh`
-
-**Terminal 2:**
-
-`~/kafka-training/run-kafka.sh`
-
-***ACTION*** - RUN ZooKeeper and a Kafka Broker
-
-Make sure schema registry is running as well.
+To run the above example, you need to startup Kafka and Zookeeper. Make sure schema registry is running as well.
 
 ***ACTION*** - RUN AvroProducer from the IDE
 ![](./images/registry4.png)
