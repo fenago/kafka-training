@@ -126,7 +126,9 @@ All scripts should be run from following directory:
 
 ***ACTION*** - RUN - Run ConsumerMain3rdCluster in IDE
 
-***ACTION*** - RUN - Run StockPriceProducer in IDE
+***ACTION*** - RUN - Run StockPriceProducer in IDE and wait for console to start generate logs like this:
+
+![](./images/12.png)
 
 ***ACTION*** - WAIT - After 30 Seconds stop StockPriceProducer
 
