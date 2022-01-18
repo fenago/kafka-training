@@ -102,16 +102,6 @@ public class SimpleStockPriceConsumer {
              ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
              ## ***ACTION*** - OBSERVE and then STOP consumer and producer
 
-
-             ## ***ACTION*** - EDIT `com.fenago.kafka.consumer.SimpleStockPriceConsumer` and implement fine-grained At-Most-Once Semantics
-             ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
-             ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-             ## ***ACTION*** - OBSERVE and then STOP consumer and producer
-
-             ## ***ACTION*** - EDIT `com.fenago.kafka.consumer.SimpleStockPriceConsumer` and implement fine-grained At-Least-Once Semantics
-             ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
-             ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-             ## ***ACTION*** - OBSERVE and then STOP consumer and producer
              */
 
         } catch (CommitFailedException ex) {

@@ -90,6 +90,7 @@ public class SimpleStockPriceConsumer {
 ```
 
 ## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement At-Least-Once Semantics
+
 ## ***ACTION*** - RUN ZooKeeper and Brokers if needed.
 ## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
 ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
@@ -148,116 +149,5 @@ public class SimpleStockPriceConsumer {
 ## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
 ## ***ACTION*** - OBSERVE and then STOP consumer and producer
 
-### Fine Grained "At-Least-Once"
-
-#### ~/kafka-training/lab6.3/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
-#### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
-```java
-package com.fenago.kafka.consumer;
-import com.fenago.kafka.StockAppConstants;
-import com.fenago.kafka.model.StockPrice;
-import org.apache.kafka.clients.consumer.*;
-import org.apache.kafka.common.serialization.StringDeserializer;
-
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-
-public class SimpleStockPriceConsumer {
-...
-    private static void pollRecordsAndProcess(
-            int readCountStatusUpdate,
-            Consumer<String, StockPrice> consumer,
-            Map<String, StockPrice> map, int readCount)
-            consumerRecords.forEach(record -> {
-                try {
-                    startTransaction();         //Start DB Transaction
-                    //Commit Kafka at exact location for record, and only this record.
-                    final TopicPartition recordTopicPartition =
-                        new TopicPartition(record.topic(), record.partition());
-                    final Map<TopicPartition, OffsetAndMetadata> commitMap =
-                        Collections.singletonMap(recordTopicPartition,
-                        new OffsetAndMetadata( offset: record.offset() + 1));
-                    consumer.commitSync(commitMap); //Kafka Commit
-                    processRecords(record);            //Process the record
-                    commitTransaction();        //Commit DB Transaction
-                } catch (CommitFailedException ex) {
-                    logger.error("Failed to commit sync to log", ex);
-                    rollbackTransaction();      //Rollback Transaction
-                } catch (DatabaseException dte) {
-                    logger.error("Failed to write to DB", dte);
-                    rollbackTransaction();      //Rollback Transaction
-                }
-            });
-        if (readCount % readCountStatusUpdate == 0) {
-            displayRecordsStatsAndStocks(map, consumerRecords);
-        }
-    }
-...
-}
-
-```
-
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Most-Once Semantics
-## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumer and producer
-
-### Fine Grained "At-Most-Once"
-
-#### ~/kafka-training/lab6.3/src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java
-#### Kafka Consumer:  SimpleStockPriceConsumer.pollRecordsAndProcess
-```java
-package com.fenago.kafka.consumer;
-import com.fenago.kafka.StockAppConstants;
-import com.fenago.kafka.model.StockPrice;
-import org.apache.kafka.clients.consumer.*;
-import org.apache.kafka.common.serialization.StringDeserializer;
-
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-
-public class SimpleStockPriceConsumer {
-...
-    private static void pollRecordsAndProcess(
-            int readCountStatusUpdate,
-            Consumer<String, StockPrice> consumer,
-            Map<String, StockPrice> map, int readCount)
-            consumerRecords.forEach(record -> {
-                try {
-                    startTransaction();         //Start DB Transaction
-                    processRecords(record);            //Process the record
-                            //Commit Kafka at exact location for the record, and only this record.
-                    final TopicPartition recordTopicPartition =
-                        new TopicPartition(record.topic(), record.partition());
-                    final Map<TopicPartition, OffsetAndMetadata> commitMap =
-                        Collections.singletonMap(recordTopicPartition,
-                        new OffsetAndMetadata( offset: record.offset() + 1));
-                    consumer.commitSync(commitMap); //Kafka Commit
-                    commitTransaction();        //Commit DB Transaction
-                } catch (CommitFailedException ex) {
-                    logger.error("Failed to commit sync to log", ex);
-                    rollbackTransaction();      //Rollback Transaction
-                } catch (DatabaseException dte) {
-                    logger.error("Failed to write to DB", dte);
-                    rollbackTransaction();      //Rollback Transaction
-                }
-            });
-        if (readCount % readCountStatusUpdate == 0) {
-            displayRecordsStatsAndStocks(map, consumerRecords);
-        }
-    }
-...
-}
-
-```
-
-## ***ACTION*** - EDIT `src/main/java/com/fenago/kafka/consumer/SimpleStockPriceConsumer.java` and implement fine-grained At-Least-Once Semantics
-## ***ACTION*** - RUN SimpleStockPriceConsumer from IDE
-## ***ACTION*** - RUN StockPriceKafkaProducer from IDE
-## ***ACTION*** - OBSERVE and then STOP consumer and producer
 
 It should all run. Stop consumer and producer when finished.
