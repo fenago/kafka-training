@@ -6,11 +6,6 @@ Welcome to the session 5 lab 2. The work for this lab is done in `~/kafka-traini
 In this lab, you are going to create a clean shutdown for our advanced Producer.
 
 
-
-
-
-
-
 ## Lab Adding an orderly shutdown flush and close
 
 ### Shutdown Producer Nicely

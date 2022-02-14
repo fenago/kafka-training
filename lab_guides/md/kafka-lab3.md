@@ -211,7 +211,6 @@ The poll method is not thread safe and is not meant to get called from multiple 
 ***ACTION*** - RUN src/main/java/com/fenago/kafka/KafkaConsumerExample.java from the IDE.
 
 
-____
 ### Running the Kafka Consumer
 
 Next you define the `main` method.

@@ -7,12 +7,9 @@ Welcome to the session 5 lab 1. The work for this lab is done in
 
 In this lab, you are going to create an advanced Java Kafka producer.
 
-Please refer to the [Kafka course notes](https://goo.gl/a4kk5b) for any updates or
-changes to this lab.
+<span style="color:red;">Note: Do not run scripts inside `bin` directory. Run scripts from `~/kafka-training/labs/lab5.1/solution` directory</span>
 
-Find the lastest version of this lab
-[here](https://github.com/fenago/kafka-training/tree/master/lab_guides).
-
+**Scripts in all labs should be run from outside bin directory.**
 
 ### Kafka Producers
 
