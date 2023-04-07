@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package com.fenago.protobuf;
-option java_outer_classname = "SimpleMessageProtos";
-
-message SimpleMessage {
-	string content = 1;
-	string date_time = 2;
-}
