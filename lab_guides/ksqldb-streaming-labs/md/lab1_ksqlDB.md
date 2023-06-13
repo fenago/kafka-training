@@ -1,9 +1,24 @@
 
-ksqlDB Quickstart
-=================
+Lab: ksqlDB Quickstart
+======================
 
 The guide below demonstrates how to get a minimal environment up and running.
 
+
+
+## Prerequisites
+
+This lab installs Confluent Platform using Docker. Before proceeding:
+
+- Connect with lab environment VM using SSH:
+
+    `ssh USERNAME@YOUR_VM_DNS.courseware.io`
+
+  *  **Username:** Will be provided by Instructor.
+
+  *  **Password:** Will be provided by Instructor.
+
+- Verify that Docker is set up properly by ensuring no errors are output when you run `docker info` and `docker compose version` on the command line.
 
 
 ### 1. Get standalone ksqlDB
@@ -107,21 +122,20 @@ interactive command-line interface (CLI) session.
 
 ### 4. Create a stream
 
-The first thing we're going to do is create a
-[stream](https://docs.ksqldb.io/en/latest/concepts/collections/streams/).
+The first thing we're going to do is create a `stream`.
 A stream essentially associates a schema with an underlying Kafka topic.
 Here's what each parameter in the CREATE STREAM statement does:
 
 
--   **kafka\_topic -**Name of the Kafka topic underlying the stream. In
+-   **kafka\_topic -** Name of the Kafka topic underlying the stream. In
     this case it will be automatically created because it doesn't exist
     yet, but streams may also be created over topics that already exist.
--   **value\_format -**Encoding of the messages stored in the Kafka
+-   **value\_format -** Encoding of the messages stored in the Kafka
     topic. For JSON encoding, each row will be stored as a JSON object
     whose keys/values are column names/values. For example:
     {"profileId": "c2309eec", "latitude": 37.7877, "longitude":
     -122.4205}
--   **partitions -**Number of partitions to create for the locations
+-   **partitions -** Number of partitions to create for the locations
     topic. Note that this parameter is not needed for topics that
     already exist.
 
@@ -160,7 +174,7 @@ begins producing output.
 
 Since the CLI session from (5) is busy waiting for output from the
 persistent query, let's start another session that we can use to write
-some data into ksqlDB.\
+some data into ksqlDB.
 
 
 ```
@@ -169,13 +183,12 @@ some data into ksqlDB.\
 
 ### 7. Populate the stream with events
 
-Run each of the given [INSERT
-statements](https://docs.ksqldb.io/en/latest/concepts/collections/inserting-events/)
+Run each of the given INSERT statements
 within the new CLI session, and keep an eye on the CLI session from (5)
 as you do.
 
 The persistent query will output matching rows in real time as soon as
-they're written to the riderLocations stream.\
+they're written to the riderLocations stream.
 
 ```
     INSERT INTO riderLocations (profileId, latitude, longitude) VALUES ('c2309eec', 37.7877, -122.4205);
@@ -185,3 +198,19 @@ they're written to the riderLocations stream.\
     INSERT INTO riderLocations (profileId, latitude, longitude) VALUES ('4a7c7b41', 37.4049, -122.0822);
     INSERT INTO riderLocations (profileId, latitude, longitude) VALUES ('4ddad000', 37.7857, -122.4011);
 ```
+
+
+### Cleanup Resources
+
+
+Delete all the resources by running following command in the `docker-compose.yml` file directory from the terminal:
+
+```
+docker compose down
+```
+
+![](./images/3.png)
+
+**Note:** If you get above error while running above command. Manually stop the containers and run `docker compose down` again. **Do not delete kafkanew container**.
+
+![](./images/4.png)
