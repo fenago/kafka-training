@@ -28,9 +28,7 @@ installation running that ksqlDB is configured to use. The
 docker-compose files to the right will run everything for you via
 Docker, including ksqlDB itself.
 
-Select the docker-compose file that you'd like to use, depending on
-whether or not you're already running Kafka. Next, copy and paste it
-into a file named docker-compose.yml on your local filesystem.
+Copy and paste following content into a file named `docker-compose.yml` on your local filesystem. You can run ` nano docker-compose.yml` command to create and edit file using nano editor.
 
 
 ```
@@ -102,7 +100,7 @@ Once all services have successfully launched, you will have a ksqlDB
 server running and ready to use.
 
 ```
-    docker-compose up
+docker compose up -d
 ```
 
 
@@ -181,6 +179,8 @@ some data into ksqlDB.
     docker exec -it ksqldb-cli ksql http://ksqldb-server:8088
 ```
 
+**Note:** You will need to first connect with lab machine using SSH in new terminal.
+
 ### 7. Populate the stream with events
 
 Run each of the given INSERT statements
@@ -199,6 +199,7 @@ they're written to the riderLocations stream.
     INSERT INTO riderLocations (profileId, latitude, longitude) VALUES ('4ddad000', 37.7857, -122.4011);
 ```
 
+![](./images/5.png)
 
 ### Cleanup Resources
 
@@ -207,6 +208,8 @@ Delete all the resources by running following command in the `docker-compose.yml
 
 ```
 docker compose down
+
+docker container prune
 ```
 
 ![](./images/3.png)

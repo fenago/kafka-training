@@ -645,6 +645,8 @@ Delete all the resources by running following command in the `docker-compose.yml
 
 ```
 docker compose down
+
+docker container prune
 ```
 
 ![](./images/3.png)

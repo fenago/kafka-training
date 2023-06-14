@@ -276,9 +276,6 @@ SET 'cache.max.bytes.buffering' = '0';
 ```
 
 
-
-
-
 Let's experiment with these events.
 
 
@@ -301,7 +298,9 @@ LIMIT 6;
 ```
 
 
+And it should produce the following output:
 
+![](./images/6.png)
 
 Notice that the duplicate IP addresses have an `IP_COUNT` value greater
 than one. So our next step is to filter out the duplicates by only
@@ -400,7 +399,9 @@ LIMIT 3;
 ```
 
 
+The output should look similar to:
 
+![](./images/7.png)
 
 Finally, let's see what's available on the underlying Kafka topic for
 the table. We can print that out easily.
@@ -613,6 +614,8 @@ Delete all the resources by running following command in the `docker-compose.yml
 
 ```
 docker compose down
+
+docker container prune
 ```
 
 ![](./images/3.png)
