@@ -7,8 +7,6 @@ import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.apache.kafka.streams.StreamsBuilder;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
@@ -26,7 +24,7 @@ public class WordCount {
         config.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         config.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
 
-        StreamsBuilder builder = new StreamsBuilder();
+        KStreamBuilder builder = new KStreamBuilder();
 
         // 1 - stream from Kafka
         KStream<String, String> step1Input = builder.stream("word-count-input");
@@ -72,14 +70,12 @@ public class WordCount {
         KGroupedStream<String, String> step5Group = step4Key.groupByKey();
 
         // 6 - count occurrences
-        KTable<String, Long> step6Count = step5Group.count(Materialized.as("Counts"));
+        KTable<String, Long> step6Count = step5Group.count("Counts");
 
         // 7 - to in order to write the results back to kafka
+        step6Count.to(Serdes.String(), Serdes.Long(), "word-count-output");
 
-        step6Count.toStream().to("word-count-output", Produced.with(Serdes.String(),
-                Serdes.Long()));
-
-        KafkaStreams streams = new KafkaStreams(builder.build(), config);
+        KafkaStreams streams = new KafkaStreams(builder, config);
         streams.cleanUp();
         streams.start();
 

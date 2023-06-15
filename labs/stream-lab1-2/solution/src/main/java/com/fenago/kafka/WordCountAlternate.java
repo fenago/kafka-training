@@ -7,8 +7,6 @@ import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.apache.kafka.streams.StreamsBuilder;
-
 import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -36,7 +34,7 @@ public class WordCountAlternate {
         // 6 - count occurrences
 
 
-        StreamsBuilder builder = new StreamsBuilder();
+        KStreamBuilder builder = new KStreamBuilder();
 
         // 1 - stream from Kafka
         KStream<String, String> input = builder.stream("word-count-input");
@@ -46,13 +44,12 @@ public class WordCountAlternate {
                 .flatMapValues(textLine -> Arrays.asList(textLine.split(" ")))
                 .selectKey((key, word) -> word)
                 .groupByKey()
-                .count(Materialized.as("Counts"));
+                .count("Counts");
 
         // 7 - to in order to write the results back to kafka
-        wordCounts.toStream().to("word-count-output",
-                Produced.with(Serdes.String(), Serdes.Long()));
+        wordCounts.toStream().to(Serdes.String(), Serdes.Long(), "word-count-output");
 
-        KafkaStreams streams = new KafkaStreams(builder.build(), config);
+        KafkaStreams streams = new KafkaStreams(builder, config);
         streams.start();
 
         registerCleanShutdown(streams);
